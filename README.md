@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.com/narisasingngam/TravelPlanner.svg?branch=dev-test-django)](https://travis-ci.com/narisasingngam/TravelPlanner)
+
 # Travel Planner
 Travel planner is a website that user can create a planner for their own trip. In a planner; user can determine arrival and departure date, select places by searching from maps, and set time duration that they need to spend for each place. The planner will show time remaining in each day, and display the time that take user from one place to another.
 
