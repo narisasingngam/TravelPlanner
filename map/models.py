@@ -4,7 +4,7 @@ from django.urls import reverse # Used to generate URLs by reversing the URL pat
 class Location(models.Model):  
     # Model representing name location  
     location = models.CharField(max_length = 30)
-    stay_time = models.IntegerField(null=True)
+    stay_time = models.IntegerField(default=0)
     # User can have multi-plan
     user = models.ForeignKey('User', on_delete=models.SET_NULL, null=True)
     
@@ -17,7 +17,7 @@ class User(models.Model):
 
     email = models.CharField(max_length = 30)
     #start time that user want to go in each place
-    time = models.IntegerField(null=True)
+    time = models.IntegerField(default=0)
     date = models.DateField(null=True, blank=True)
 
     def get_absolute_url(self):
