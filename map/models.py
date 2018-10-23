@@ -16,7 +16,7 @@ class Location(models.Model):
 class User(models.Model):
 
     email = models.CharField(max_length = 30)
-    #the time that user want to go in each place
+    #start time that user want to go in each place
     time = models.IntegerField(null=True)
     date = models.DateField(null=True, blank=True)
 
