@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Location
+from django.http import HttpResponse
 import urllib.request
 import json
 import ssl
@@ -17,32 +17,40 @@ def index(request):
                 return render(request, 'index.html')  
     else:
         return render(request,'index.html')
+        
+from django.views.decorators.csrf import csrf_exempt
+@csrf_exempt
+def search_place(request):
+    if request.method == 'POST':
+        json_body = json.loads(request.body.decode('utf-8'))
+        place = json_body['place']
 
-def search_place(search):
-    endpoint = 'https://maps.googleapis.com/maps/api/place/findplacefromtext/json?'
-    inputtype = 'textquery&fields=formatted_address,name,opening_hours&locationbias=circle:2000@47.6918452,-122.2226413'
-    context = ssl._create_unverified_context()
-    
-    text_request = endpoint + f'input={search}&inputtype={inputtype}&key={api_key}'
+        endpoint = 'https://maps.googleapis.com/maps/api/place/findplacefromtext/json?'
+        inputtype = 'textquery&fields=formatted_address,name,opening_hours&locationbias=circle:2000@47.6918452,-122.2226413'
+        request = endpoint + f'input={place}&inputtype={inputtype}&key={api_key}' 
 
-    response = urllib.request.urlopen(text_request, context=context).read()
-    direction = json.loads(response.decode('utf-8'))
-    
-    place  = direction['candidates'][0]['formatted_address']
-    return HttpRequest(place)
+        response = urllib.request.urlopen
+        context = ssl._create_unverified_context()
+        response = urllib.request.urlopen(request, context=context).read()
+        direction = response.decode('utf-8')
 
-def  time_count(origin, destination, mode):
-    endpoint = 'https://maps.googleapis.com/maps/api/distancematrix/json?'
-    context = ssl._create_unverified_context()
+        return HttpResponse(direction)
 
-    text_request = endpoint + f'origins={origin}&destinations={destination}&mode={mode}&key={api_key}'
+@csrf_exempt
+def  time_count(request):
+    if request.method == 'POST':
+        json_body = json.loads(request.body.decode('utf-8'))
+        origin = json_body['origin']
+        destination = json_body['destination']
+      
+        endpoint = 'https://maps.googleapis.com/maps/api/distancematrix/json?'
+        request = endpoint + f'origins={origin}&destinations={destination}&mode=driving&key={api_key}'
+        
+        context = ssl._create_unverified_context()
+        response = urllib.request.urlopen(request, context=context).read()
+        direction = response.decode('utf-8')
 
-    response = urllib.request.urlopen(request, context=context).read()
-    direction = json.loads(response.decode('utf-8'))
-
-    time = direction['rows'][0]['elements'][0]['duration']['text'])
-    return HttpRequest(time)
-
+        return HttpResponse(direction)
 
 
  
