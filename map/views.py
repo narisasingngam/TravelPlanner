@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Location
+from .models import Location,User
 
 def index(request):
     if request.method == 'POST':
@@ -12,3 +12,8 @@ def index(request):
                 return render(request, 'index.html')  
     else:
         return render(request,'index.html')
+
+# def test_database(request):
+#     location = Location.objects.all()
+#     for i in location:
+#         print(i)
