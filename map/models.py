@@ -7,17 +7,17 @@ class Location(models.Model):
     stay_time = models.IntegerField(default=0)
     # User can have multi-plan
     user = models.ForeignKey('User', on_delete=models.SET_NULL, null=True)
+    #start time that user want to go in each place
+    time = models.IntegerField(default=0)
     
     def __str__(self):
-        return f'{self.location}, {self.stay_time}'
+        return f'{self.location}, {self.stay_time}, {self.user},{self.time}'
     def get_absolute_url(self):
         return reverse('planner-detail', args=[str(self.id)])
 
 class User(models.Model):
 
     email = models.CharField(max_length = 30)
-    #start time that user want to go in each place
-    time = models.IntegerField(default=0)
     date = models.DateField(null=True, blank=True)
 
     def get_absolute_url(self):
