@@ -26,7 +26,7 @@ SECRET_KEY = 'q@-n(0_rh^5t+6n@^rz)cgh*=1gyzetqc)%fejmuvt35=#i+z#'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['travel-planner-develop.herokuapp.com']
+ALLOWED_HOSTS = ['travel-planner-develop.herokuapp.com', '127.0.0.1', '*']
 
 
 # Application definition
@@ -121,6 +121,9 @@ USE_L10N = True
 
 USE_TZ = True
 
+
+# disable CSRF
+CSRF_COOKIE_SECURE = False
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
