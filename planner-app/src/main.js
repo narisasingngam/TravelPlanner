@@ -12,6 +12,14 @@ import {
   VGrid,
   VToolbar,
   transitions,
+  VForm,
+  VTextField,
+  VCard,
+  VCarousel,
+  VDatePicker,
+  VTimePicker,
+  VMenu,
+  VDataTable,
 } from 'vuetify';
 
 Vue.use(Vuetify, {
@@ -25,6 +33,14 @@ Vue.use(Vuetify, {
     VGrid,
     VToolbar,
     transitions,
+    VForm,
+    VTextField,
+    VCard,
+    VCarousel,
+    VDatePicker,
+    VTimePicker,
+    VMenu,
+    VDataTable,
   },
   theme: {
     primary: '#FFAB00',

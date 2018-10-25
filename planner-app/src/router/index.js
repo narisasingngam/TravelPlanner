@@ -5,8 +5,9 @@ import Home from '@/components/Home';
 import Planners from '@/components/Planner/Planners'
 import CreatePlanner from '@/components/Planner/CreatePlanner'
 import SignIn from '@/components/User/SignIn'
-import SignUp from '@/components/User/SignUp'
 import Profile from '@/components/User/Profile'
+import Planner from '@/components/Planner/Planner'
+
 
 Vue.use(Router);
 
@@ -28,6 +29,11 @@ export default new Router({
       component: CreatePlanner,
     },
     {
+      path: '/planners/:id',
+      name: 'Planner',
+      component: Planner,
+    },
+    {
       path: '/profile',
       name: 'Profile',
       component: Profile,
@@ -36,11 +42,6 @@ export default new Router({
       path: '/signin',
       name: 'SignIn',
       component: SignIn,
-    },
-    {
-      path: '/signup',
-      name: 'SignUp',
-      component: SignUp,
     },
   ],
   mode: 'history'

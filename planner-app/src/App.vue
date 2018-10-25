@@ -47,11 +47,10 @@ export default {
           { icon: 'supervisor_account', title: 'View Planners', link: '/planners'},
           { icon: 'room', title: 'Organize Planner', link: '/planner/new'},
           { icon: 'person', title: 'Profile', link: '/profile'},
-          { icon: 'face', title: 'Sign up', link: '/signup'},
           { icon: 'lock_open', title: 'Sign in', link: '/signin'}
-        ]
+        ],
     }
-  }
+  },
 };
 </script>
 
