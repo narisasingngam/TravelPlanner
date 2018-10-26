@@ -41,13 +41,13 @@
                             </v-flex>
                         </v-layout>
                     </v-form>
-                    <v-card-action>
+                    <v-card-actions>
                         <v-spacer></v-spacer>
                         <v-btn 
                         class="primary"
                         @click="addPlace"
                         >Add place</v-btn>
-                    </v-card-action>
+                    </v-card-actions>
                 </v-card>
             </v-flex>
         </v-layout>
@@ -88,24 +88,19 @@ export default {
           { text: 'Duration', value: 'timeDuration', },
         ],
         list: [
-          {
-            value: false,
-            time: '9:00',
-            name: 'Siam',
-            timeDuration: 2,
-          },
-          {
-            value: false,
-            time: '10:00',
-            name: 'Thonglor',
-            timeDuration: 1,
-          },
+          
         ],
       }
     },
-    method: {
+    methods: {
         addPlace() {
-            alert('addPlace')
+            this.list.push({
+                time: this.time,
+                name: this.place,
+                timeDuration: this.duration,
+                completed: false,
+            })
+            this.timeDuration = ''
         },
     },
 }
