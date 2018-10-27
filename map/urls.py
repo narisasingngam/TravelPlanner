@@ -4,4 +4,5 @@ from map import views
 
 urlpatterns = [
     path('', views.index, name='index'),
+
 ]
