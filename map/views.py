@@ -52,6 +52,19 @@ def  time_count(request):
 
         return HttpResponse(direction)
 
+@csrf_exempt
+def  auto_complete(request):
+    if request.method == 'POST':
+        json_body = json.loads(request.body.decode('utf-8'))
+        text = json_body['text']
+      
+        endpoint = 'https://maps.googleapis.com/maps/api/place/autocomplete/json?'
+        request = endpoint + f'input={text}&types=establishment&language=en&key={api_key}'
+        
+        context = ssl._create_unverified_context()
+        response = urllib.request.urlopen(request, context=context).read()
+        predict = response.decode('utf-8')
 
+        return HttpResponse(predict)
  
     
