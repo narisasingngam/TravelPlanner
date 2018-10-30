@@ -6,3 +6,4 @@ pytz==2018.5
 whitenoise==4.1
 django-cors-headers==2.4.0
 python-decouple==3.1
+djangorestframework==3.9.0
