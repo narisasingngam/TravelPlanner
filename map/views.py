@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponse,JsonResponse
 import urllib.request
 import json
 import ssl
@@ -34,7 +34,7 @@ def search_place(request):
         response = urllib.request.urlopen(request, context=context).read()
         direction = response.decode('utf-8')
 
-        return HttpResponse(direction)
+        return JsonResponse(json.loads(direction))
 
 @csrf_exempt
 def  time_count(request):
@@ -50,7 +50,7 @@ def  time_count(request):
         response = urllib.request.urlopen(request, context=context).read()
         direction = response.decode('utf-8')
 
-        return HttpResponse(direction)
+        return JsonResponse(json.loads(direction))
 
 @csrf_exempt
 def  auto_complete(request):
@@ -65,6 +65,6 @@ def  auto_complete(request):
         response = urllib.request.urlopen(request, context=context).read()
         predict = response.decode('utf-8')
 
-        return HttpResponse(predict)
+        return JsonResponse(json.loads(predict))
  
     
