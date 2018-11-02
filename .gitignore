@@ -4,3 +4,5 @@ db.sqlite3
 node_modules/
 .env
 /dist/
+request/
+=5.0.0
