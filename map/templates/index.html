@@ -7,8 +7,14 @@
 <h1>Create a Location </h1>
 <form action="" method="POST">
 {% csrf_token %}
-Location: <input type="text" name="location"/><br/>
-time: <input type="number" name="stay_time"><br>
+Location: <input type="text" name="place"/><br/>
+{% comment %} time: <input type="number" name="stay_time"><br> {% endcomment %}
+
+{% if darm%}
+<h1>{{darm}}</h1>
+{% else %}
+<h1> cannot find direction</h1>
+{% endif %}
 
 <input type="submit" value="Post"/>
 </form>
