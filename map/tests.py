@@ -11,5 +11,5 @@ class TestMethodsInViews(TestCase):
     def test_sent_request(self):
         response = self.search
         self.assetNotContains(response,'200')
-        
+
 
