@@ -68,4 +68,15 @@ def  auto_complete(request):
 
         return JsonResponse(json.loads(predict))
 
+@csrf_exempt
+def remaining_time(request):
+    if request.method == 'POST':
+
+        json_body = json.loads(request.body.decode('utf-8'))
+        spend_time = json_body['duration']
+        time_remain = json_body['remaining']
+
+        time = int(time_remain)-int(spend_time)
+        return JsonResponse(json.dumps(time),safe=False)
+
     
