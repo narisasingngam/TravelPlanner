@@ -4,6 +4,7 @@ from django.views import generic
 import urllib.request
 import json
 import ssl
+from map import ptime
 
 api_key = 'AIzaSyBENVTYtp6UnlTVs8gmLomS1NNlJqK7-ww'
 
@@ -30,12 +31,11 @@ def search_place(request):
         inputtype = 'textquery&fields=formatted_address,name,opening_hours&locationbias=circle:2000@47.6918452,-122.2226413'
         request = endpoint + f'input={place}&inputtype={inputtype}&key={api_key}' 
 
-        response = urllib.request.urlopen
         context = ssl._create_unverified_context()
         response = urllib.request.urlopen(request, context=context).read()
-        direction = response.decode('utf-8')
+        direction = json.loads(response.decode('utf-8'))
 
-        return JsonResponse(json.loads(direction))
+        return HttpResponse(direction['candidates'][0]['formatted_address'])
 
 @csrf_exempt
 def  time_count(request):
@@ -49,9 +49,12 @@ def  time_count(request):
         
         context = ssl._create_unverified_context()
         response = urllib.request.urlopen(request, context=context).read()
-        direction = response.decode('utf-8')
+        direction = json.loads(response.decode('utf-8'))
+        time_str = direction['rows'][0]['elements'][0]['duration']['text']
+        
+        time_int = ptime.int_time(time_str)
 
-        return JsonResponse(json.loads(direction))
+        return JsonResponse(json.dumps(time_int), safe = False)
 
 @csrf_exempt
 def  auto_complete(request):
@@ -64,9 +67,9 @@ def  auto_complete(request):
         
         context = ssl._create_unverified_context()
         response = urllib.request.urlopen(request, context=context).read()
-        predict = response.decode('utf-8')
+        predict = json.loads(response.decode('utf-8'))
 
-        return JsonResponse(json.loads(predict))
+        return JsonResponse(predict)
 
 @csrf_exempt
 def remaining_time(request):
