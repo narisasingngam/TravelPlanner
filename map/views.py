@@ -82,4 +82,30 @@ def remaining_time(request):
         time = int(time_remain)-int(spend_time)
         return JsonResponse(json.dumps(time),safe=False)
 
-    
+array_place = []
+
+@csrf_exempt
+def  time_place(request):
+    if request.method == 'POST':
+        json_body = json.loads(request.body.decode('utf-8'))
+        place = json_body['place']
+        k = ""
+
+        array_place.append(place)
+
+        if(len(array_place) == 2):
+             k = array_place.pop(0)
+
+             endpoint = 'https://maps.googleapis.com/maps/api/distancematrix/json?'
+             request = endpoint + f'origins={k}&destinations={place}&mode=driving&key={api_key}'
+        
+             context = ssl._create_unverified_context()
+             response = urllib.request.urlopen(request, context=context).read()
+             direction = json.loads(response.decode('utf-8'))
+             time_str = direction['rows'][0]['elements'][0]['duration']['text']
+        
+             time_int = ptime.int_time(time_str)
+        else:
+             time_int = 0   
+        return JsonResponse(json.dumps(time_int), safe = False)  
+
