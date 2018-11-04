@@ -22,4 +22,4 @@ Travel planner is a website that user can create a planner for their own trip. I
 
 [doc]:https://docs.google.com/document/d/17YU4U-z9ftI0GzMlQQTGfNDjZDice1K9bn1NK7oGFBY/edit#
 [task]:https://trello.com/b/wfRyjm44/work-plan
-[front]:https://github.com/ffaiip/TravelPlanner-App/blob/master/src/components/Planner/Planner.vue
+[front]:https://github.com/ffaiip/TravelPlanner-App
