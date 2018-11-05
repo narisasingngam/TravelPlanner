@@ -80,7 +80,7 @@ def remaining_time(request):
         time_remain = json_body['remaining']
         road_time = json_body['road']
 
-        time = (int(time_remain)*60 - (int(spend_time)*60 + ptime.int_time(road_time)))/60
+        time = (float(time_remain)*60 - (float(spend_time)*60 + ptime.int_time(road_time)))/60
         remain = int(time)+((time- int(time))*60/100)
         return JsonResponse(json.dumps(remain),safe=False)
 
