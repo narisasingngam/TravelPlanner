@@ -35,7 +35,7 @@ def search_place(request):
         response = urllib.request.urlopen(request, context=context).read()
         direction = json.loads(response.decode('utf-8'))
 
-        return HttpResponse(direction['candidates'][0]['formatted_address'])
+        return HttpResponse(direction['candidates'])
 
 @csrf_exempt
 def  time_count(request):
@@ -78,14 +78,16 @@ def remaining_time(request):
         json_body = json.loads(request.body.decode('utf-8'))
         spend_time = json_body['duration']
         time_remain = json_body['remaining']
+        road_time = json_body['road']
 
-        time = int(time_remain)-int(spend_time)
-        return JsonResponse(json.dumps(time),safe=False)
+        time = (int(time_remain)*60 - (int(spend_time)*60 + ptime.int_time(road_time)))/60
+        remain = int(time)+((time- int(time))*60/100)
+        return JsonResponse(json.dumps(remain),safe=False)
 
 array_place = []
 
 @csrf_exempt
-def  time_place(request):
+def time_place(request):
     if request.method == 'POST':
         json_body = json.loads(request.body.decode('utf-8'))
         place = json_body['place']
@@ -103,9 +105,7 @@ def  time_place(request):
              response = urllib.request.urlopen(request, context=context).read()
              direction = json.loads(response.decode('utf-8'))
              time_str = direction['rows'][0]['elements'][0]['duration']['text']
-        
-             time_int = ptime.int_time(time_str)
-        else:
-             time_int = 0   
-        return JsonResponse(json.dumps(time_int), safe = False)  
-
+        else:   
+             time_str = "0"     
+   
+        return JsonResponse(time_str, safe=False)  
