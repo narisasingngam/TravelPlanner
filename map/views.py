@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Location,User
+from .models import Planner,Users
 
 def index(request):
     if request.method == 'POST':
