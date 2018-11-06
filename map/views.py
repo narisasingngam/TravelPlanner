@@ -92,15 +92,15 @@ def time_place(request):
     if request.method == 'POST':
         json_body = json.loads(request.body.decode('utf-8'))
         place = json_body['place']
+        place_without_space = place.replace(" ", "")
         k = ""
-
-        array_place.append(place)
+        array_place.append(place_without_space)
 
         if(len(array_place) == 2):
              k = array_place.pop(0)
 
              endpoint = 'https://maps.googleapis.com/maps/api/distancematrix/json?'
-             request = endpoint + f'origins={k}&destinations={place}&mode=driving&key={api_key}'
+             request = endpoint + f'origins={k}&destinations={place_without_space}&mode=driving&key={api_key}'
         
              context = ssl._create_unverified_context()
              response = urllib.request.urlopen(request, context=context).read()
