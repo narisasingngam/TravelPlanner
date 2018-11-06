@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/2.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/2.1/ref/settings/
 """
-
+import sys
 import os
 import dj_database_url
 
@@ -85,6 +85,13 @@ DATABASES = {
 db_url = 'postgres://qykycimabhjaji:52fb48a92b28a36cb3ab4f3003149d2a9f48d826e23dc7956c8bb3ebeac78313@ec2-54-163-245-44.compute-1.amazonaws.com:5432/d1a5jdq3qb959'
 DATABASES['default'] = dj_database_url.config(default=db_url, conn_max_age=600, ssl_require=True)
 
+if 'test' in sys.argv:
+    DATABASES['default'] = {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'test_db',
+        'USER': 'postgres',
+        'PASSWORD': 'mint2840',
+    }
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
 
