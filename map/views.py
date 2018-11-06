@@ -67,5 +67,3 @@ def  auto_complete(request):
         predict = response.decode('utf-8')
 
         return JsonResponse(json.loads(predict))
-
-    

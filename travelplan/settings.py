@@ -9,7 +9,6 @@ https://docs.djangoproject.com/en/2.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/2.1/ref/settings/
 """
-
 import sys
 import os
 import dj_database_url
@@ -83,10 +82,9 @@ WSGI_APPLICATION = 'travelplan.wsgi.application'
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
 DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql',
-            'NAME': '',
-        }
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': '',
     }
 
 #Heroku-Postgres database
@@ -141,3 +139,4 @@ CSRF_COOKIE_SECURE = False
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
