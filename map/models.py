@@ -7,7 +7,7 @@ class Planner(models.Model):
     stay_time = models.FloatField(default=0)
     #start time that user want to go in each place
     times = models.CharField(max_length = 30,default="")
-    date = models.DateField(null=True, blank=True)
+    date = models.CharField(max_length = 20,default="")
     
     def __str__(self):
         return f'{self.location}, {self.stay_time}, {self.date},{self.time}'
