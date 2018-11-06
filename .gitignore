@@ -1,8 +1,8 @@
 __pycache__/
 .vscode
 db.sqlite3
-.env
-=5.0.0
-dist/
 node_modules/
+.env
+/dist/
 request/
+=5.0.0

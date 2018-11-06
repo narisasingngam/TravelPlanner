@@ -24,10 +24,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'q@-n(0_rh^5t+6n@^rz)cgh*=1gyzetqc)%fejmuvt35=#i+z#'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['travel-planner-develop.herokuapp.com','localhost','*']
-
+ALLOWED_HOSTS = ['travel-planner-develop.herokuapp.com','*']
 
 # Application definition
 
@@ -38,10 +37,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'map.apps.MapConfig'
+    'corsheaders',
+    'map'
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -50,6 +52,10 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+CORS_ORIGIN_WHITELIST = (
+    'localhost:8080',
+)
 
 ROOT_URLCONF = 'travelplan.urls'
 
@@ -80,8 +86,8 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': '',
     }
-}
 
+#Heroku-Postgres database
 db_url = 'postgres://qykycimabhjaji:52fb48a92b28a36cb3ab4f3003149d2a9f48d826e23dc7956c8bb3ebeac78313@ec2-54-163-245-44.compute-1.amazonaws.com:5432/d1a5jdq3qb959'
 DATABASES['default'] = dj_database_url.config(default=db_url, conn_max_age=600, ssl_require=True)
 
@@ -92,6 +98,7 @@ if 'test' in sys.argv:
         'USER': 'postgres',
         'PASSWORD': 'mint2840',
     }
+
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
 
@@ -124,6 +131,9 @@ USE_L10N = True
 
 USE_TZ = True
 
+
+# disable CSRF
+CSRF_COOKIE_SECURE = False
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
