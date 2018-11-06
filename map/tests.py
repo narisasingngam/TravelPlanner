@@ -1,6 +1,6 @@
 from django.test import TestCase
-from views.py import .
-import json
+# from views.py import .
+# import json
 from .models import Planner,Users
 
 class PlannerModelTests(TestCase):
@@ -73,13 +73,13 @@ class PlannerModelTests(TestCase):
         self.assertEqual(user_plan[0].plans.date,"10/2/18")
 
 
-class TestMethodsInViews(TestCase):
+# class TestMethodsInViews(TestCase):
 
-    def set_up(self):
-        self.search = views.search_place(json.dumps{"place": "bangkok"})
-        self.time = views.time_count(json.dumps{"origins\s": "bangkok", "destination": "pattaya"})
+#     def set_up(self):
+#         self.search = views.search_place(json.dumps{"place": "bangkok"})
+#         self.time = views.time_count(json.dumps{"origins\s": "bangkok", "destination": "pattaya"})
 
-    def test_sent_request(self):
-        response = self.search
-        self.assetNotContains(response,'200')
+#     def test_sent_request(self):
+#         response = self.search
+#         self.assetNotContains(response,'200')
 
