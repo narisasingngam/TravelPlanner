@@ -80,9 +80,10 @@ def remaining_time(request):
         time_remain = json_body['remaining']
         road_time = json_body['road']
 
-        time = (int(time_remain)*60 - (int(spend_time)*60 + ptime.int_time(road_time)))/60
-        remain = int(time)+((time- int(time))*60/100)
-        return JsonResponse(json.dumps(remain),safe=False)
+        spend = float(spend_time) + ptime.int_time(road_time)
+        time = (float(time_remain) - int(spend) - 1) + (0.6 - (spend - int(spend)))
+       
+        return JsonResponse(json.dumps(time),safe=False)
 
 array_place = []
 
