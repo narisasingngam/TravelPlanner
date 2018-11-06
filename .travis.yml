@@ -11,6 +11,9 @@ virtualenv:
 
 install:
     - pip install -r requirements.txt
+    
+addons:
+    postgresql: "9.6"
 
 before_script:
     - psql -c "CREATE DATABASE mydb;" -U postgres

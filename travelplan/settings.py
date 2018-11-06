@@ -92,6 +92,14 @@ if 'test' in sys.argv:
         'USER': 'postgres',
         'PASSWORD': 'mint2840',
     }
+
+if 'TRAVIS' in os.environ:
+    DATABASES['default'] = {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'test_db',
+        'USER': 'postgres',
+        'PASSWORD': 'mint2840',
+    }
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
 
