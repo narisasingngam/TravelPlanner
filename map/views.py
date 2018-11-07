@@ -38,23 +38,19 @@ def search_place(request):
         return HttpResponse(direction['candidates'])
 
 @csrf_exempt
-def  time_count(request):
+def remaining_time(request):
     if request.method == 'POST':
-        json_body = json.loads(request.body.decode('utf-8'))
-        origin = json_body['origin']
-        destination = json_body['destination']
-      
-        endpoint = 'https://maps.googleapis.com/maps/api/distancematrix/json?'
-        request = endpoint + f'origins={origin}&destinations={destination}&mode=driving&key={api_key}'
-        
-        context = ssl._create_unverified_context()
-        response = urllib.request.urlopen(request, context=context).read()
-        direction = json.loads(response.decode('utf-8'))
-        time_str = direction['rows'][0]['elements'][0]['duration']['text']
-        
-        time_int = ptime.int_time(time_str)
 
-        return JsonResponse(json.dumps(time_int), safe = False)
+        json_body = json.loads(request.body.decode('utf-8'))
+        spend_time = float(json_body['duration'])
+        time_remain = float(json_body['remaining'])
+        road_time = ptime.int_time(json_body['road'])
+
+        time = (int(time_remain) - int(road_time) - spend_time) + ((time_remain - int(time_remain))*100/60 - (road_time - int(road_time))*100/60)
+
+        remain = int(time) + (time - int(time))*60/100 
+
+        return JsonResponse(json.dumps(float(f"{remain:.2f}")),safe=False)
 
 @csrf_exempt
 def  auto_complete(request):
@@ -70,20 +66,6 @@ def  auto_complete(request):
         predict = json.loads(response.decode('utf-8'))
 
         return JsonResponse(predict)
-
-@csrf_exempt
-def remaining_time(request):
-    if request.method == 'POST':
-
-        json_body = json.loads(request.body.decode('utf-8'))
-        spend_time = json_body['duration']
-        time_remain = json_body['remaining']
-        road_time = json_body['road']
-
-        spend = float(spend_time) + ptime.int_time(road_time)
-        time = (float(time_remain) - int(spend) - 1) + (0.6 - (spend - int(spend)))
-       
-        return JsonResponse(json.dumps(time),safe=False)
 
 array_place = []
 
