@@ -33,7 +33,15 @@ Travel planner is a web application where users can create a planner for their o
 git clone https://github.com/ffaiip/TravelPlanner-App.git
  ```
 
-+ Clone this repository for backend.
++ Clone the backend repository.
+``` 
+git clone https://github.com/narisasingngam/TravelPlanner.git
+ ```
+
++ Install dependencies with pip
+``` 
+pip install -r requirements.txt
+ ```
 
 + For backend compiled
 
