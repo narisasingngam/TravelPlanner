@@ -1,7 +1,7 @@
 [![Build Status](https://travis-ci.com/narisasingngam/TravelPlanner.svg?branch=dev-test-django)](https://travis-ci.com/narisasingngam/TravelPlanner)
 ## [Front-end repository][front]
 # Travel Planner
-Travel planner is a website that user can create a planner for their own trip. In a planner; user can determine arrival and departure date, select places by searching from maps, and set time duration that they need to spend for each place. The planner will show time remaining in each day, and display the time that take user from one place to another.
+Travel planner is a web application where users can create a planner for their own trip. In a planner; the user can specify arrival and departure dates, select places to visit by searching from maps, and set time that they want to spend at each place. The planner will show time remaining in each day, and display the time that takes user to travel from one place to another.
 
 # Members
 | GitHub  | Name              | ID |
@@ -28,11 +28,14 @@ Travel planner is a website that user can create a planner for their own trip. I
 + [quick guide](https://docs.djangoproject.com/en/2.1/topics/install/#installing-official-release)
 
 # Step needed to configure the application for running
-+ clone frontend repository. [front]
++ Clone the frontend repository. [front]
+``` 
+git clone https://github.com/ffaiip/TravelPlanner-App.git
+ ```
 
-+ clone this repository for backend.
++ Clone this repository for backend.
 
-+ for backend compiled
++ For backend compiled
 
 ``` 
 python manage.py runserver
