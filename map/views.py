@@ -74,7 +74,8 @@ def time_place(request):
     if request.method == 'POST':
         json_body = json.loads(request.body.decode('utf-8'))
         place = json_body['place']
-        place_without_space = place.replace(" ", "")
+        place_without_space = place.replace(" ", "%20")
+        
         k = ""
         array_place.append(place_without_space)
 
@@ -88,6 +89,8 @@ def time_place(request):
              response = urllib.request.urlopen(request, context=context).read()
              direction = json.loads(response.decode('utf-8'))
              time_str = direction['rows'][0]['elements'][0]['duration']['text']
+
+
         else:   
              time_str = "0"     
    
