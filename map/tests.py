@@ -55,5 +55,3 @@ class Test_ptime(TestCase):
         self.assertEqual(0, "")    
 
 
-
-
