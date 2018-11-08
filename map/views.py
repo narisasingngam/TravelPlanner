@@ -42,7 +42,7 @@ def remaining_time(request):
     if request.method == 'POST':
 
         json_body = json.loads(request.body.decode('utf-8'))
-        spend_time = float(json_body['duration'])
+        spend_time = float(json_body['spendtime'])
         time_remain = float(json_body['remaining'])
         road_time = ptime.int_time(json_body['road'])
 
