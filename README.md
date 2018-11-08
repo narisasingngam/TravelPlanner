@@ -38,7 +38,7 @@ git clone https://github.com/ffaiip/TravelPlanner-App.git
 git clone https://github.com/narisasingngam/TravelPlanner.git
  ```
 
-+ Install dependencies with pip
++ Install dependencies with **pip**
 ``` 
 pip install -r requirements.txt
  ```
