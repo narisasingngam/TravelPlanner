@@ -1,7 +1,7 @@
 from django.test import TestCase
 # from views.py import .
 # import json
-from .models import Planner,Users
+from map.models import Planner,Users
 
 class PlannerModelTests(TestCase):
 
