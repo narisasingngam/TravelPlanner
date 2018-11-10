@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 import sys
 import os
 import dj_database_url
+import psycopg2
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -102,6 +103,7 @@ if 'test' in sys.argv:
         'NAME': 'test_db',
         'USER': 'postgres',
         'PASSWORD': 'mint2840',
+        # 'PORT': '5432',
     }
 
 if 'TRAVIS' in os.environ:

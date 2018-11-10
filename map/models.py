@@ -25,4 +25,6 @@ class Users(models.Model):
         return reverse('user-detail', args=[str(self.id)])
 
     def __str__(self):
+
         return f'{self.email}, {self.plans}'
+
