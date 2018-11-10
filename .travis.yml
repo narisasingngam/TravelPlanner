@@ -1,0 +1,22 @@
+language: python
+
+python:
+    - "3.6.3"
+
+services:
+    - postgresql
+
+virtualenv:
+  env_bin_activate: true
+
+install:
+    - pip install -r requirements.txt
+    
+addons:
+    postgresql: "9.6"
+
+before_script:
+    - psql -c "CREATE DATABASE mydb;" -U postgres
+
+script:
+    - python manage.py test
