@@ -2,7 +2,7 @@ from django.test import TestCase
 from django.urls import reverse
 from django.http import JsonResponse
 import urllib.request
-import requests
+# import requests
 from map import ptime,views
 import json
 import ssl
