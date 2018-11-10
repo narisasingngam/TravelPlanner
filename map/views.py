@@ -4,6 +4,8 @@ from django.views import generic
 import urllib.request
 import json
 import ssl
+from map import ptime
+from django.views.decorators.csrf import csrf_exempt
 
 api_key = 'AIzaSyBENVTYtp6UnlTVs8gmLomS1NNlJqK7-ww'
 
@@ -18,52 +20,41 @@ def index(request):
                 return render(request, 'index.html')  
     else:
         return render(request,'index.html')
-        
-from django.views.decorators.csrf import csrf_exempt
+
+
 @csrf_exempt
-def search_place(request):
+def remaining_time(request):
+    if request.method == 'POST':
+
+        json_body = json.loads(request.body.decode('utf-8'))
+        spend_time = float(json_body['spendtime'])
+        time_remain = float(json_body['remaining'])
+        road_time = ptime.int_time(json_body['road'])
+
+        time = (int(time_remain) - int(road_time) - spend_time) + ((time_remain - int(time_remain))*100/60 - (road_time - int(road_time))*100/60)
+
+        remain = int(time) + (time - int(time))*60/100 
+
+        return JsonResponse(json.dumps(float(f"{remain:.2f}")),safe=False)
+
+
+
+@csrf_exempt
+def time_place(request):
     if request.method == 'POST':
         json_body = json.loads(request.body.decode('utf-8'))
         place = json_body['place']
+        place_without_space = place.replace(" ","%20")
+        
+        origin_place = json_body['origin']
+        origin_place_non_space = origin_place.replace(" ","%20")
 
-        endpoint = 'https://maps.googleapis.com/maps/api/place/findplacefromtext/json?'
-        inputtype = 'textquery&fields=formatted_address,name,opening_hours&locationbias=circle:2000@47.6918452,-122.2226413'
-        request = endpoint + f'input={place}&inputtype={inputtype}&key={api_key}' 
-
-        response = urllib.request.urlopen
-        context = ssl._create_unverified_context()
-        response = urllib.request.urlopen(request, context=context).read()
-        direction = response.decode('utf-8')
-
-        return JsonResponse(json.loads(direction))
-
-@csrf_exempt
-def  time_count(request):
-    if request.method == 'POST':
-        json_body = json.loads(request.body.decode('utf-8'))
-        origin = json_body['origin']
-        destination = json_body['destination']
-      
         endpoint = 'https://maps.googleapis.com/maps/api/distancematrix/json?'
-        request = endpoint + f'origins={origin}&destinations={destination}&mode=driving&key={api_key}'
+        request = endpoint + f'origins={origin_place_non_space}&destinations={place_without_space}&mode=driving&key={api_key}'
         
         context = ssl._create_unverified_context()
         response = urllib.request.urlopen(request, context=context).read()
-        direction = response.decode('utf-8')
+        direction = json.loads(response.decode('utf-8'))
+        time_str = direction['rows'][0]['elements'][0]['duration']['text']
 
-        return JsonResponse(json.loads(direction))
-
-@csrf_exempt
-def  auto_complete(request):
-    if request.method == 'POST':
-        json_body = json.loads(request.body.decode('utf-8'))
-        text = json_body['text']
-      
-        endpoint = 'https://maps.googleapis.com/maps/api/place/autocomplete/json?'
-        request = endpoint + f'input={text}&types=establishment&language=en&key={api_key}'
-        
-        context = ssl._create_unverified_context()
-        response = urllib.request.urlopen(request, context=context).read()
-        predict = response.decode('utf-8')
-
-        return JsonResponse(json.loads(predict))
+        return JsonResponse(time_str, safe=False)  

@@ -24,7 +24,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'q@-n(0_rh^5t+6n@^rz)cgh*=1gyzetqc)%fejmuvt35=#i+z#'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['travel-planner-develop.herokuapp.com','localhost','*']
 
@@ -100,6 +100,7 @@ if 'TRAVIS' in os.environ:
         'USER': 'postgres',
         'PASSWORD': 'mint2840',
     }
+
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
 
@@ -137,4 +138,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
+APPEND_SLASH=False
+
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
