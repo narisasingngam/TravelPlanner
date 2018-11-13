@@ -61,7 +61,7 @@ CORS_ORIGIN_ALLOW_ALL=True
 
 CORS_ORIGIN_WHITELIST = (
     'localhost:8080',
-    'https://travelplanner-app.herokuapp.com/',
+    'https://travelplan-app.herokuapp.com/',
 
 )
 
@@ -108,7 +108,7 @@ else :
 
     db_url = 'postgres://qykycimabhjaji:52fb48a92b28a36cb3ab4f3003149d2a9f48d826e23dc7956c8bb3ebeac78313@ec2-54-163-245-44.compute-1.amazonaws.com:5432/d1a5jdq3qb959'
     DATABASES['default'] = dj_database_url.config(default=db_url, conn_max_age=600, ssl_require=True)
-    print("มาวะ")
+
 
 
 if 'test' in sys.argv:
