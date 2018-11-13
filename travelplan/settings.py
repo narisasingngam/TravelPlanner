@@ -61,7 +61,7 @@ CORS_ORIGIN_ALLOW_ALL=True
 
 CORS_ORIGIN_WHITELIST = (
     'localhost:8080',
-    'https://travelplanner-app.herokuapp.com/',
+    'https://travelplan-app.herokuapp.com/',
 
 )
 
