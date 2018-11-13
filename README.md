@@ -1,7 +1,8 @@
-[![Build Status](https://travis-ci.com/narisasingngam/TravelPlanner.svg?branch=dev-test-django)](https://travis-ci.com/narisasingngam/TravelPlanner)
 ## [Front-end repository][front]
 # Travel Planner
 Travel planner is a web application where users can create a planner for their own trip. In a planner; the user can specify arrival and departure dates, select places to visit by searching from maps, and set time that they want to spend at each place. The planner will show time remaining in each day, and display the time that takes user to travel from one place to another.
+
+Traivis CI : [![Build Status](https://travis-ci.com/narisasingngam/TravelPlanner.svg?branch=master)](https://travis-ci.com/narisasingngam/TravelPlanner)
 
 # Members
 | GitHub  | Name              | ID |
