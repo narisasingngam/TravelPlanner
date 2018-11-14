@@ -53,7 +53,7 @@ npm install
 ```
 + Compile
 ```
-npm run dev
+npm run start
 
 - Run serve with localhost:8080
 ```
