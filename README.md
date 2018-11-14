@@ -60,6 +60,21 @@ npm run start
 + Clone the backend repository.
 ``` 
 git clone https://github.com/narisasingngam/TravelPlanner.git
+
+cd TravelPlanner
+ ```
+
+ + Open Virtual Environment
+
+ ```
+ For MacOs or Ubuntu
+
+ - source env/bin/activate
+
+For Window
+
+- env/bin/activate
+
  ```
 
 + Install dependencies with **pip**
