@@ -12,28 +12,51 @@ Traivis CI : [![Build Status](https://travis-ci.com/narisasingngam/TravelPlanner
 | @jampttws | Tanasorn Tritawisup | 6010545790 |
 
 
-# Iteration Plan
+## Task Board
 
 + [Task Management][task]
 
+## Iteration Plan
+
 + [Documentation][doc]
+
+## Issue tracking
 
 + [Issue Tracker](https://github.com/narisasingngam/TravelPlanner/issues)
 
-# Install Python
+# Install 
+
+#### Python 
+
+Python - 3.6.6
 
 + [download](https://www.python.org/downloads/)
 
-# Install Django
+#### Django
 
-+ [quick guide](https://docs.djangoproject.com/en/2.1/topics/install/#installing-official-release)
+Compile with pip
+```
+pip install django
+```
+or you can checkout [quick guide](https://docs.djangoproject.com/en/2.1/topics/install/#installing-official-release)
 
 # Step needed to configure the application for running
 + Clone the frontend repository. [front]
 ``` 
 git clone https://github.com/ffaiip/TravelPlanner-App.git
  ```
++ For frontend 
 
++ Install dependencies
+```
+npm install
+```
++ Compile
+```
+npm run dev
+
+- Run serve with localhost:8080
+```
 + Clone the backend repository.
 ``` 
 git clone https://github.com/narisasingngam/TravelPlanner.git
@@ -48,6 +71,8 @@ pip install -r requirements.txt
 
 ``` 
 python manage.py runserver
+
+- Run serve with localhost:8000
  ```
 
 
