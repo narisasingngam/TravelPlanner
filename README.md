@@ -41,6 +41,8 @@ git clone https://github.com/narisasingngam/TravelPlanner.git
 + Install dependencies with **pip**
 ``` 
 pip install -r requirements.txt
+
+
  ```
 
 + For backend compiled
