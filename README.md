@@ -4,6 +4,13 @@ Travel planner is a web application where users can create a planner for their o
 
 Traivis CI : [![Build Status](https://travis-ci.com/narisasingngam/TravelPlanner.svg?branch=master)](https://travis-ci.com/narisasingngam/TravelPlanner)
 
+### Task Board - [Task Management][task]
+
+### Iteration Plan - [Documentation][doc]
+
+### Issue tracking - [Issue Tracker](https://github.com/narisasingngam/TravelPlanner/issues)
+
+
 # Members
 | GitHub  | Name              | ID |
 |--------|-----------------------------|-------|
@@ -12,17 +19,6 @@ Traivis CI : [![Build Status](https://travis-ci.com/narisasingngam/TravelPlanner
 | @jampttws | Tanasorn Tritawisup | 6010545790 |
 
 
-## Task Board
-
-+ [Task Management][task]
-
-## Iteration Plan
-
-+ [Documentation][doc]
-
-## Issue tracking
-
-+ [Issue Tracker](https://github.com/narisasingngam/TravelPlanner/issues)
 
 # Installation
 
@@ -68,31 +64,28 @@ git clone https://github.com/narisasingngam/TravelPlanner.git
 cd TravelPlanner
  ```
 
-3. Create your virtual environment
+2. Create your virtual environment
 ```
 virtualenv env
 ```
- 4. Activate environment
+3. Activate environment
 
- ```
- For MacOs or Ubuntu
+```
+For MacOs or Ubuntu
 
- - source env/bin/activate
+- source env/bin/activate
 
 For Window
 
-- env/Scripts\activate
-
+- env/Scripts/activate
  ```
 
-5. Install dependencies with **pip**
+4. Install dependencies with **pip**
 ``` 
 pip install -r requirements.txt
-
-
  ```
 
-6. For backend compiled
+5. For backend compiled
 
 ``` 
 python manage.py runserver

@@ -4,9 +4,10 @@ from django.views import generic
 import urllib.request
 import json
 import ssl
+from decouple import config
 from map import ptime
 
-api_key = 'AIzaSyBENVTYtp6UnlTVs8gmLomS1NNlJqK7-ww'
+api_key = config('API_KEY')
 
 def index(request):
     if request.method == 'POST':
@@ -45,9 +46,7 @@ def remaining_time(request):
         time_remain = float(json_body['remaining'])
         road_time = ptime.int_time(json_body['road'])
 
-        time = (int(time_remain) - int(road_time) - int(spend_time)) + ((time_remain - int(time_remain))*100/60 - (road_time - int(road_time))*100/60 - (spend_time - int(spend_time))*100/60)
-        print(time)
-       
+        time = (int(time_remain) - int(road_time) - int(spend_time)) + ((time_remain - int(time_remain))*100/60 - (road_time - int(road_time))*100/60 - (spend_time - int(spend_time))*100/60)       
         remain = int(time) + (time - int(time))*60/100 
 
         return JsonResponse(json.dumps(float(f"{remain:.2f}")),safe=False)
