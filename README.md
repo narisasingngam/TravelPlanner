@@ -64,6 +64,21 @@ npm run start
 1. Clone the backend repository.
 ``` 
 git clone https://github.com/narisasingngam/TravelPlanner.git
+
+cd TravelPlanner
+ ```
+
+ + Open Virtual Environment
+
+ ```
+ For MacOs or Ubuntu
+
+ - source env/bin/activate
+
+For Window
+
+- env/bin/activate
+
  ```
 
 3. Create your virtual environment
@@ -86,6 +101,8 @@ For Window
 5. Install dependencies with **pip**
 ``` 
 pip install -r requirements.txt
+
+
  ```
 
 6. For backend compiled
