@@ -68,31 +68,28 @@ git clone https://github.com/narisasingngam/TravelPlanner.git
 cd TravelPlanner
  ```
 
-3. Create your virtual environment
+2. Create your virtual environment
 ```
 virtualenv env
 ```
- 4. Activate environment
+3. Activate environment
 
- ```
- For MacOs or Ubuntu
+```
+For MacOs or Ubuntu
 
- - source env/bin/activate
+- source env/bin/activate
 
 For Window
 
-- env/Scripts\activate
-
+- env/Scripts/activate
  ```
 
-5. Install dependencies with **pip**
+4. Install dependencies with **pip**
 ``` 
 pip install -r requirements.txt
-
-
  ```
 
-6. For backend compiled
+5. For backend compiled
 
 ``` 
 python manage.py runserver
