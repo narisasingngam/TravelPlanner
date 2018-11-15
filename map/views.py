@@ -66,9 +66,7 @@ def  auto_complete(request):
         predict = json.loads(response.decode('utf-8'))
 
         return JsonResponse(predict)
-
-array_place = []
-
+        
 @csrf_exempt
 def time_place(request):
     if request.method == 'POST':
