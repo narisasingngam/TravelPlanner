@@ -117,7 +117,7 @@ if 'test' in sys.argv:
         'NAME': 'test_db',
         'USER': 'postgres',
         'PASSWORD': 'mint2840',
-        'PORT': '5432',
+        # 'PORT': '5432',
     }
 
 if 'TRAVIS' in os.environ:
