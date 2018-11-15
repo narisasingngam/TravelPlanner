@@ -24,50 +24,71 @@ Traivis CI : [![Build Status](https://travis-ci.com/narisasingngam/TravelPlanner
 
 + [Issue Tracker](https://github.com/narisasingngam/TravelPlanner/issues)
 
-# Install 
+# Installation
 
-#### Python 
 
-Python - 3.6.6
++ Python - 3.6 
 
-+ [download](https://www.python.org/downloads/)
+    [download](https://www.python.org/downloads/)
++ Node.js
 
-#### Django
+     [download](https://nodejs.org/en/)
 
-Compile with pip
-```
-pip install django
-```
-or you can checkout [quick guide](https://docs.djangoproject.com/en/2.1/topics/install/#installing-official-release)
++ Virtual Environment
+    ```
+    pip install virtualenv
+    ```
 
 # Step needed to configure the application for running
-+ Clone the frontend repository. [front]
+
+### For frontend
+
+1. Clone the frontend repository. [front]
 ``` 
 git clone https://github.com/ffaiip/TravelPlanner-App.git
- ```
-+ For frontend 
+ ``` 
 
-+ Install dependencies
+2. Install dependencies
 ```
 npm install
 ```
-+ Compile
+3.  Compile
 ```
 npm run start
 
 - Run serve with localhost:8080
 ```
-+ Clone the backend repository.
+
+### For backend
+
+1. Clone the backend repository.
 ``` 
 git clone https://github.com/narisasingngam/TravelPlanner.git
  ```
 
-+ Install dependencies with **pip**
+3. Create your virtual environment
+```
+virtualenv env
+```
+ 4. Activate environment
+
+ ```
+ For MacOs or Ubuntu
+
+ - source env/bin/activate
+
+For Window
+
+- env/Scripts\activate
+
+ ```
+
+5. Install dependencies with **pip**
 ``` 
 pip install -r requirements.txt
  ```
 
-+ For backend compiled
+6. For backend compiled
 
 ``` 
 python manage.py runserver
