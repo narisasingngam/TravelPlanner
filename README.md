@@ -68,19 +68,6 @@ git clone https://github.com/narisasingngam/TravelPlanner.git
 cd TravelPlanner
  ```
 
- + Open Virtual Environment
-
- ```
- For MacOs or Ubuntu
-
- - source env/bin/activate
-
-For Window
-
-- env/bin/activate
-
- ```
-
 3. Create your virtual environment
 ```
 virtualenv env
