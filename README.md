@@ -7,11 +7,11 @@ Traivis CI : [![Build Status](https://travis-ci.com/narisasingngam/TravelPlanner
 Code Coverage : [![codecov](https://codecov.io/gh/narisasingngam/Travel-Planner/branch/master/graph/badge.svg)](https://codecov.io/gh/narisasingngam/Travel-Planner)
 
 # Members
-| GitHub  | Name              | ID |
-|--------|-----------------------------|-------|
-| @narisasingngam   | Narisa Singngam | 6010545820 |
-| @ffaiip | Kavinthip Pattanaphaophan | 6010546869 |
-| @jampttws | Tanasorn Tritawisup | 6010545790 |
+| GitHub  | Name              | 
+|--------|-----------------------------|
+| @narisasingngam   | Narisa Singngam |
+| @ffaiip | Kavinthip Pattanaphaophan |
+| @jampttws | Tanasorn Tritawisup |
 
 
 ## Task Board
