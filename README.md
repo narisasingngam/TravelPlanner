@@ -13,32 +13,23 @@ Code Coverage : [![codecov](https://codecov.io/gh/narisasingngam/Travel-Planner/
 | @ffaiip | Kavinthip Pattanaphaophan |
 | @jampttws | Tanasorn Tritawisup |
 
+# Documents
 
-## Task Board
++ Task Board - [Task Management][task]
 
-+ [Task Management][task]
++ Iteration Plan - [Documentation][doc]
 
-## Iteration Plan
-
-+ [Documentation][doc]
-
-## Issue tracking
-
-+ [Issue Tracker](https://github.com/narisasingngam/TravelPlanner/issues)
++ Issue tracking - [Issue Tracker](https://github.com/narisasingngam/TravelPlanner/issues)
 
 # Installation
 
++ Python (v.3.6.6 or newer)  -  [download](https://www.python.org/downloads/)
 
-+ Python - 3.6 
-
-    [download](https://www.python.org/downloads/)
-+ Node.js
-
-     [download](https://nodejs.org/en/)
++ Node.js - [download](https://nodejs.org/en/)
 
 + Virtual Environment
     ```
-    pip install virtualenv
+    $ pip install virtualenv
     ```
 
 # Step needed to configure the application for running
@@ -47,16 +38,16 @@ Code Coverage : [![codecov](https://codecov.io/gh/narisasingngam/Travel-Planner/
 
 1. Clone the frontend repository. [front]
 ``` 
-git clone https://github.com/ffaiip/TravelPlanner-App.git
+$ git clone https://github.com/ffaiip/TravelPlanner-App.git
  ``` 
 
 2. Install dependencies
 ```
-npm install
+$ npm install
 ```
 3.  Compile
 ```
-npm run start
+$ npm run start
 
 - Run serve with localhost:8080
 ```
@@ -65,36 +56,36 @@ npm run start
 
 1. Clone the backend repository.
 ``` 
-git clone https://github.com/narisasingngam/TravelPlanner.git
+$ git clone https://github.com/narisasingngam/TravelPlanner.git
 
-cd TravelPlanner
+$ cd TravelPlanner
  ```
 
 2. Create your virtual environment
 ```
-virtualenv env
+$ virtualenv env
 ```
 3. Activate environment
 
 ```
 For MacOs or Ubuntu
 
-- source env/bin/activate
+> $ source env/bin/activate
 
 For Window
 
-- env/Scripts/activate
+> $ env/Scripts/activate
  ```
 
 4. Install dependencies with **pip**
 ``` 
-pip install -r requirements.txt
+$ pip install -r requirements.txt
  ```
 
 5. For backend compiled
 
 ``` 
-python manage.py runserver
+$ python manage.py runserver
 
 - Run serve with localhost:8000
  ```
