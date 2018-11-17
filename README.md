@@ -36,7 +36,7 @@ Code Coverage : [![codecov](https://codecov.io/gh/narisasingngam/Travel-Planner/
 
 ### For frontend
 
-1. Clone the frontend repository. [front]
+1. Clone the [frontend repository](https://github.com/ffaiip/TravelPlanner-App) 
 ``` 
 $ git clone https://github.com/ffaiip/TravelPlanner-App.git
  ``` 
@@ -93,4 +93,3 @@ $ python manage.py runserver
 
 [doc]:https://docs.google.com/document/d/17YU4U-z9ftI0GzMlQQTGfNDjZDice1K9bn1NK7oGFBY/edit#
 [task]:https://trello.com/b/wfRyjm44/work-plan
-[front]:https://github.com/ffaiip/TravelPlanner-App
