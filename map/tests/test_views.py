@@ -85,3 +85,4 @@ class TestMethodsInViews(TestCase):
         data = {'email': 'mmintttt@gmail.com','date': '02/12/2018'}
         response = c.post(reverse('travelplanner:plan'),data,content_type="application/json")
         self.assertEquals(response.status_code, 200)
+        
