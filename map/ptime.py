@@ -6,44 +6,44 @@ def is_int(value):
        return False
        
 def int_time(time):
-    h = []
-    m = []
+    hour = []
+    mins = []
     t = []
-    c = 0
+    count = 0
 
     for i in time:
         t.append(i)
-        c += 1
+        count += 1
 
         if(is_int(i)):
-            if( c <= 2): h.append(int(i))
-            else: m.append(int(i))            
+            if( count <= 2): hour.append(int(i))
+            else: mins.append(int(i))            
 
     if(len(t) < 2): return 0
     elif(t[2] == "m" or t[3] == "m"):
         if(is_int(t[0])): 
-            m.append(int(t[0]))
+            mins.append(int(t[0]))
         if(is_int(t[1])): 
-            m.append(int(t[1]))   
+            mins.append(int(t[1]))   
 
-        h.clear()
+        hour.clear()
     
-    s = 0
+    summ = 0
     a = 0
     b = 0
     
-    while a < len(h):
-        if(len(h) == 2 and a == 0): s += h[a]*10
-        else: s += h[a]  
+    while a < len(hour):
+        if(len(hour) == 2 and a == 0): summ += hour[a]*10
+        else: summ += hour[a]  
         a += 1
     
-    while b < len(m):
-        if(b == 0 and len(m) == 1): 
-            s += m[b]*0.01
+    while b < len(mins):
+        if(b == 0 and len(mins) == 1): 
+            summ += mins[b]*0.01
         elif(b == 0): 
-            s += m[b]*0.1
-        else: s += m[b]*0.01
+            summ += mins[b]*0.1
+        else: summ += mins[b]*0.01
         
         b += 1  
     
-    return float(f"{s:.2f}")
+    return float(f"{summ:.2f}")

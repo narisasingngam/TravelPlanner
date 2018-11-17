@@ -20,4 +20,22 @@ class Test_ptime(TestCase):
         self.assertEqual(0.03,ptime.int_time("3 mins"))
         self.assertEqual(0,ptime.int_time("is int"))
 
-        self.assertEqual(0,ptime.int_time(""))
+    def test_border_line_case(self):
+
+        self.assertFalse(ptime.is_int("2.76"))
+        self.assertFalse(ptime.is_int("2 hours"))
+        self.assertFalse(ptime.is_int("2*27"))
+
+        self.assertEqual(2.44, ptime.int_time("2.44 hours"))
+
+    def test_impossible(self):
+
+        self.assertFalse(ptime.is_int(" "))
+        self.assertFalse(ptime.is_int(""))
+
+        self.assertEqual(0, ptime.int_time(" "))
+        self.assertEqual(0, ptime.int_time(""))
+
+        
+
+
