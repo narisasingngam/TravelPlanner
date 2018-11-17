@@ -1,10 +1,12 @@
 from django.shortcuts import render
 from django.http import HttpResponse,JsonResponse
 from django.views import generic
+from django.core import serializers
 import urllib.request
 import json
 import ssl
 from map import ptime
+from map.models import Planner,Users
 
 api_key = 'AIzaSyBENVTYtp6UnlTVs8gmLomS1NNlJqK7-ww'
 
@@ -19,8 +21,9 @@ def index(request):
                 return render(request, 'index.html')  
     else:
         return render(request,'index.html')
-        
+
 from django.views.decorators.csrf import csrf_exempt
+
 @csrf_exempt
 def search_place(request):
     if request.method == 'POST':
@@ -87,4 +90,57 @@ def time_place(request):
         time_str = direction['rows'][0]['elements'][0]['duration']['text']
      
    
-        return JsonResponse(time_str, safe=False)  
+        return JsonResponse(time_str, safe=False) 
+
+@csrf_exempt
+def savedata(request):
+    if request.method == 'POST':
+        json_body = json.loads(request.body.decode('utf-8'))
+        email = json_body['email']
+        location = json_body['location']
+        spendtime = json_body['spendtime']
+        times = json_body['times']
+        date = json_body['date']
+        duration = json_body['duration']
+        data_plan = Planner(location=location,date=date,times=times,duration=duration,spend_time=spendtime)
+        data_plan.save()
+        user = Users(email=email,plans=data_plan)
+        user.save()
+        return JsonResponse(email,safe=False)
+
+@csrf_exempt
+def user_data(request):
+        if request.method == 'POST':
+                json_body = json.loads(request.body.decode('utf-8'))
+                email = json_body['email']
+                user = Users.objects.filter(email=email)
+                list = []
+                #show user
+                for i in user:
+                        if(i.plans.date not in list):
+                                list.append(i.plans.date)
+                                print(i.plans.date)
+                        else:
+                                break
+                return JsonResponse(list,safe=False)
+
+@csrf_exempt
+def plan_data(request):
+        list = []
+        if request.method == 'POST':
+                json_body = json.loads(request.body.decode('utf-8'))
+                email = json_body['email']
+                date = json_body['date']
+                user = Users.objects.filter(email=email)
+                # list = []
+                # show plan     
+                for i in user:
+
+                        if(i.plans.date == date):
+                                show_plan = Planner.objects.filter(date=i.plans.date,location=i.plans.location,times=i.plans.times,duration=i.plans.duration,spend_time=i.plans.spend_time)
+                                json_plan = serializers.serialize('json',show_plan)
+                                list.append(json_plan)
+                                print(json_plan)
+                                
+                                        # print(j.times+" "+j.location+" "+j.spend_time+" "+j.duration)
+        return HttpResponse(list,content_type="application/json")
