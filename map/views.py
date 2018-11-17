@@ -37,7 +37,7 @@ def remaining_time(request):
 
         return JsonResponse(json.dumps(float(f"{remain:.2f}")),safe=False)
         
-
+        
 @csrf_exempt
 def time_place(request):
     if request.method == 'POST':
