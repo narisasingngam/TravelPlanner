@@ -49,7 +49,6 @@ class PlannerModelTests(TestCase):
         test date in Planner object  
         """
         date = Planner.objects.all()
-
         self.assertEqual(date[0].date,"10/2/18")
         self.assertEqual(date[1].date,"11/2/18")
         self.assertEqual(date[2].date,"12/2/18")
