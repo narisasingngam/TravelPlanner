@@ -1,0 +1,15 @@
+[run]
+branch = True
+
+omit =
+    # omit anything in a .local directory anywhere
+    */.local/*
+    # omit everything in /usr
+    /usr/*
+    # omit migrations
+    */map/migrations/*
+    */travelplan/*
+
+include = 
+    */map/*    
+
