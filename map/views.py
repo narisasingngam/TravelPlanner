@@ -89,9 +89,7 @@ def user_data(request):
                 for i in user:
                         if(i.plans.date not in list):
                                 list.append(i.plans.date)
-                                print(i.plans.date)
-                        else:
-                                break
+                                # print(i.plans.date)
                 return JsonResponse(list,safe=False)
 
 @csrf_exempt
@@ -102,7 +100,6 @@ def plan_data(request):
                 email = json_body['email']
                 date = json_body['date']
                 user = Users.objects.filter(email=email)
-                # list = []
                 # show plan     
                 for i in user:
 
@@ -111,6 +108,5 @@ def plan_data(request):
                                 json_plan = serializers.serialize('json',show_plan)
                                 list.append(json_plan)
                                 print(json_plan)
-                                
-                                        # print(j.times+" "+j.location+" "+j.spend_time+" "+j.duration)
+
         return HttpResponse(list,content_type="application/json")

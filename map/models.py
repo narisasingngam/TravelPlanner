@@ -12,8 +12,8 @@ class Planner(models.Model):
     
     def __str__(self):
         return f'{self.location}, {self.spend_time},{self.duration}, {self.date},{self.times}'
-    def get_absolute_url(self):
-        return reverse('planner-detail', args=[str(self.id)])
+    # def get_absolute_url(self):
+    #     return reverse('planner-detail', args=[str(self.id)])
 
 class Users(models.Model):
 
@@ -22,8 +22,8 @@ class Users(models.Model):
     # User can have multi-plan
     plans = models.ForeignKey('Planner', on_delete=models.SET_NULL, null=True)
     
-    def get_absolute_url(self):
-        return reverse('user-detail', args=[str(self.id)])
+    # def get_absolute_url(self):
+    #     return reverse('user-detail', args=[str(self.id)])
 
     def __str__(self):
 

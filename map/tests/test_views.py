@@ -38,6 +38,21 @@ class TestMethodsInViews(TestCase):
         response1 = c.post(reverse('travelplanner:place'),data1,content_type="application/json")
         text = response1.content.decode('utf-8')
         self.assertTrue('hour' in text)
+    
+    def test_time_place_space(self):
+        '''
+        test place with space
+        '''
+        c = Client()
+        data = {'place' : 'pat taya', 'origin' : 'b a n g kok'}
+        response = c.post(reverse('travelplanner:place'),data,content_type="application/json")
+        text = response.content.decode('utf-8')
+        self.assertTrue('hour' in text)
+
+        data1 = {'place' : 'Central World', 'origin' : 'chaingm ai'}
+        response1 = c.post(reverse('travelplanner:place'),data1,content_type="application/json")
+        text = response1.content.decode('utf-8')
+        self.assertTrue('hour' in text)
 
     def test_remaining_time(self):
         '''
@@ -58,3 +73,4 @@ class TestMethodsInViews(TestCase):
         response2 = c.post(reverse('travelplanner:remain'),data2,content_type="application/json")
         ans2 = response2.content.decode('utf-8')
         self.assertEquals(7,  float(ans2.replace('\"', "")))
+    
