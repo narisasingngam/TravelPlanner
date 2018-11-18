@@ -1,7 +1,8 @@
 from django.test import TestCase
-# from views.py import .
-# import json
+from django.test import Client
+from django.urls import reverse
 from map.models import Planner,Users
+import json
 
 class PlannerModelTests(TestCase):
 
@@ -11,9 +12,17 @@ class PlannerModelTests(TestCase):
         """
         Planner.objects.create(location = "CentralWorld",spend_time = 1,times = "11:30",date = "10/2/18",duration="3 hours")
         Planner.objects.create(location = "SiamDiscovery",spend_time = 2,times = "12:30",date = "11/2/18",duration="2 hours")
-        Planner.objects.create(location = "Kasetsart University",spend_time = 3,times = "15:30",date = "12/2/18",duration="1 hours")
-        test_plan_user = Planner.objects.create(location = "CentralWorld",spend_time = 1,times = "11:30",date = "10/2/18",duration="3 hours")
-        Users.objects.create(email= "mmintttt@gmail.com",plans= test_plan_user)
+        Planner.objects.create(location = "Kasetsart University",spend_time = 3,times = "15:30",date = "12/2/18",duration="1 hour")
+        
+        user_date1_plan = Planner.objects.create(location = "SiamDiscovery",spend_time = 2,times = "12:30",date = "11/2/18",duration="2 hours")
+        user_date2_plan = Planner.objects.create(location = "Kasetsart University",spend_time = 3,times = "15:30",date = "10/2/18",duration="1 hour")
+        user_date3_plan = Planner.objects.create(location = "CentralWorld",spend_time = 1,times = "11:30",date = "10/2/18",duration="3 hours")
+        user_date4_plan = Planner.objects.create(location = "CentralWorld",spend_time = 1,times = "11:30",date = "13/2/18",duration="3 hours")
+
+        Users.objects.create(email= "mmintttt@gmail.com",plans= user_date3_plan)
+        Users.objects.create(email= "mmintttt@gmail.com",plans= user_date2_plan)
+        Users.objects.create(email= "mmintttt@gmail.com",plans= user_date1_plan)
+        Users.objects.create(email= "mmintttt@gmail.com",plans= user_date4_plan)
     
     def test_Planner_name(self):
         """
@@ -66,7 +75,27 @@ class PlannerModelTests(TestCase):
         test ForeignKey plan in Users object  
         """
         user_plan = Users.objects.all()
-        self.assertEqual(user_plan[0].plans.location,"CentralWorld")
-        self.assertEqual(user_plan[0].plans.spend_time,"1")
-        self.assertEqual(user_plan[0].plans.times,"11:30")
-        self.assertEqual(user_plan[0].plans.date,"10/2/18")
+        plan = Planner.objects.all()
+
+        self.assertEqual(user_plan[0].plans.location,plan[0].location)
+        self.assertEqual(user_plan[0].plans.spend_time,plan[0].spend_time)
+        self.assertEqual(user_plan[0].plans.times,plan[0].times)
+        self.assertEqual(user_plan[0].plans.date,plan[0].date)
+
+    def test_user_data(self):
+        '''
+        test list user data
+        '''
+        c = Client()
+        data = {'email': 'mmintttt@gmail.com'}
+        response = c.post(reverse('travelplanner:user'),data,content_type="application/json")
+        result = response.content
+        list = ["10/2/18", "11/2/18", "13/2/18"]
+        self.assertEquals(json.loads(result), list)
+
+    def test_type_error(self):
+        '''
+        test type error location and date always be string
+        '''
+        plan = Planner.objects.create(location = 234 ,spend_time = 2,times = "12:30",date = 11/2/18 ,duration="2 hours")
+        self.assertRaises(TypeError,plan)
