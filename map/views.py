@@ -5,10 +5,11 @@ from django.core import serializers
 import urllib.request
 import json
 import ssl
+from decouple import config
 from map import ptime
 from map.models import Planner,Users
 
-api_key = 'AIzaSyBENVTYtp6UnlTVs8gmLomS1NNlJqK7-ww'
+API_KEY = config('API_KEY')
 
 def index(request):
     if request.method == 'POST':
@@ -52,7 +53,7 @@ def time_place(request):
 
 
         endpoint = 'https://maps.googleapis.com/maps/api/distancematrix/json?'
-        request = endpoint + f'origins={origin_place_non_space}&destinations={place_without_space}&mode=driving&key={api_key}'
+        request = endpoint + f'origins={origin_place_non_space}&destinations={place_without_space}&mode=driving&key={API_KEY}'
         
         context = ssl._create_unverified_context()
         response = urllib.request.urlopen(request, context=context).read()
