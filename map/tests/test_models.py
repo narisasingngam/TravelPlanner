@@ -10,19 +10,17 @@ class PlannerModelTests(TestCase):
         """
         Set up data 
         """
-        Planner.objects.create(location = "CentralWorld",spend_time = 1,times = "11:30",date = "10/2/18",duration="3 hours")
-        Planner.objects.create(location = "SiamDiscovery",spend_time = 2,times = "12:30",date = "11/2/18",duration="2 hours")
-        Planner.objects.create(location = "Kasetsart University",spend_time = 3,times = "15:30",date = "12/2/18",duration="1 hour")
+        Planner.objects.create(location = "CentralWorld",spend_time = 1,times = "11:30",date = "10/2/18",duration="3 hours",name_planner="trip",id_plan='01')
+        Planner.objects.create(location = "SiamDiscovery",spend_time = 2,times = "12:30",date = "11/2/18",duration="2 hours",name_planner="trip",id_plan='02')
+        Planner.objects.create(location = "Kasetsart University",spend_time = 3,times = "15:30",date = "12/2/18",duration="1 hour",name_planner="trip",id_plan='03')
         
-        user_date1_plan = Planner.objects.create(location = "SiamDiscovery",spend_time = 2,times = "12:30",date = "11/2/18",duration="2 hours")
-        user_date2_plan = Planner.objects.create(location = "Kasetsart University",spend_time = 3,times = "15:30",date = "10/2/18",duration="1 hour")
-        user_date3_plan = Planner.objects.create(location = "CentralWorld",spend_time = 1,times = "11:30",date = "10/2/18",duration="3 hours")
-        user_date4_plan = Planner.objects.create(location = "CentralWorld",spend_time = 1,times = "11:30",date = "13/2/18",duration="3 hours")
+        user_date1_plan = Planner.objects.create(location = "SiamDiscovery",spend_time = 2,times = "12:30",date = "11/2/18",duration="2 hours",name_planner="trip",id_plan='02')
+        user_date2_plan = Planner.objects.create(location = "Kasetsart University",spend_time = 3,times = "15:30",date = "10/2/18",duration="1 hour",name_planner="trip",id_plan='03')
+        user_date3_plan = Planner.objects.create(location = "CentralWorld",spend_time = 1,times = "11:30",date = "10/2/18",duration="3 hours",name_planner="trip",id_plan='01')
 
         Users.objects.create(email= "mmintttt@gmail.com",plans= user_date3_plan)
         Users.objects.create(email= "mmintttt@gmail.com",plans= user_date2_plan)
         Users.objects.create(email= "mmintttt@gmail.com",plans= user_date1_plan)
-        Users.objects.create(email= "mmintttt@gmail.com",plans= user_date4_plan)
     
     def test_Planner_name(self):
         """
@@ -87,15 +85,15 @@ class PlannerModelTests(TestCase):
         test list user data
         '''
         c = Client()
-        data = {'email': 'mmintttt@gmail.com'}
+        data = {"email" : "mmintttt@gmail.com"}
         response = c.post(reverse('travelplanner:user'),data,content_type="application/json")
         result = response.content
-        list = ["10/2/18", "11/2/18", "13/2/18"]
+        list = [{'date': '10/2/18', 'id': '01', 'name': 'trip'},{'date': '10/2/18', 'id': '03', 'name': 'trip'},{'date': '11/2/18', 'id': '02', 'name': 'trip'}]
         self.assertEquals(json.loads(result), list)
 
     def test_type_error(self):
         '''
         test type error location and date always be string
         '''
-        plan = Planner.objects.create(location = 234 ,spend_time = 2,times = "12:30",date = 11/2/18 ,duration="2 hours")
+        plan = Planner.objects.create(location = 234 ,spend_time = 2,times = "12:30",date = 11/2/18 ,duration="2 hours",name_planner="trip",id_plan='03')
         self.assertRaises(TypeError,plan)
