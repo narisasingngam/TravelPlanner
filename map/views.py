@@ -73,7 +73,9 @@ def savedata(request):
         times = json_body['times']
         date = json_body['date']
         duration = json_body['duration']
-        data_plan = Planner(location=location,date=date,times=times,duration=duration,spend_time=spendtime)
+        name_planner = json_body['name']
+        id_plan = json_body['id']
+        data_plan = Planner(location=location,date=date,times=times,duration=duration,spend_time=spendtime,name_planner=name_planner,id_plan=id_plan)
         data_plan.save()
         user = Users(email=email,plans=data_plan)
         user.save()
@@ -88,8 +90,15 @@ def user_data(request):
                 list = []
                 #show user
                 for i in user:
-                        if(i.plans.date not in list):
-                                list.append(i.plans.date)
+                        to_json = {
+                                "date" : i.plans.date,
+                                "name" : i.plans.name_planner,
+                                "id" : i.plans.id_plan
+                        }
+                        if(to_json not in list):
+                                # print(to_json)
+                                list.append(to_json)
+                                # print(list)
                                 # print(i.plans.date)
                 return JsonResponse(list,safe=False)
 
@@ -99,15 +108,23 @@ def plan_data(request):
         if request.method == 'POST':
                 json_body = json.loads(request.body.decode('utf-8'))
                 email = json_body['email']
-                date = json_body['date']
+                id_plan = json_body['id']
                 user = Users.objects.filter(email=email)
                 # show plan     
                 for i in user:
 
-                        if(i.plans.date == date):
-                                show_plan = Planner.objects.filter(date=i.plans.date,location=i.plans.location,times=i.plans.times,duration=i.plans.duration,spend_time=i.plans.spend_time)
-                                json_plan = serializers.serialize('json',show_plan)
-                                list.append(json_plan)
-                                print(json_plan)
+                        if(i.plans.id_plan == id_plan):
+                                to_json = {
+                                "id" : i.plans.id_plan,
+                                "email" : i.email,
+                                "date" : i.plans.date,
+                                "name" : i.plans.name_planner,
+                                "location" : i.plans.location,
+                                "spendtime" : i.plans.spend_time,
+                                "times" : i.plans.times,
+                                "duration" : i.plans.duration,
+                                }
+                                list.append(to_json)
+                                print(to_json)
 
-        return HttpResponse(list,content_type="application/json")
+        return JsonResponse(list,safe=False)
