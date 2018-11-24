@@ -5,10 +5,11 @@ from django.core import serializers
 import urllib.request
 import json
 import ssl
+from decouple import config
 from map import ptime
 from map.models import Planner,Users
 
-api_key = 'AIzaSyBENVTYtp6UnlTVs8gmLomS1NNlJqK7-ww'
+API_KEY = config('API_KEY')
 
 def index(request):
     if request.method == 'POST':
@@ -52,7 +53,7 @@ def time_place(request):
 
 
         endpoint = 'https://maps.googleapis.com/maps/api/distancematrix/json?'
-        request = endpoint + f'origins={origin_place_non_space}&destinations={place_without_space}&mode=driving&key={api_key}'
+        request = endpoint + f'origins={origin_place_non_space}&destinations={place_without_space}&mode=driving&key={API_KEY}'
         
         context = ssl._create_unverified_context()
         response = urllib.request.urlopen(request, context=context).read()
@@ -72,7 +73,9 @@ def savedata(request):
         times = json_body['times']
         date = json_body['date']
         duration = json_body['duration']
-        data_plan = Planner(location=location,date=date,times=times,duration=duration,spend_time=spendtime)
+        name_planner = json_body['name']
+        id_plan = json_body['id']
+        data_plan = Planner(location=location,date=date,times=times,duration=duration,spend_time=spendtime,name_planner=name_planner,id_plan=id_plan)
         data_plan.save()
         user = Users(email=email,plans=data_plan)
         user.save()
@@ -87,11 +90,16 @@ def user_data(request):
                 list = []
                 #show user
                 for i in user:
-                        if(i.plans.date not in list):
-                                list.append(i.plans.date)
-                                print(i.plans.date)
-                        else:
-                                break
+                        to_json = {
+                                "date" : i.plans.date,
+                                "name" : i.plans.name_planner,
+                                "id" : i.plans.id_plan
+                        }
+                        if(to_json not in list):
+                                # print(to_json)
+                                list.append(to_json)
+                                # print(list)
+                                # print(i.plans.date)
                 return JsonResponse(list,safe=False)
 
 @csrf_exempt
@@ -100,17 +108,23 @@ def plan_data(request):
         if request.method == 'POST':
                 json_body = json.loads(request.body.decode('utf-8'))
                 email = json_body['email']
-                date = json_body['date']
+                id_plan = json_body['id']
                 user = Users.objects.filter(email=email)
-                # list = []
                 # show plan     
                 for i in user:
 
-                        if(i.plans.date == date):
-                                show_plan = Planner.objects.filter(date=i.plans.date,location=i.plans.location,times=i.plans.times,duration=i.plans.duration,spend_time=i.plans.spend_time)
-                                json_plan = serializers.serialize('json',show_plan)
-                                list.append(json_plan)
-                                print(json_plan)
-                                
-                                        # print(j.times+" "+j.location+" "+j.spend_time+" "+j.duration)
-        return HttpResponse(list,content_type="application/json")
+                        if(i.plans.id_plan == id_plan):
+                                to_json = {
+                                "id" : i.plans.id_plan,
+                                "email" : i.email,
+                                "date" : i.plans.date,
+                                "name" : i.plans.name_planner,
+                                "location" : i.plans.location,
+                                "spendtime" : i.plans.spend_time,
+                                "times" : i.plans.times,
+                                "duration" : i.plans.duration,
+                                }
+                                list.append(to_json)
+                                print(to_json)
+
+        return JsonResponse(list,safe=False)

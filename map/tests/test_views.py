@@ -38,6 +38,21 @@ class TestMethodsInViews(TestCase):
         response1 = c.post(reverse('travelplanner:place'),data1,content_type="application/json")
         text = response1.content.decode('utf-8')
         self.assertTrue('hour' in text)
+    
+    def test_time_place_space(self):
+        '''
+        test place with space
+        '''
+        c = Client()
+        data = {'place' : 'pat taya', 'origin' : 'b a n g kok'}
+        response = c.post(reverse('travelplanner:place'),data,content_type="application/json")
+        text = response.content.decode('utf-8')
+        self.assertTrue('hour' in text)
+
+        data1 = {'place' : 'Central World', 'origin' : 'chaingm ai'}
+        response1 = c.post(reverse('travelplanner:place'),data1,content_type="application/json")
+        text = response1.content.decode('utf-8')
+        self.assertTrue('hour' in text)
 
     def test_remaining_time(self):
         '''
@@ -58,13 +73,14 @@ class TestMethodsInViews(TestCase):
         response2 = c.post(reverse('travelplanner:remain'),data2,content_type="application/json")
         ans2 = response2.content.decode('utf-8')
         self.assertEquals(7,  float(ans2.replace('\"', "")))
-    
+
     def test_status_savedata(self):
         '''
         test status save data
         '''
         c = Client()
-        data = {'email' : 'mmintttt@gmail.com','location' : 'chonburi','spendtime' : '1','times' : '15:54','date' : '02/12/2018','duration' : '3 hours'}
+        data = {'email' : 'mmintttt@gmail.com','location' : 'chonburi','spendtime' : '1','times' : '15:54','date' : '02/12/2018','duration' : '3 hours','name' : 'mimint trip',
+    'id' : '05'}
         response = c.post(reverse('travelplanner:savedata'),data,content_type="application/json")
         self.assertEquals(response.status_code, 200)
     
@@ -82,7 +98,7 @@ class TestMethodsInViews(TestCase):
         test status plan_data
         '''
         c = Client()
-        data = {'email': 'mmintttt@gmail.com','date': '02/12/2018'}
+        data = {'email': 'mmintttt@gmail.com','id' : '03'}
         response = c.post(reverse('travelplanner:plan'),data,content_type="application/json")
         self.assertEquals(response.status_code, 200)
         

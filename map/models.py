@@ -9,6 +9,8 @@ class Planner(models.Model):
     duration = models.CharField(max_length = 30,default="0")
     times = models.CharField(max_length = 30,default="")
     date = models.CharField(max_length = 20,default="")
+    name_planner = models.CharField(max_length =30,default="")
+    id_plan = models.CharField(max_length=20,default="")
     
     def __str__(self):
         return f'{self.location}, {self.spend_time},{self.duration}, {self.date},{self.times}'
@@ -27,5 +29,5 @@ class Users(models.Model):
 
     def __str__(self):
 
-        return f'{self.email},{self.plans.date}'
+        return f'{self.email},{self.plans}'
 

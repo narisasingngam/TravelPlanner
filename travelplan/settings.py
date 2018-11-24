@@ -15,6 +15,7 @@ import dj_database_url
 import psycopg2
 from decouple import config
 import configparser
+import base64
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -24,7 +25,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'q@-n(0_rh^5t+6n@^rz)cgh*=1gyzetqc)%fejmuvt35=#i+z#'
+SECRET_KEY = base64.b64decode(config('SECRET_KEY')).decode('utf-8')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -85,10 +86,11 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'travelplan.wsgi.application'
 
-config = configparser.ConfigParser()
-config.read('config.ini')
+cf = configparser.ConfigParser()
+cf.read('config.ini')
 
-if 'sqlite' in config :
+# you can use your own database or sqlite for develop
+if 'dev' in cf :
     DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -97,37 +99,36 @@ if 'sqlite' in config :
     }
 
 else :
-    # Database
+    # Database in cloud
     # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
+    DATABASE_URL = config('DATABASE_URL')
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql',
             'NAME': '',
         }
     }
-
-    db_url = 'postgres://qykycimabhjaji:52fb48a92b28a36cb3ab4f3003149d2a9f48d826e23dc7956c8bb3ebeac78313@ec2-54-163-245-44.compute-1.amazonaws.com:5432/d1a5jdq3qb959'
-    DATABASES['default'] = dj_database_url.config(default=db_url, conn_max_age=600, ssl_require=True)
+    DATABASES['default'] = dj_database_url.config(default=DATABASE_URL, conn_max_age=600, ssl_require=True)
 
 
 
 if 'test' in sys.argv:
     DATABASES['default'] = {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'test_db',
-        'USER': 'postgres',
-        'PASSWORD': 'mint2840',
-        # 'PORT': '5432',
+        'ENGINE': config('DB_ENGINE'),
+        'NAME': config('DB_NAME'),
+        'USER': config('DB_USER'),
+        'PASSWORD': config('DB_PASSWORD'),
+        'PORT': config('DB_PORT'),
     }
 
 if 'TRAVIS' in os.environ:
     DATABASES['default'] = {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'test_db',
-        'USER': 'postgres',
-        'PASSWORD': 'mint2840',
+        'ENGINE': config('DB_ENGINE'),
+        'NAME': config('DB_NAME'),
+        'USER': config('DB_USER'),
+        'PASSWORD': config('DB_PASSWORD'),
     }
-
+    
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
 

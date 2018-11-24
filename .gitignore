@@ -6,3 +6,4 @@ node_modules/
 /dist/
 request/
 =5.0.0
+env

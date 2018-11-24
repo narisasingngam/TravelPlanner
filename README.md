@@ -17,7 +17,7 @@ Code Coverage : [![codecov](https://codecov.io/gh/narisasingngam/Travel-Planner/
 
 # Installation
 
-+ Python (v.3.6.6 or newer)  -  [download](https://www.python.org/downloads/)
++ Python (v.3 or newer)  -  [download](https://www.python.org/downloads/)
 
 + Node.js - [download](https://nodejs.org/en/)
 
@@ -41,7 +41,7 @@ $ npm install
 ```
 3.  Compile
 ```
-$ npm run start
+$ npm run dev
 
 - Run serve with localhost:8080
 ```
