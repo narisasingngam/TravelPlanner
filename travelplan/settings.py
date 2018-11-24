@@ -88,7 +88,8 @@ WSGI_APPLICATION = 'travelplan.wsgi.application'
 cf = configparser.ConfigParser()
 cf.read('config.ini')
 
-if 'guest' in cf :
+# you can use your own database or sqlite for develop
+if 'dev' in cf :
     DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -97,7 +98,7 @@ if 'guest' in cf :
     }
 
 else :
-    # Database
+    # Database in cloud
     # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
     DATABASE_URL = config('DATABASE_URL')
     DATABASES = {
