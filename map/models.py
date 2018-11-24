@@ -3,7 +3,7 @@ from django.urls import reverse # Used to generate URLs by reversing the URL pat
 
 class Planner(models.Model):  
     # Model representing name location  
-    location = models.CharField(max_length = 30)
+    location = models.CharField(max_length = 60)
     spend_time = models.CharField(max_length = 30,default="0")
     #start time that user want to go in each place
     duration = models.CharField(max_length = 30,default="0")
