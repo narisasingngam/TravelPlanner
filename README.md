@@ -6,12 +6,6 @@ Traivis CI : [![Build Status](https://travis-ci.com/narisasingngam/TravelPlanner
 
 Code Coverage : [![codecov](https://codecov.io/gh/narisasingngam/Travel-Planner/branch/master/graph/badge.svg)](https://codecov.io/gh/narisasingngam/Travel-Planner)
 
-# Members
-| GitHub  | Name              | 
-|--------|-----------------------------|
-| @narisasingngam   | Narisa Singngam |
-| @ffaiip | Kavinthip Pattanaphaophan |
-| @jampttws | Tanasorn Tritawisup |
 
 # Documents
 
@@ -82,13 +76,26 @@ For Window
 $ pip install -r requirements.txt
  ```
 
-5. For backend compiled
+5. If you want to use SQLite database
+```
+$ python manage.py migrate
+```
+
+6. For backend compiled
 
 ``` 
 $ python manage.py runserver
 
 - Run serve with localhost:8000
  ```
+
+ # Members
+| GitHub  | Name              | 
+|--------|-----------------------------|
+| @narisasingngam   | Narisa Singngam |
+| @ffaiip | Kavinthip Pattanaphaophan |
+| @jampttws | Tanasorn Tritawisup |
+
 
 
 [doc]:https://docs.google.com/document/d/17YU4U-z9ftI0GzMlQQTGfNDjZDice1K9bn1NK7oGFBY/edit#
