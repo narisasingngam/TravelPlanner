@@ -11,6 +11,7 @@ class Planner(models.Model):
     date = models.CharField(max_length = 20,default="")
     name_planner = models.CharField(max_length =30,default="")
     id_plan = models.CharField(max_length=20,default="")
+    total_time = models.CharField(max_length=10,default="0")
     
     def __str__(self):
         return f'{self.location}, {self.spend_time},{self.duration}, {self.date},{self.times}'

@@ -10,13 +10,13 @@ class PlannerModelTests(TestCase):
         """
         Set up data 
         """
-        Planner.objects.create(location = "CentralWorld",spend_time = 1,times = "11:30",date = "10/2/18",duration="3 hours",name_planner="trip",id_plan='01')
-        Planner.objects.create(location = "SiamDiscovery",spend_time = 2,times = "12:30",date = "11/2/18",duration="2 hours",name_planner="trip",id_plan='02')
-        Planner.objects.create(location = "Kasetsart University",spend_time = 3,times = "15:30",date = "12/2/18",duration="1 hour",name_planner="trip",id_plan='03')
+        Planner.objects.create(location = "CentralWorld",spend_time = 1,times = "11:30",date = "10/2/18",duration="3 hours",name_planner="trip",id_plan='01',total_time='11:30')
+        Planner.objects.create(location = "SiamDiscovery",spend_time = 2,times = "12:30",date = "11/2/18",duration="2 hours",name_planner="trip",id_plan='02',total_time='13:30')
+        Planner.objects.create(location = "Kasetsart University",spend_time = 3,times = "15:30",date = "12/2/18",duration="1 hour",name_planner="trip",id_plan='03',total_time='15:30')
         
-        user_date1_plan = Planner.objects.create(location = "SiamDiscovery",spend_time = 2,times = "12:30",date = "11/2/18",duration="2 hours",name_planner="trip",id_plan='02')
-        user_date2_plan = Planner.objects.create(location = "Kasetsart University",spend_time = 3,times = "15:30",date = "10/2/18",duration="1 hour",name_planner="trip",id_plan='03')
-        user_date3_plan = Planner.objects.create(location = "CentralWorld",spend_time = 1,times = "11:30",date = "10/2/18",duration="3 hours",name_planner="trip",id_plan='01')
+        user_date1_plan = Planner.objects.create(location = "SiamDiscovery",spend_time = 2,times = "12:30",date = "11/2/18",duration="2 hours",name_planner="trip",id_plan='02',total_time='13:30')
+        user_date2_plan = Planner.objects.create(location = "Kasetsart University",spend_time = 3,times = "15:30",date = "10/2/18",duration="1 hour",name_planner="trip",id_plan='03',total_time='15:30')
+        user_date3_plan = Planner.objects.create(location = "CentralWorld",spend_time = 1,times = "11:30",date = "10/2/18",duration="3 hours",name_planner="trip",id_plan='01',total_time='11:30')
 
         Users.objects.create(email= "mmintttt@gmail.com",plans= user_date3_plan)
         Users.objects.create(email= "mmintttt@gmail.com",plans= user_date2_plan)
@@ -95,5 +95,5 @@ class PlannerModelTests(TestCase):
         '''
         test type error location and date always be string
         '''
-        plan = Planner.objects.create(location = 234 ,spend_time = 2,times = "12:30",date = 11/2/18 ,duration="2 hours",name_planner="trip",id_plan='03')
+        plan = Planner.objects.create(location = 234 ,spend_time = 2,times = "12:30",date = 11/2/18 ,duration="2 hours",name_planner="trip",id_plan='03',total_time='22.30')
         self.assertRaises(TypeError,plan)
