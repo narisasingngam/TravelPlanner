@@ -3,7 +3,7 @@ from django.urls import reverse # Used to generate URLs by reversing the URL pat
 
 class Planner(models.Model):  
     # Model representing name location  
-    location = models.CharField(max_length = 30)
+    location = models.CharField(max_length = 60)
     spend_time = models.CharField(max_length = 30,default="0")
     #start time that user want to go in each place
     duration = models.CharField(max_length = 30,default="0")
@@ -11,6 +11,7 @@ class Planner(models.Model):
     date = models.CharField(max_length = 20,default="")
     name_planner = models.CharField(max_length =30,default="")
     id_plan = models.CharField(max_length=20,default="")
+    total_time = models.CharField(max_length=10,default="0")
     
     def __str__(self):
         return f'{self.location}, {self.spend_time},{self.duration}, {self.date},{self.times}'
@@ -30,4 +31,3 @@ class Users(models.Model):
     def __str__(self):
 
         return f'{self.email},{self.plans}'
-

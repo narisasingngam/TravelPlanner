@@ -80,7 +80,7 @@ class TestMethodsInViews(TestCase):
         '''
         c = Client()
         data = {'email' : 'mmintttt@gmail.com','location' : 'chonburi','spendtime' : '1','times' : '15:54','date' : '02/12/2018','duration' : '3 hours','name' : 'mimint trip',
-    'id' : '05'}
+    'id' : '05','remaining': '21.30'}
         response = c.post(reverse('travelplanner:savedata'),data,content_type="application/json")
         self.assertEquals(response.status_code, 200)
     
