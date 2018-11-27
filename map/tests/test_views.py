@@ -101,4 +101,12 @@ class TestMethodsInViews(TestCase):
         data = {'email': 'mmintttt@gmail.com','id' : '03'}
         response = c.post(reverse('travelplanner:plan'),data,content_type="application/json")
         self.assertEquals(response.status_code, 200)
-        
+    
+    def test_status_searchplace(self):
+        '''
+        test place that can search
+        '''
+        c = Client()
+        data = {'place': 'bangkok'}
+        response = c.post(reverse('travelplanner:search'),data,content_type="application/json")
+        self.assertEqual(response.status_code,200)        
