@@ -228,3 +228,5 @@ STATIC_URL = '/static/'
 APPEND_SLASH=False
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+CODECOV_TOKEN="2a886f05-e301-4425-a09b-69adab168401"
