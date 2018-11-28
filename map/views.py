@@ -98,6 +98,30 @@ def time_place(request):
    
         return JsonResponse(time_str, safe=False) 
 
+@csrf_exempt  
+def search_place(request):  
+     if request.method == 'POST': 
+         try:
+               json_body = json.loads(request.body.decode('utf-8'))  
+               place = json_body['place']
+               place_without_space = place.replace(" ","%20")  
+  
+               endpoint = 'https://maps.googleapis.com/maps/api/place/findplacefromtext/json?'  
+               inputtype = 'textquery&fields=formatted_address,name,opening_hours&locationbias=circle:2000@47.6918452,-122.2226413'  
+               request = endpoint + f'input={place_without_space}&inputtype={inputtype}&key={API_KEY}'   
+  
+               context = ssl._create_unverified_context()  
+               response = urllib.request.urlopen(request, context=context).read()  
+               direction = json.loads(response.decode('utf-8'))
+               address =   direction['candidates']
+
+               logger.info(f'search: {address}')
+           except:
+                logger.error(sys.exc_info())
+
+  
+         return JsonResponse(address, safe=False)
+
 @csrf_exempt
 def savedata(request):
         if request.method == 'POST':
@@ -170,6 +194,7 @@ def plan_data(request):
                                 "spendtime" : i.plans.spend_time,
                                 "times" : i.plans.times,
                                 "duration" : i.plans.duration,
+                                "remaining" : i.plans.total_time
                                 }
                                 list.append(to_json)
                                 print(to_json)

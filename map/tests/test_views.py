@@ -80,7 +80,7 @@ class TestMethodsInViews(TestCase):
         '''
         c = Client()
         data = {'email' : 'mmintttt@gmail.com','location' : 'chonburi','spendtime' : '1','times' : '15:54','date' : '02/12/2018','duration' : '3 hours','name' : 'mimint trip',
-    'id' : '05'}
+    'id' : '05','remaining': '21.30'}
         response = c.post(reverse('travelplanner:savedata'),data,content_type="application/json")
         self.assertEquals(response.status_code, 200)
     
@@ -101,4 +101,14 @@ class TestMethodsInViews(TestCase):
         data = {'email': 'mmintttt@gmail.com','id' : '03'}
         response = c.post(reverse('travelplanner:plan'),data,content_type="application/json")
         self.assertEquals(response.status_code, 200)
-        
+    
+    def test_status_searchplace(self):
+        '''
+        test place that can search
+        '''
+        c = Client()
+        data = {'place': 'bangkok'}
+        response = c.post(reverse('travelplanner:search'),data,content_type="application/json")
+        self.assertEqual(response.status_code,200)    
+
+            

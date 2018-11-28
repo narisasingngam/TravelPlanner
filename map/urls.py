@@ -10,5 +10,6 @@ urlpatterns = [
     path('place/',views.time_place, name='place'),
     path('savedata/',views.savedata,name='savedata'),
     path('user_data/',views.user_data,name='user'),
-    path('plan_data/',views.plan_data,name='plan')
+    path('plan_data/',views.plan_data,name='plan'),
+    path('search/',views.search_place,name='search')
 ]
