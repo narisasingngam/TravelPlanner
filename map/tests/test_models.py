@@ -50,7 +50,7 @@ class PlannerModelTests(TestCase):
         self.assertEqual(time[0].times,"11:30")
         self.assertEqual(time[1].times,"12:30")
         self.assertEqual(time[2].times,"15:30")
-    
+
     def test_Planner_date(self):
         """
         test date in Planner object  
@@ -58,7 +58,50 @@ class PlannerModelTests(TestCase):
         date = Planner.objects.all()
         self.assertEqual(date[0].date,"10/2/18")
         self.assertEqual(date[1].date,"11/2/18")
-        self.assertEqual(date[2].date,"12/2/18")
+        self.assertEqual(date[2].date,"12/2/18")    
+
+    def test_Planner_duration(self):
+        """
+        test duration in Planner object  
+        """
+        plan = Planner.objects.all()
+
+        self.assertEqual(plan[0].duration,"3 hours")
+        self.assertEqual(plan[1].duration,"2 hours")
+        self.assertEqual(plan[2].duration,"1 hour")
+        
+    def test_Planner_name_planner(self):
+        """
+        test date in Planner object  
+        """
+        plan = Planner.objects.all()
+        self.assertEqual(plan[0].name_planner,"trip")
+        self.assertEqual(plan[1].name_planner,"trip")
+        self.assertEqual(plan[2].name_planner,"trip")    
+
+
+    def test_Planner_id(self):
+        """
+        test plan's id in Planner object  
+        """
+        plan = Planner.objects.all()
+
+        self.assertEqual(plan[0].id_plan,"01")
+        self.assertEqual(plan[1].id_plan,"02")
+        self.assertEqual(plan[2].id_plan,"03")
+
+    def test_Planner_total_time(self):
+        """
+        test total time in Planner object  
+        """
+        plan = Planner.objects.all()
+
+        self.assertEqual(plan[0].total_time,"11:30")
+        self.assertEqual(plan[1].total_time,"13:30")
+        self.assertEqual(plan[2].total_time,"15:30")
+
+  
+        
     
     def test_Users_email(self):
         """

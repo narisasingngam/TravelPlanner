@@ -101,7 +101,7 @@ def time_place(request):
 @csrf_exempt  
 def search_place(request):  
      if request.method == 'POST': 
-         try:
+        try:
                json_body = json.loads(request.body.decode('utf-8'))  
                place = json_body['place']
                place_without_space = place.replace(" ","%20")  
@@ -116,11 +116,13 @@ def search_place(request):
                address =   direction['candidates']
 
                logger.info(f'search: {address}')
-           except:
+
+        except:
+
                 logger.error(sys.exc_info())
 
   
-         return JsonResponse(address, safe=False)
+        return JsonResponse(address, safe=False)
 
 @csrf_exempt
 def savedata(request):
