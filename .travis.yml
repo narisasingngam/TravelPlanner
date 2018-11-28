@@ -11,6 +11,7 @@ virtualenv:
 
 install:
     - pip install -r requirements.txt
+    - pip install coverage
     
 addons:
     postgresql: "9.6"
@@ -21,4 +22,6 @@ before_script:
 script:
     - python manage.py test map/tests
     - coverage run manage.py test map/tests
-    
+
+after_success:
+  - codecov    
