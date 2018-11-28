@@ -89,6 +89,13 @@ $ python manage.py runserver
 - Run serve with localhost:8000
  ```
 
+ If you want to login as **admin**
+ ```
+ $ python manage.py createsuperuser
+
+ - Open with localhost:8000/admin
+ ``` 
+
  # Members
 | GitHub  | Name              | 
 |--------|-----------------------------|
