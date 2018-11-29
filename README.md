@@ -17,18 +17,9 @@ Code Coverage : [![codecov](https://codecov.io/gh/narisasingngam/Travel-Planner/
 
 # Installation
 
-+ Python (v.3 or newer)  -  [download](https://www.python.org/downloads/)
-
 + Node.js - [download](https://nodejs.org/en/)
 
-+ Virtual Environment
-    ```
-    $ pip install virtualenv
-    ```
-
 # Step needed to configure the application for running
-
-### For frontend
 
 1. Clone the [frontend repository][front]
 ``` 
@@ -41,60 +32,10 @@ $ npm install
 ```
 3.  Compile
 ```
-$ npm run dev
+$ npm run start
 
 - Run serve with localhost:8080
 ```
-
-### For backend
-
-1. Clone the backend repository.
-``` 
-$ git clone https://github.com/narisasingngam/TravelPlanner.git
-
-$ cd TravelPlanner
- ```
-
-2. Create your virtual environment
-```
-$ virtualenv env
-```
-3. Activate environment
-
-```
-For MacOs or Ubuntu
-
-> $ source env/bin/activate
-
-For Window
-
-> $ env/Scripts/activate
- ```
-
-4. Install dependencies with **pip**
-``` 
-$ pip install -r requirements.txt
- ```
-
-5. If you want to use SQLite database
-```
-$ python manage.py migrate
-```
-
-6. For backend compiled
-
-``` 
-$ python manage.py runserver
-
-- Run serve with localhost:8000
- ```
-
- If you want to login as **admin**
- ```
- $ python manage.py createsuperuser
-
- - Open with localhost:8000/admin
- ``` 
 
  # Members
 | GitHub  | Name              | 
