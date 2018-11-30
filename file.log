@@ -1245,3 +1245,24 @@ NameError: name 'sys' is not defined
 11-30 13:00 logger       INFO     {'id': 'phzxcy7mq', 'email': 'darmonlyone@gmail.com', 'date': '2018-11-30', 'name': 'plan in khaoyai', 'location': 'เชียงคานบุรี', 'spendtime': '', 'times': '00:00', 'duration': '27 mins', 'remaining': '12.33'}
 11-30 13:00 django.server INFO     "POST /api/plan_data/ HTTP/1.1" 200 946
 11-30 13:18 django.server INFO     "GET /admin/ HTTP/1.1" 200 6813
+11-30 13:48 django.server INFO     "GET / HTTP/1.1" 200 698
+11-30 13:48 django.server INFO     "GET /static/css/app.8cf8345de2c358f5a3546a816b866972.css HTTP/1.1" 200 203547
+11-30 13:48 django.server INFO     "GET /static/js/manifest.2ae2e69a05c33dfc65f8.js HTTP/1.1" 200 857
+11-30 13:48 django.server INFO     "GET /static/js/app.c75b68673e156a91cb8e.js HTTP/1.1" 200 33623
+11-30 13:48 django.server INFO     "GET /static/js/vendor.0d6b511f58a42807b804.js HTTP/1.1" 200 409871
+11-30 13:48 django.server INFO     "GET /static/js/manifest.2ae2e69a05c33dfc65f8.js.map HTTP/1.1" 200 4972
+11-30 13:48 django.server INFO     "GET /static/css/app.8cf8345de2c358f5a3546a816b866972.css.map HTTP/1.1" 200 545150
+11-30 13:48 django.server INFO     "GET /static/js/app.c75b68673e156a91cb8e.js.map HTTP/1.1" 200 115214
+11-30 13:48 django.server INFO     "GET /static/js/vendor.0d6b511f58a42807b804.js.map HTTP/1.1" 200 1609796
+11-30 13:48 django.server INFO     "GET /static/img/travel-planner.8e0238f.png HTTP/1.1" 200 868789
+11-30 13:48 logger       INFO     add {'date': '2018-11-28', 'name': 'Darm tour', 'id': 'ed2cwv3o0'}
+11-30 13:48 logger       INFO     add {'date': '2018-11-27', 'name': 'dudu', 'id': 'apgy47g3s'}
+11-30 13:48 logger       INFO     add {'date': '2018-11-30', 'name': 'mint', 'id': 'mghwhxxzv'}
+11-30 13:48 logger       INFO     add {'date': '2018-11-30', 'name': 'm', 'id': '0qe2zkrc4'}
+11-30 13:48 logger       INFO     add {'date': '2018-11-30', 'name': 'plan in khaoyai', 'id': 'phzxcy7mq'}
+11-30 13:48 django.server INFO     "POST /api/user_data/ HTTP/1.1" 200 308
+11-30 13:48 django.server INFO     "POST /api/plan_data/ HTTP/1.1" 200 2
+11-30 13:48 logger       INFO     search: [{'formatted_address': '5820 125th Ln NE, Kirkland, WA 98033, USA', 'name': 'Central Park Tennis Club', 'opening_hours': {'open_now': False}}]
+11-30 13:48 django.server INFO     "POST /api/search/ HTTP/1.1" 200 142
+11-30 13:48 logger       INFO     remaining time : 23.0
+11-30 13:48 django.server INFO     "POST /api/time-remain/ HTTP/1.1" 200 6
