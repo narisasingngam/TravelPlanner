@@ -13,7 +13,7 @@ SECRET_KEY = base64.b64decode(config('SECRET_KEY')).decode('utf-8')
 
 DEBUG = config('DEBUG', cast=bool)
 
-ALLOWED_HOSTS = ['travel-planner-develop.herokuapp.com','localhost','*']
+ALLOWED_HOSTS = ['travelplanner-app.herokuapp.com','travel-planner-develop.herokuapp.com','localhost','*']
 
 
 # Application definition
