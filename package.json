@@ -13,7 +13,8 @@
     "lintfix": "eslint --ext .js,.vue src test/unit/specs --fix",
     "l": "eslint --help",
     "build": "node build/build.js",
-    "production": "export ENV=production && npm run start"
+    "production": "export ENV=production && npm run start",
+    "postinstall": "npm run build"
   },
   "dependencies": {
     "axios": "^0.18.0",
