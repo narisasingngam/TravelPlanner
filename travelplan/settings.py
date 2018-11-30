@@ -15,6 +15,8 @@ DEBUG = config('DEBUG', cast=bool)
 
 ALLOWED_HOSTS = ['travelplanner-app.herokuapp.com','travel-planner-develop.herokuapp.com','localhost','*']
 
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 # Application definition
 
@@ -47,7 +49,6 @@ CORS_ORIGIN_WHITELIST = (
     'localhost:8080',
     '127.0.0.1:8080',
     'https://travelplan-app.herokuapp.com/',
-    'https://travelplanner-app.herokuapp.com/',
 
 )
 
@@ -200,7 +201,6 @@ LOGGING_CONFIG = None
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 STATIC_URL = '/static/'
 
