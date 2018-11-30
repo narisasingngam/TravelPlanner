@@ -41,7 +41,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-CORS_ORIGIN_ALLOW_ALL=False
+CORS_ORIGIN_ALLOW_ALL=True
 
 CORS_ORIGIN_WHITELIST = (
     'localhost:8080',
@@ -74,11 +74,8 @@ STATICFILES_DIRS = [
 
 WSGI_APPLICATION = 'travelplan.wsgi.application'
 
-cf = configparser.ConfigParser()
-cf.read('config.ini')
-
 # you can use your own database or sqlite for develop
-if 'dev' in cf :
+if config('DEV', cast=bool) :
     DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -109,13 +106,6 @@ if 'test' in sys.argv:
         'PORT': config('DB_PORT'),
     }
 
-if 'TRAVIS' in os.environ:
-    DATABASES['default'] = {
-        'ENGINE': config('DB_ENGINE'),
-        'NAME': config('DB_NAME'),
-        'USER': config('DB_USER'),
-        'PASSWORD': config('DB_PASSWORD'),
-    }
     
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
