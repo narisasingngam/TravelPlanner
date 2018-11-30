@@ -1301,3 +1301,55 @@ NameError: name 'sys' is not defined
 11-30 14:01 logger       INFO     {'id': 'ed2cwv3o0', 'email': 'darmonlyone@gmail.com', 'date': '2018-11-28', 'name': 'Darm tour', 'location': 'Pattaya Night Bazaar', 'spendtime': '0.01', 'times': '03:44', 'duration': '16 mins', 'remaining': '0.22'}
 11-30 14:01 logger       INFO     {'id': 'ed2cwv3o0', 'email': 'darmonlyone@gmail.com', 'date': '2018-11-28', 'name': 'Darm tour', 'location': '', 'spendtime': '', 'times': '01:00', 'duration': '16 mins', 'remaining': '0.05'}
 11-30 14:01 django.server INFO     "POST /api/plan_data/ HTTP/1.1" 200 846
+11-30 14:20 django.server INFO     "GET / HTTP/1.1" 200 698
+11-30 14:20 django.server INFO     "GET /static/css/app.8cf8345de2c358f5a3546a816b866972.css HTTP/1.1" 304 0
+11-30 14:20 django.server INFO     "GET /static/js/manifest.2ae2e69a05c33dfc65f8.js HTTP/1.1" 304 0
+11-30 14:20 django.server INFO     "GET /static/js/vendor.0d6b511f58a42807b804.js HTTP/1.1" 304 0
+11-30 14:20 django.server INFO     "GET /static/js/app.c75b68673e156a91cb8e.js HTTP/1.1" 304 0
+11-30 14:20 django.server INFO     "GET /static/img/travel-planner.8e0238f.png HTTP/1.1" 304 0
+11-30 14:20 logger       INFO     add {'date': '2018-11-28', 'name': 'Darm tour', 'id': 'ed2cwv3o0'}
+11-30 14:20 logger       INFO     add {'date': '2018-11-27', 'name': 'dudu', 'id': 'apgy47g3s'}
+11-30 14:20 logger       INFO     add {'date': '2018-11-30', 'name': 'mint', 'id': 'mghwhxxzv'}
+11-30 14:20 django.server INFO     "GET /static/js/manifest.2ae2e69a05c33dfc65f8.js.map HTTP/1.1" 304 0
+11-30 14:20 django.server INFO     "GET /static/js/vendor.0d6b511f58a42807b804.js.map HTTP/1.1" 304 0
+11-30 14:20 django.server INFO     "GET /static/js/app.c75b68673e156a91cb8e.js.map HTTP/1.1" 304 0
+11-30 14:20 django.server INFO     "GET /static/css/app.8cf8345de2c358f5a3546a816b866972.css.map HTTP/1.1" 304 0
+11-30 14:20 logger       INFO     add {'date': '2018-11-30', 'name': 'm', 'id': '0qe2zkrc4'}
+11-30 14:20 logger       INFO     add {'date': '2018-11-30', 'name': 'plan in khaoyai', 'id': 'phzxcy7mq'}
+11-30 14:20 django.server INFO     "POST /api/user_data/ HTTP/1.1" 200 308
+11-30 14:24 django.server INFO     "GET / HTTP/1.1" 200 698
+11-30 14:24 django.server INFO     "GET /static/js/app.af3766720f9dc055ecca.js HTTP/1.1" 200 33743
+11-30 14:24 django.server INFO     "GET /static/css/app.8cf8345de2c358f5a3546a816b866972.css HTTP/1.1" 200 203547
+11-30 14:24 django.server INFO     "GET /static/js/manifest.2ae2e69a05c33dfc65f8.js HTTP/1.1" 200 857
+11-30 14:24 django.server INFO     "GET /static/js/vendor.0d6b511f58a42807b804.js HTTP/1.1" 200 409871
+11-30 14:24 django.server INFO     "GET /static/js/manifest.2ae2e69a05c33dfc65f8.js.map HTTP/1.1" 200 4972
+11-30 14:24 django.server INFO     "GET /static/css/app.8cf8345de2c358f5a3546a816b866972.css.map HTTP/1.1" 200 545150
+11-30 14:24 django.server INFO     "GET /static/js/app.af3766720f9dc055ecca.js.map HTTP/1.1" 200 115354
+11-30 14:24 django.server INFO     "GET /static/js/vendor.0d6b511f58a42807b804.js.map HTTP/1.1" 200 1609796
+11-30 14:24 django.server INFO     "GET / HTTP/1.1" 200 698
+11-30 14:24 django.server INFO     "GET /static/css/app.8cf8345de2c358f5a3546a816b866972.css HTTP/1.1" 304 0
+11-30 14:24 django.server INFO     "GET /static/js/manifest.2ae2e69a05c33dfc65f8.js HTTP/1.1" 304 0
+11-30 14:24 django.server INFO     "GET /static/js/vendor.0d6b511f58a42807b804.js HTTP/1.1" 304 0
+11-30 14:24 django.server INFO     "GET /static/js/app.af3766720f9dc055ecca.js HTTP/1.1" 304 0
+11-30 14:24 django.server INFO     "GET /static/js/manifest.2ae2e69a05c33dfc65f8.js.map HTTP/1.1" 304 0
+11-30 14:24 django.server INFO     "GET /static/js/vendor.0d6b511f58a42807b804.js.map HTTP/1.1" 304 0
+11-30 14:24 django.server INFO     "GET /static/js/app.af3766720f9dc055ecca.js.map HTTP/1.1" 304 0
+11-30 14:24 django.server INFO     "GET /static/css/app.8cf8345de2c358f5a3546a816b866972.css.map HTTP/1.1" 304 0
+11-30 14:24 logger       INFO     add {'date': '2018-11-28', 'name': 'Darm tour', 'id': 'ed2cwv3o0'}
+11-30 14:24 logger       INFO     add {'date': '2018-11-27', 'name': 'dudu', 'id': 'apgy47g3s'}
+11-30 14:24 logger       INFO     add {'date': '2018-11-30', 'name': 'mint', 'id': 'mghwhxxzv'}
+11-30 14:24 logger       INFO     add {'date': '2018-11-30', 'name': 'm', 'id': '0qe2zkrc4'}
+11-30 14:24 logger       INFO     add {'date': '2018-11-30', 'name': 'plan in khaoyai', 'id': 'phzxcy7mq'}
+11-30 14:24 django.server INFO     "POST /api/user_data/ HTTP/1.1" 200 308
+11-30 14:24 django.server INFO     "POST /api/plan_data/ HTTP/1.1" 200 2
+11-30 14:24 logger       INFO     search: [{'formatted_address': '59/8 Nimmanahaeminda Road, Tambon Su Thep, Amphoe Mueang Chiang Mai, Chang Wat Chiang Mai 50200, Thailand', 'name': 'Nimman House Thai Massage', 'opening_hours': {'open_now': True}}]
+11-30 14:24 django.server INFO     "POST /api/search/ HTTP/1.1" 200 206
+11-30 14:27 django.server INFO     "GET / HTTP/1.1" 200 698
+11-30 14:27 django.server INFO     "GET /static/js/app.66b55e2ef02055022931.js HTTP/1.1" 200 33823
+11-30 14:27 django.server INFO     "GET /static/js/manifest.2ae2e69a05c33dfc65f8.js HTTP/1.1" 200 857
+11-30 14:27 django.server INFO     "GET /static/css/app.8cf8345de2c358f5a3546a816b866972.css HTTP/1.1" 200 203547
+11-30 14:27 django.server INFO     "GET /static/js/vendor.0d6b511f58a42807b804.js HTTP/1.1" 200 409871
+11-30 14:27 django.server INFO     "GET /static/js/manifest.2ae2e69a05c33dfc65f8.js.map HTTP/1.1" 200 4972
+11-30 14:27 django.server INFO     "GET /static/js/app.66b55e2ef02055022931.js.map HTTP/1.1" 200 115398
+11-30 14:27 django.server INFO     "GET /static/css/app.8cf8345de2c358f5a3546a816b866972.css.map HTTP/1.1" 200 545150
+11-30 14:27 django.server INFO     "GET /static/js/vendor.0d6b511f58a42807b804.js.map HTTP/1.1" 200 1609796

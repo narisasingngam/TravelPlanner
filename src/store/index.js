@@ -76,7 +76,7 @@ export const store = new Vuex.Store({
 
                 try {
 
-                    const planData = await axios.post(process.env.PLAN_DATA, bodyUser);
+                    const planData = await axios.post(process.env.API_URL + process.env.PLAN_DATA, bodyUser);
                     console.log(planData.data)
                     console.log(planData.data[0]['id'])
                     commit('setDataId', planData.data[0]['id'])
@@ -100,7 +100,7 @@ export const store = new Vuex.Store({
                 try {
 
                     const userDate = await axios.post(
-                        process.env.USER_DATA,
+                        process.env.API_URL + process.env.USER_DATA,
                         bodyUser,
                     );
 

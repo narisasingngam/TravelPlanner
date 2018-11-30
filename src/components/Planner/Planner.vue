@@ -504,7 +504,7 @@ export default {
             origin: this.placeList[placeOrigin].placeName
           };
           let placeResponse = await axios.post(
-            process.env.PLACE_DURATION,
+            process.env.API_URL + process.env.PLACE_DURATION,
             bodyPlace
           );
           this.placeData = placeResponse.data;
@@ -629,7 +629,10 @@ export default {
           remaining: this.totalTime,
           road: this.placeData
         };
-        let timeResponse = await axios.post(process.env.TIME_REMAIN, bodyTime);
+        let timeResponse = await axios.post(
+          process.env.API_URL + process.env.TIME_REMAIN,
+          bodyTime
+        );
         if (timeResponse.data < 0) {
           alert("Your time is over date");
           this.list.splice(this.list.length - 3, 4);
@@ -675,7 +678,10 @@ export default {
       try {
         for (const i of this.saveList) {
           console.log(i);
-          let save = await axios.post(process.env.SAVE_DATA, i);
+          let save = await axios.post(
+            process.env.API_URL + process.env.SAVE_DATA,
+            i
+          );
           console.log(save.data);
           this.$log.info(`${i} saved!`);
         }
