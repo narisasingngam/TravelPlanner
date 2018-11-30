@@ -41,10 +41,11 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-CORS_ORIGIN_ALLOW_ALL=True
+CORS_ORIGIN_ALLOW_ALL=False
 
 CORS_ORIGIN_WHITELIST = (
     'localhost:8080',
+    '127.0.0.1:8080',
     'https://travelplan-app.herokuapp.com/',
 
 )
@@ -54,7 +55,7 @@ ROOT_URLCONF = 'travelplan.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, './dist')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -65,6 +66,10 @@ TEMPLATES = [
             ],
         },
     },
+]
+
+STATICFILES_DIRS = [
+  os.path.join(BASE_DIR, './dist/static'),
 ]
 
 WSGI_APPLICATION = 'travelplan.wsgi.application'
@@ -204,11 +209,15 @@ LOGGING_CONFIG = None
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 STATIC_URL = '/static/'
 
 APPEND_SLASH=False
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+CODECOV_TOKEN=config('CODECOV_TOKEN')
 
-CODECOV_TOKEN=config('CODECOV')
+try:
+    from local_settings import *
+except ImportError:
+    pass

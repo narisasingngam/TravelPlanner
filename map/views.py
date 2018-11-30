@@ -137,7 +137,8 @@ def savedata(request):
                 duration = json_body['duration']
                 name_planner = json_body['name']
                 id_plan = json_body['id']
-                data_plan = Planner(location=location,date=date,times=times,duration=duration,spend_time=spendtime,name_planner=name_planner,id_plan=id_plan)
+                total_time = json_body['remaining']
+                data_plan = Planner(location=location,date=date,times=times,duration=duration,spend_time=spendtime,name_planner=name_planner,id_plan=id_plan,total_time=total_time)
                 data_plan.save()
                 user = Users(email=email,plans=data_plan)
                 user.save()
