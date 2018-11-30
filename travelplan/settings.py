@@ -69,21 +69,15 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'travelplan.wsgi.application'
 
-cf = configparser.ConfigParser()
-cf.read('config.ini')
-
 # you can use your own database or sqlite for develop
-if 'dev' in cf :
+if config('DEV', cast=bool) :
     DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
         }
     }
-
 else :
-    # Database in cloud
-    # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
     DATABASE_URL = config('DATABASE_URL')
     DATABASES = {
         'default': {
@@ -102,14 +96,6 @@ if 'test' in sys.argv:
         'USER': config('DB_USER'),
         'PASSWORD': config('DB_PASSWORD'),
         'PORT': config('DB_PORT'),
-    }
-
-if 'TRAVIS' in os.environ:
-    DATABASES['default'] = {
-        'ENGINE': config('DB_ENGINE'),
-        'NAME': config('DB_NAME'),
-        'USER': config('DB_USER'),
-        'PASSWORD': config('DB_PASSWORD'),
     }
     
 # Password validation
@@ -136,7 +122,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Bangkok'
 
 USE_I18N = True
 
@@ -211,4 +197,4 @@ APPEND_SLASH=False
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
-CODECOV_TOKEN=config('CODECOV')
+CODECOV_TOKEN=config('CODECOV_TOKEN')
