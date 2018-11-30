@@ -13,12 +13,13 @@
     "lintfix": "eslint --ext .js,.vue src test/unit/specs --fix",
     "l": "eslint --help",
     "build": "node build/build.js",
-    "production": "export ENV=production && npm run start",
-    "postinstall": "npm run build"
+    "postinstall": "npm run build",
+    "production": "export ENV=production && npm run start"
   },
   "dependencies": {
     "axios": "^0.18.0",
     "express": "^4.16.4",
+    "postinstall-build": "^5.0.3",
     "vue": "^2.5.2",
     "vue-cookie": "^1.1.4",
     "vue-cookies": "^1.5.7",

@@ -1373,3 +1373,26 @@ NameError: name 'sys' is not defined
 11-30 14:53 logger       INFO     {'id': 'ed2cwv3o0', 'email': 'darmonlyone@gmail.com', 'date': '2018-11-28', 'name': 'Darm tour', 'location': 'Pattaya Night Bazaar', 'spendtime': '0.01', 'times': '03:44', 'duration': '16 mins', 'remaining': '0.22'}
 11-30 14:53 logger       INFO     {'id': 'ed2cwv3o0', 'email': 'darmonlyone@gmail.com', 'date': '2018-11-28', 'name': 'Darm tour', 'location': '', 'spendtime': '', 'times': '01:00', 'duration': '16 mins', 'remaining': '0.05'}
 11-30 14:53 django.server INFO     "POST /api/plan_data/ HTTP/1.1" 200 846
+11-30 15:11 django.server INFO     "GET / HTTP/1.1" 200 698
+11-30 15:11 django.server INFO     "GET /static/js/manifest.2ae2e69a05c33dfc65f8.js HTTP/1.1" 304 0
+11-30 15:11 django.server INFO     "GET /static/js/vendor.0d6b511f58a42807b804.js HTTP/1.1" 304 0
+11-30 15:11 django.server INFO     "GET /static/js/app.a8d5fb5942d1a3f0fe12.js HTTP/1.1" 304 0
+11-30 15:11 django.server INFO     "GET /static/css/app.8cf8345de2c358f5a3546a816b866972.css HTTP/1.1" 304 0
+11-30 15:11 django.server INFO     "GET /static/js/manifest.2ae2e69a05c33dfc65f8.js.map HTTP/1.1" 304 0
+11-30 15:11 django.server INFO     "GET /static/js/vendor.0d6b511f58a42807b804.js.map HTTP/1.1" 304 0
+11-30 15:11 django.server INFO     "GET /static/js/app.a8d5fb5942d1a3f0fe12.js.map HTTP/1.1" 304 0
+11-30 15:11 django.server INFO     "GET /static/css/app.8cf8345de2c358f5a3546a816b866972.css.map HTTP/1.1" 304 0
+11-30 15:11 logger       INFO     add {'date': '2018-11-28', 'name': 'Darm tour', 'id': 'ed2cwv3o0'}
+11-30 15:11 logger       INFO     add {'date': '2018-11-27', 'name': 'dudu', 'id': 'apgy47g3s'}
+11-30 15:11 logger       INFO     add {'date': '2018-11-30', 'name': 'mint', 'id': 'mghwhxxzv'}
+11-30 15:11 logger       INFO     add {'date': '2018-11-30', 'name': 'm', 'id': '0qe2zkrc4'}
+11-30 15:11 logger       INFO     add {'date': '2018-11-30', 'name': 'plan in khaoyai', 'id': 'phzxcy7mq'}
+11-30 15:11 django.server INFO     "POST /api/user_data/ HTTP/1.1" 200 308
+11-30 15:11 django.server INFO     "GET / HTTP/1.1" 200 698
+11-30 15:11 logger       INFO     add {'date': '2018-11-28', 'name': 'Darm tour', 'id': 'ed2cwv3o0'}
+11-30 15:12 logger       INFO     add {'date': '2018-11-27', 'name': 'dudu', 'id': 'apgy47g3s'}
+11-30 15:12 logger       INFO     add {'date': '2018-11-30', 'name': 'mint', 'id': 'mghwhxxzv'}
+11-30 15:12 logger       INFO     add {'date': '2018-11-30', 'name': 'm', 'id': '0qe2zkrc4'}
+11-30 15:12 django.server INFO     "GET /static/img/travel-planner.8e0238f.png HTTP/1.1" 200 868789
+11-30 15:12 logger       INFO     add {'date': '2018-11-30', 'name': 'plan in khaoyai', 'id': 'phzxcy7mq'}
+11-30 15:12 django.server INFO     "POST /api/user_data/ HTTP/1.1" 200 308
