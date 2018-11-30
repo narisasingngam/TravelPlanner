@@ -10,5 +10,5 @@ module.exports = {
   PLACE_DURATION: '"api/place/"',
   PLAN_DATA: '"api/plan_data/"',
   USER_DATA: '"api/user_data/"',
-  API_URL: '"https://travelplanner-app.herokuapp.com/"',
+  API_URL: '""',
 }
