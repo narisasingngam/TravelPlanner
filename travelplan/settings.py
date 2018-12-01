@@ -43,7 +43,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-CORS_ORIGIN_ALLOW_ALL=True
+CORS_ORIGIN_ALLOW_ALL=False
 
 CORS_ORIGIN_WHITELIST = (
     'localhost:8080',
@@ -72,7 +72,7 @@ TEMPLATES = [
 ]
 
 STATICFILES_DIRS = [
-  os.path.join(BASE_DIR, './dist/static'),
+  os.path.join(BASE_DIR, 'dist/static'),
 ]
 
 WSGI_APPLICATION = 'travelplan.wsgi.application'
