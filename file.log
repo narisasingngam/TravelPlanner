@@ -1590,3 +1590,32 @@ NameError: name 'sys' is not defined
 12-01 07:14 django.server INFO     "POST /api/place/ HTTP/1.1" 200 9
 12-01 07:14 logger       INFO     remaining time : 21.37
 12-01 07:14 django.server INFO     "POST /api/time-remain/ HTTP/1.1" 200 7
+12-01 08:23 django.server INFO     "GET / HTTP/1.1" 200 698
+12-01 08:23 django.server INFO     "GET /static/js/manifest.2ae2e69a05c33dfc65f8.js HTTP/1.1" 200 857
+12-01 08:23 django.server INFO     "GET /static/js/app.a3de22f33b0cd5ee0dc9.js HTTP/1.1" 200 33818
+12-01 08:23 django.server INFO     "GET /static/css/app.8cf8345de2c358f5a3546a816b866972.css HTTP/1.1" 200 203547
+12-01 08:23 django.server INFO     "GET /static/js/vendor.0d6b511f58a42807b804.js HTTP/1.1" 200 409871
+12-01 08:23 django.server INFO     "GET /static/css/app.8cf8345de2c358f5a3546a816b866972.css.map HTTP/1.1" 200 545150
+12-01 08:23 django.server INFO     "GET /static/js/manifest.2ae2e69a05c33dfc65f8.js.map HTTP/1.1" 200 4972
+12-01 08:23 django.server INFO     "GET /static/js/app.a3de22f33b0cd5ee0dc9.js.map HTTP/1.1" 200 115398
+12-01 08:23 django.server INFO     "GET /static/js/vendor.0d6b511f58a42807b804.js.map HTTP/1.1" 200 1609796
+12-01 08:24 django.server INFO     "GET / HTTP/1.1" 200 698
+12-01 08:24 django.server INFO     "GET /static/css/app.8cf8345de2c358f5a3546a816b866972.css HTTP/1.1" 200 203547
+12-01 08:24 django.server INFO     "GET /static/js/manifest.2ae2e69a05c33dfc65f8.js HTTP/1.1" 200 857
+12-01 08:24 django.server INFO     "GET /static/js/vendor.0d6b511f58a42807b804.js HTTP/1.1" 200 409871
+12-01 08:24 django.server INFO     "GET /static/js/app.a8d5fb5942d1a3f0fe12.js HTTP/1.1" 200 33623
+12-01 08:24 django.server INFO     "GET /static/js/manifest.2ae2e69a05c33dfc65f8.js.map HTTP/1.1" 200 4972
+12-01 08:24 django.server INFO     "GET /static/css/app.8cf8345de2c358f5a3546a816b866972.css.map HTTP/1.1" 200 545150
+12-01 08:24 django.server INFO     "GET /static/js/app.a8d5fb5942d1a3f0fe12.js.map HTTP/1.1" 200 115398
+12-01 08:24 django.server INFO     "GET /static/js/vendor.0d6b511f58a42807b804.js.map HTTP/1.1" 200 1609796
+12-01 08:24 logger       INFO     add {'date': '2018-11-27', 'name': 'Sathon road', 'id': '1hdaqv02v'}
+12-01 08:24 logger       INFO     add {'date': '2018-11-27', 'name': 'pakkanuy', 'id': 'd7p0mg6zj'}
+12-01 08:24 logger       INFO     add {'date': '2018-12-01', 'name': 'วัด9วัน', 'id': '7y5w29w2u'}
+12-01 08:24 django.server INFO     "POST /api/user_data/ HTTP/1.1" 200 221
+12-01 08:25 logger       INFO     {'id': 'd7p0mg6zj', 'email': 'mmintttt@gmail.com', 'date': '2018-11-27', 'name': 'pakkanuy', 'location': 'SuperHIT Kaset nawamin', 'spendtime': '3.00', 'times': '00:00', 'duration': '0', 'remaining': '24.0'}
+12-01 08:25 logger       INFO     {'id': 'd7p0mg6zj', 'email': 'mmintttt@gmail.com', 'date': '2018-11-27', 'name': 'pakkanuy', 'location': 'Lab Republic', 'spendtime': '3.00', 'times': '03:05', 'duration': '5 mins', 'remaining': '21.0'}
+12-01 08:25 logger       INFO     {'id': 'd7p0mg6zj', 'email': 'mmintttt@gmail.com', 'date': '2018-11-27', 'name': 'pakkanuy', 'location': 'Thay ekamai', 'spendtime': '3.00', 'times': '06:32', 'duration': '27 mins', 'remaining': '17.55'}
+12-01 08:25 logger       INFO     {'id': 'd7p0mg6zj', 'email': 'mmintttt@gmail.com', 'date': '2018-11-27', 'name': 'pakkanuy', 'location': 'RCA Block C', 'spendtime': '3.00', 'times': '09:43', 'duration': '11 mins', 'remaining': '14.28'}
+12-01 08:25 logger       INFO     {'id': 'd7p0mg6zj', 'email': 'mmintttt@gmail.com', 'date': '2018-11-27', 'name': 'pakkanuy', 'location': 'Vipavadi', 'spendtime': '3.00', 'times': '16:36', 'duration': '32 mins', 'remaining': '11.17'}
+12-01 08:25 logger       INFO     {'id': 'd7p0mg6zj', 'email': 'mmintttt@gmail.com', 'date': '2018-11-27', 'name': 'pakkanuy', 'location': '', 'spendtime': '', 'times': '00:00', 'duration': '32 mins', 'remaining': '7.45'}
+12-01 08:25 django.server INFO     "POST /api/plan_data/ HTTP/1.1" 200 1214
