@@ -1619,3 +1619,83 @@ NameError: name 'sys' is not defined
 12-01 08:25 logger       INFO     {'id': 'd7p0mg6zj', 'email': 'mmintttt@gmail.com', 'date': '2018-11-27', 'name': 'pakkanuy', 'location': 'Vipavadi', 'spendtime': '3.00', 'times': '16:36', 'duration': '32 mins', 'remaining': '11.17'}
 12-01 08:25 logger       INFO     {'id': 'd7p0mg6zj', 'email': 'mmintttt@gmail.com', 'date': '2018-11-27', 'name': 'pakkanuy', 'location': '', 'spendtime': '', 'times': '00:00', 'duration': '32 mins', 'remaining': '7.45'}
 12-01 08:25 django.server INFO     "POST /api/plan_data/ HTTP/1.1" 200 1214
+12-01 10:01 django.server INFO     "GET / HTTP/1.1" 200 391
+12-01 10:01 django.server WARNING  "GET /static/js/vendor.0d6b511f58a42807b804.js HTTP/1.1" 404 1723
+12-01 10:01 django.server INFO     "GET / HTTP/1.1" 200 391
+12-01 10:01 django.server WARNING  "GET /static/js/manifest.2ae2e69a05c33dfc65f8.js HTTP/1.1" 404 1729
+12-01 10:01 django.server WARNING  "GET /static/css/app.8cf8345de2c358f5a3546a816b866972.css HTTP/1.1" 404 1756
+12-01 10:01 django.server WARNING  "GET /static/img/travel-planner.8e0238f.png HTTP/1.1" 404 1714
+12-01 10:03 django.server INFO     "GET / HTTP/1.1" 200 698
+12-01 10:03 django.server WARNING  "GET /static/css/app.8cf8345de2c358f5a3546a816b866972.css HTTP/1.1" 404 1756
+12-01 10:03 django.server WARNING  "GET /static/js/manifest.2ae2e69a05c33dfc65f8.js HTTP/1.1" 404 1729
+12-01 10:03 django.server WARNING  "GET /static/js/vendor.0d6b511f58a42807b804.js HTTP/1.1" 404 1723
+12-01 10:03 django.server WARNING  "GET /static/js/app.a8d5fb5942d1a3f0fe12.js HTTP/1.1" 404 1714
+12-01 10:03 django.server WARNING  "GET /static/css/app.8cf8345de2c358f5a3546a816b866972.css HTTP/1.1" 404 1756
+12-01 10:03 django.server WARNING  "GET /static/js/manifest.2ae2e69a05c33dfc65f8.js HTTP/1.1" 404 1729
+12-01 10:03 django.server WARNING  "GET /static/js/vendor.0d6b511f58a42807b804.js HTTP/1.1" 404 1723
+12-01 10:03 django.server INFO     "GET / HTTP/1.1" 200 698
+12-01 10:03 django.server WARNING  "GET /static/js/app.a8d5fb5942d1a3f0fe12.js HTTP/1.1" 404 1714
+12-01 10:03 django.server INFO     "GET / HTTP/1.1" 200 698
+12-01 10:03 django.server WARNING  "GET /static/css/app.8cf8345de2c358f5a3546a816b866972.css HTTP/1.1" 404 1756
+12-01 10:03 django.server WARNING  "GET /static/js/manifest.2ae2e69a05c33dfc65f8.js HTTP/1.1" 404 1729
+12-01 10:03 django.server WARNING  "GET /static/js/vendor.0d6b511f58a42807b804.js HTTP/1.1" 404 1723
+12-01 10:03 django.server WARNING  "GET /static/js/app.a8d5fb5942d1a3f0fe12.js HTTP/1.1" 404 1714
+12-01 10:03 django.server WARNING  "GET /static/js/manifest.2ae2e69a05c33dfc65f8.js HTTP/1.1" 404 1729
+12-01 10:03 django.server WARNING  "GET /static/js/vendor.0d6b511f58a42807b804.js HTTP/1.1" 404 1723
+12-01 10:03 django.server WARNING  "GET /static/js/app.a8d5fb5942d1a3f0fe12.js HTTP/1.1" 404 1714
+12-01 10:03 django.server WARNING  "GET /static/css/app.8cf8345de2c358f5a3546a816b866972.css HTTP/1.1" 404 1756
+12-01 10:04 django.server INFO     "GET / HTTP/1.1" 200 391
+12-01 10:04 django.server INFO     "GET / HTTP/1.1" 200 391
+12-01 10:07 django.server INFO     "GET / HTTP/1.1" 200 698
+12-01 10:07 django.server WARNING  "GET /static/css/app.8cf8345de2c358f5a3546a816b866972.css HTTP/1.1" 404 1756
+12-01 10:07 django.server WARNING  "GET /static/js/vendor.0d6b511f58a42807b804.js HTTP/1.1" 404 1723
+12-01 10:07 django.server WARNING  "GET /static/js/app.a8d5fb5942d1a3f0fe12.js HTTP/1.1" 404 1714
+12-01 10:07 django.server WARNING  "GET /static/js/manifest.2ae2e69a05c33dfc65f8.js HTTP/1.1" 404 1729
+12-01 10:07 django.server WARNING  "GET /static/js/vendor.0d6b511f58a42807b804.js HTTP/1.1" 404 1723
+12-01 10:07 django.server WARNING  "GET /static/js/app.a8d5fb5942d1a3f0fe12.js HTTP/1.1" 404 1714
+12-01 10:08 django.server INFO     "GET / HTTP/1.1" 200 698
+12-01 10:08 django.server WARNING  "GET /static/js/manifest.2ae2e69a05c33dfc65f8.js HTTP/1.1" 404 1729
+12-01 10:08 django.server WARNING  "GET /static/css/app.8cf8345de2c358f5a3546a816b866972.css HTTP/1.1" 404 1756
+12-01 10:08 django.server WARNING  "GET /static/js/vendor.0d6b511f58a42807b804.js HTTP/1.1" 404 1723
+12-01 10:08 django.server WARNING  "GET /static/js/app.a8d5fb5942d1a3f0fe12.js HTTP/1.1" 404 1714
+12-01 10:08 django.server WARNING  "GET /static/js/manifest.2ae2e69a05c33dfc65f8.js HTTP/1.1" 404 1729
+12-01 10:08 django.server WARNING  "GET /static/js/vendor.0d6b511f58a42807b804.js HTTP/1.1" 404 1723
+12-01 10:08 django.server WARNING  "GET /static/js/app.a8d5fb5942d1a3f0fe12.js HTTP/1.1" 404 1714
+12-01 10:08 django.server INFO     "GET / HTTP/1.1" 200 698
+12-01 10:08 django.server WARNING  "GET /static/css/app.8cf8345de2c358f5a3546a816b866972.css HTTP/1.1" 404 1756
+12-01 10:08 django.server WARNING  "GET /static/js/manifest.2ae2e69a05c33dfc65f8.js HTTP/1.1" 404 1729
+12-01 10:08 django.server WARNING  "GET /static/js/vendor.0d6b511f58a42807b804.js HTTP/1.1" 404 1723
+12-01 10:08 django.server WARNING  "GET /static/js/app.a8d5fb5942d1a3f0fe12.js HTTP/1.1" 404 1714
+12-01 10:08 django.server WARNING  "GET /static/js/manifest.2ae2e69a05c33dfc65f8.js HTTP/1.1" 404 1729
+12-01 10:08 django.server WARNING  "GET /static/js/vendor.0d6b511f58a42807b804.js HTTP/1.1" 404 1723
+12-01 10:08 django.server WARNING  "GET /static/js/app.a8d5fb5942d1a3f0fe12.js HTTP/1.1" 404 1714
+12-01 10:13 django.server INFO     "GET / HTTP/1.1" 200 698
+12-01 10:13 django.server INFO     "GET /static/css/app.8cf8345de2c358f5a3546a816b866972.css HTTP/1.1" 200 203547
+12-01 10:13 django.server INFO     "GET /static/js/manifest.2ae2e69a05c33dfc65f8.js HTTP/1.1" 200 857
+12-01 10:13 django.server INFO     "GET /static/js/vendor.0d6b511f58a42807b804.js HTTP/1.1" 200 409871
+12-01 10:13 django.server INFO     "GET /static/js/app.a8d5fb5942d1a3f0fe12.js HTTP/1.1" 200 33623
+12-01 10:13 django.server INFO     "GET /static/js/manifest.2ae2e69a05c33dfc65f8.js.map HTTP/1.1" 200 4972
+12-01 10:13 django.server INFO     "GET /static/css/app.8cf8345de2c358f5a3546a816b866972.css.map HTTP/1.1" 200 545150
+12-01 10:13 django.server INFO     "GET /static/js/app.a8d5fb5942d1a3f0fe12.js.map HTTP/1.1" 200 115398
+12-01 10:13 django.server INFO     "GET /static/js/vendor.0d6b511f58a42807b804.js.map HTTP/1.1" 200 1609796
+12-01 10:13 django.server INFO     "GET /static/img/travel-planner.8e0238f.png HTTP/1.1" 200 868789
+12-01 10:13 logger       INFO     add {'date': '2018-11-27', 'name': 'Sathon road', 'id': '1hdaqv02v'}
+12-01 10:13 logger       INFO     add {'date': '2018-11-27', 'name': 'pakkanuy', 'id': 'd7p0mg6zj'}
+12-01 10:13 logger       INFO     add {'date': '2018-12-01', 'name': 'วัด9วัน', 'id': '7y5w29w2u'}
+12-01 10:13 django.server INFO     "POST /api/user_data/ HTTP/1.1" 200 221
+12-01 10:13 logger       INFO     {'id': 'd7p0mg6zj', 'email': 'mmintttt@gmail.com', 'date': '2018-11-27', 'name': 'pakkanuy', 'location': 'SuperHIT Kaset nawamin', 'spendtime': '3.00', 'times': '00:00', 'duration': '0', 'remaining': '24.0'}
+12-01 10:13 logger       INFO     {'id': 'd7p0mg6zj', 'email': 'mmintttt@gmail.com', 'date': '2018-11-27', 'name': 'pakkanuy', 'location': 'Lab Republic', 'spendtime': '3.00', 'times': '03:05', 'duration': '5 mins', 'remaining': '21.0'}
+12-01 10:13 logger       INFO     {'id': 'd7p0mg6zj', 'email': 'mmintttt@gmail.com', 'date': '2018-11-27', 'name': 'pakkanuy', 'location': 'Thay ekamai', 'spendtime': '3.00', 'times': '06:32', 'duration': '27 mins', 'remaining': '17.55'}
+12-01 10:13 logger       INFO     {'id': 'd7p0mg6zj', 'email': 'mmintttt@gmail.com', 'date': '2018-11-27', 'name': 'pakkanuy', 'location': 'RCA Block C', 'spendtime': '3.00', 'times': '09:43', 'duration': '11 mins', 'remaining': '14.28'}
+12-01 10:13 logger       INFO     {'id': 'd7p0mg6zj', 'email': 'mmintttt@gmail.com', 'date': '2018-11-27', 'name': 'pakkanuy', 'location': 'Vipavadi', 'spendtime': '3.00', 'times': '16:36', 'duration': '32 mins', 'remaining': '11.17'}
+12-01 10:13 logger       INFO     {'id': 'd7p0mg6zj', 'email': 'mmintttt@gmail.com', 'date': '2018-11-27', 'name': 'pakkanuy', 'location': '', 'spendtime': '', 'times': '00:00', 'duration': '32 mins', 'remaining': '7.45'}
+12-01 10:13 django.server INFO     "POST /api/plan_data/ HTTP/1.1" 200 1214
+12-01 10:14 django.server INFO     "POST /api/plan_data/ HTTP/1.1" 200 2
+12-01 10:14 logger       INFO     search: [{'formatted_address': '5820 125th Ln NE, Kirkland, WA 98033, USA', 'name': 'Central Park Tennis Club', 'opening_hours': {'open_now': False}}]
+12-01 10:14 django.server INFO     "POST /api/search/ HTTP/1.1" 200 142
+12-01 10:14 logger       INFO     remaining time : 23.0
+12-01 10:14 django.server INFO     "POST /api/time-remain/ HTTP/1.1" 200 6
+12-01 10:14 logger       INFO     duration between Central Park Zoo and Central Park : 2 mins
+12-01 10:14 django.server INFO     "POST /api/place/ HTTP/1.1" 200 8
+12-01 10:14 logger       INFO     remaining time : 21.58
+12-01 10:14 django.server INFO     "POST /api/time-remain/ HTTP/1.1" 200 7

@@ -13,10 +13,8 @@ SECRET_KEY = base64.b64decode(config('SECRET_KEY')).decode('utf-8')
 
 DEBUG = config('DEBUG', cast=bool)
 
-ALLOWED_HOSTS = ['travelplanner-app.herokuapp.com','travel-planner-develop.herokuapp.com','localhost','*']
-
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+ALLOWED_HOSTS = ['travelplanner-app.herokuapp.com',
+                 'travel-planner-develop.herokuapp.com', 'localhost', '*']
 
 # Application definition
 
@@ -43,7 +41,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-CORS_ORIGIN_ALLOW_ALL=False
+CORS_ORIGIN_ALLOW_ALL = False
 
 CORS_ORIGIN_WHITELIST = (
     'localhost:8080',
@@ -58,7 +56,7 @@ ROOT_URLCONF = 'travelplan.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, './dist')],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -71,22 +69,18 @@ TEMPLATES = [
     },
 ]
 
-STATICFILES_DIRS = [
-  os.path.join(BASE_DIR, 'dist/static'),
-]
-
 WSGI_APPLICATION = 'travelplan.wsgi.application'
 
 # you can use your own database or sqlite for develop
-if config('DEV', cast=bool) :
+if config('DEV', cast=bool):
     DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
         }
     }
 
-else :
+else:
     # Database in cloud
     # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
     DATABASE_URL = config('DATABASE_URL')
@@ -96,8 +90,8 @@ else :
             'NAME': '',
         }
     }
-    DATABASES['default'] = dj_database_url.config(default=DATABASE_URL, conn_max_age=600, ssl_require=True)
-
+    DATABASES['default'] = dj_database_url.config(
+        default=DATABASE_URL, conn_max_age=600, ssl_require=True)
 
 
 if 'test' in sys.argv:
@@ -109,7 +103,7 @@ if 'test' in sys.argv:
         'PORT': config('DB_PORT'),
     }
 
-    
+
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
 
@@ -142,8 +136,8 @@ USE_L10N = True
 
 USE_TZ = True
 
-#logging
-#https://docs.djangoproject.com/en/2.1/topics/logging/#configuring-logging
+# logging
+# https://docs.djangoproject.com/en/2.1/topics/logging/#configuring-logging
 
 LOGGING = {
     'version': 1,
@@ -200,11 +194,9 @@ LOGGING = {
 
 LOGGING_CONFIG = None
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/2.1/howto/static-files/
-
 STATIC_URL = '/static/'
+STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.ManifestStaticFilesStorage'
 
-APPEND_SLASH=False
+APPEND_SLASH = False
 
-CODECOV_TOKEN=config('CODECOV_TOKEN')
+CODECOV_TOKEN = config('CODECOV_TOKEN')
