@@ -43,12 +43,13 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-CORS_ORIGIN_ALLOW_ALL=False
+CORS_ORIGIN_ALLOW_ALL=True
 
 CORS_ORIGIN_WHITELIST = (
     'localhost:8080',
     '127.0.0.1:8080',
     'https://travelplan-app.herokuapp.com/',
+    'https://travelplanner-app.herokuapp.com/'
 
 )
 
