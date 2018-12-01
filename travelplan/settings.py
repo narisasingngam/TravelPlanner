@@ -195,7 +195,10 @@ LOGGING = {
 LOGGING_CONFIG = None
 
 STATIC_URL = '/static/'
+
 STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.ManifestStaticFilesStorage'
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 APPEND_SLASH = False
 
