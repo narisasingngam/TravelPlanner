@@ -8,6 +8,7 @@ request/
 env
 htmlcov
 coverage.xml
+.coverage
 
 
 # Vue.js
@@ -18,7 +19,6 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 /test/unit/coverage/
-dist
 
 
 # Editor directories and files

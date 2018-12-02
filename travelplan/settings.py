@@ -1,7 +1,6 @@
 import sys
 import os
 import dj_database_url
-import psycopg2
 from decouple import config
 import configparser
 import base64
@@ -13,8 +12,7 @@ SECRET_KEY = base64.b64decode(config('SECRET_KEY')).decode('utf-8')
 
 DEBUG = config('DEBUG', cast=bool)
 
-ALLOWED_HOSTS = ['travelplanner-app.herokuapp.com',
-                 'travel-planner-develop.herokuapp.com', 'localhost', '*']
+ALLOWED_HOSTS = ['travelplanner-app.herokuapp.com', 'localhost', '*']
 
 # Application definition
 
@@ -47,7 +45,6 @@ CORS_ORIGIN_ALLOW_ALL = False
 CORS_ORIGIN_WHITELIST = (
     'localhost:8080',
     '127.0.0.1:8080',
-    'https://travelplan-app.herokuapp.com/',
     'https://travelplanner-app.herokuapp.com/'
 
 )
