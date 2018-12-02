@@ -1,7 +1,6 @@
 import sys
 import os
 import dj_database_url
-import psycopg2
 from decouple import config
 import configparser
 import base64
@@ -13,8 +12,7 @@ SECRET_KEY = base64.b64decode(config('SECRET_KEY')).decode('utf-8')
 
 DEBUG = config('DEBUG', cast=bool)
 
-ALLOWED_HOSTS = ['travel-planner-develop.herokuapp.com','localhost','*']
-
+ALLOWED_HOSTS = ['travelplanner-app.herokuapp.com', 'localhost', '*']
 
 # Application definition
 
@@ -36,16 +34,18 @@ MIDDLEWARE = [
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-CORS_ORIGIN_ALLOW_ALL=True
+CORS_ORIGIN_ALLOW_ALL = False
 
 CORS_ORIGIN_WHITELIST = (
     'localhost:8080',
-    'https://travelplan-app.herokuapp.com/',
+    '127.0.0.1:8080',
+    'https://travelplanner-app.herokuapp.com/'
 
 )
 
@@ -54,7 +54,7 @@ ROOT_URLCONF = 'travelplan.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -70,14 +70,18 @@ TEMPLATES = [
 WSGI_APPLICATION = 'travelplan.wsgi.application'
 
 # you can use your own database or sqlite for develop
-if config('DEV', cast=bool) :
+
+if config('DEV', cast=bool):
     DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
         }
     }
-else :
+
+else:
+    # Database in cloud
+    # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
     DATABASE_URL = config('DATABASE_URL')
     DATABASES = {
         'default': {
@@ -85,8 +89,8 @@ else :
             'NAME': '',
         }
     }
-    DATABASES['default'] = dj_database_url.config(default=DATABASE_URL, conn_max_age=600, ssl_require=True)
-
+    DATABASES['default'] = dj_database_url.config(
+        default=DATABASE_URL, conn_max_age=600, ssl_require=True)
 
 
 if 'test' in sys.argv:
@@ -130,8 +134,8 @@ USE_L10N = True
 
 USE_TZ = True
 
-#logging
-#https://docs.djangoproject.com/en/2.1/topics/logging/#configuring-logging
+# logging
+# https://docs.djangoproject.com/en/2.1/topics/logging/#configuring-logging
 
 LOGGING = {
     'version': 1,
@@ -188,13 +192,12 @@ LOGGING = {
 
 LOGGING_CONFIG = None
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/2.1/howto/static-files/
-
 STATIC_URL = '/static/'
 
-APPEND_SLASH=False
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-CODECOV_TOKEN=config('CODECOV_TOKEN')
+APPEND_SLASH = False
+
+CODECOV_TOKEN = config('CODECOV_TOKEN')
