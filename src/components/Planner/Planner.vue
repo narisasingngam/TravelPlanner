@@ -686,6 +686,7 @@ export default {
           this.$log.info(`${i} saved!`);
         }
         alert("Save succesful!");
+        this.$router.push("/planners");
       } catch (error) {
         this.$log.error(error);
       }

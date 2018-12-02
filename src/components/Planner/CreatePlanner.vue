@@ -48,7 +48,7 @@
                                         prepend-icon="event"
                                         @blur="date = parseDate(dateFormatted)"
                                     ></v-text-field>
-                                    <v-date-picker v-model="date" no-title @input="menu = false"></v-date-picker>
+                                    <v-date-picker v-model="date" no-title @input="menu = false" :min = this.disabledDates></v-date-picker>
                                 </v-menu>
                             </v-flex>
                         </v-layout>
@@ -93,8 +93,15 @@ export default {
     };
   },
   computed: {
+    disabledDates() {
+      let today = new Date().toISOString().slice(0, 10);
+      return today;
+    },
     formIsValid() {
-      if (this.$store.getters.getCookie("mail") == " ") {
+      if (
+        this.$store.getters.getCookie("mail") == " " ||
+        this.$store.getters.getCookie("mail") == ""
+      ) {
         return (
           this.$store.getters.loadedPlanners.length == 0 &&
           this.topic !== "" &&
@@ -127,7 +134,7 @@ export default {
       };
       this.$store.dispatch("createPlanner", plannerData);
       this.$router.push("/planners");
-      this.$log.info(`create planner name: ${this.topic}, date: ${this.date}`)
+      this.$log.info(`create planner name: ${this.topic}, date: ${this.date}`);
     },
 
     formatDate(date) {
