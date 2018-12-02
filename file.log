@@ -1898,3 +1898,133 @@ NameError: name 'sys' is not defined
 12-02 15:15 logger       INFO     add {'date': '2018-11-27', 'name': 'pakkanuy', 'id': 'd7p0mg6zj'}
 12-02 15:15 logger       INFO     add {'date': '2018-12-01', 'name': 'วัด9วัน', 'id': '7y5w29w2u'}
 12-02 15:15 django.server INFO     "POST /api/user_data/ HTTP/1.1" 200 221
+12-02 22:58 django.server INFO     "GET / HTTP/1.1" 200 699
+12-02 22:58 django.server INFO     "GET /static/css/app.8cf8345de2c358f5a3546a816b866972.css HTTP/1.1" 200 203547
+12-02 22:58 django.server INFO     "GET /static/js/manifest.2ae2e69a05c33dfc65f8.js HTTP/1.1" 200 857
+12-02 22:58 django.server INFO     "GET /static/js/app.beaa5058b614a6ca9c6c.js HTTP/1.1" 200 33831
+12-02 22:58 django.server INFO     "GET /static/js/vendor.0d6b511f58a42807b804.js HTTP/1.1" 200 409871
+12-02 22:58 django.server INFO     "GET /static/img/travel-planner.8e0238f.png HTTP/1.1" 200 868789
+12-02 22:58 logger       INFO     add {'date': '2018-11-27', 'name': 'Sathon road', 'id': '1hdaqv02v'}
+12-02 22:58 logger       INFO     add {'date': '2018-11-27', 'name': 'pakkanuy', 'id': 'd7p0mg6zj'}
+12-02 22:58 logger       INFO     add {'date': '2018-12-01', 'name': 'วัด9วัน', 'id': '7y5w29w2u'}
+12-02 22:58 django.server INFO     "POST /api/user_data/ HTTP/1.1" 200 221
+12-02 22:58 logger       INFO     {'id': 'd7p0mg6zj', 'email': 'mmintttt@gmail.com', 'date': '2018-11-27', 'name': 'pakkanuy', 'location': 'SuperHIT Kaset nawamin', 'spendtime': '3.00', 'times': '00:00', 'duration': '0', 'remaining': '24.0'}
+12-02 22:58 logger       INFO     {'id': 'd7p0mg6zj', 'email': 'mmintttt@gmail.com', 'date': '2018-11-27', 'name': 'pakkanuy', 'location': 'Lab Republic', 'spendtime': '3.00', 'times': '03:05', 'duration': '5 mins', 'remaining': '21.0'}
+12-02 22:58 logger       INFO     {'id': 'd7p0mg6zj', 'email': 'mmintttt@gmail.com', 'date': '2018-11-27', 'name': 'pakkanuy', 'location': 'Thay ekamai', 'spendtime': '3.00', 'times': '06:32', 'duration': '27 mins', 'remaining': '17.55'}
+12-02 22:58 logger       INFO     {'id': 'd7p0mg6zj', 'email': 'mmintttt@gmail.com', 'date': '2018-11-27', 'name': 'pakkanuy', 'location': 'RCA Block C', 'spendtime': '3.00', 'times': '09:43', 'duration': '11 mins', 'remaining': '14.28'}
+12-02 22:58 logger       INFO     {'id': 'd7p0mg6zj', 'email': 'mmintttt@gmail.com', 'date': '2018-11-27', 'name': 'pakkanuy', 'location': 'Vipavadi', 'spendtime': '3.00', 'times': '16:36', 'duration': '32 mins', 'remaining': '11.17'}
+12-02 22:58 logger       INFO     {'id': 'd7p0mg6zj', 'email': 'mmintttt@gmail.com', 'date': '2018-11-27', 'name': 'pakkanuy', 'location': '', 'spendtime': '', 'times': '00:00', 'duration': '32 mins', 'remaining': '7.45'}
+12-02 22:58 django.server INFO     "POST /api/plan_data/ HTTP/1.1" 200 1214
+12-02 22:59 django.server INFO     "POST /api/plan_data/ HTTP/1.1" 200 2
+12-02 22:59 logger       INFO     search: [{'formatted_address': '254 Phayathai Rd, Wang Mai, Khet Pathum Wan, Krung Thep Maha Nakhon 10330, Thailand', 'name': 'Chulalongkorn University', 'opening_hours': {'open_now': False}}]
+12-02 22:59 django.server INFO     "POST /api/search/ HTTP/1.1" 200 184
+12-02 22:59 logger       INFO     remaining time : 22.0
+12-02 22:59 django.server INFO     "POST /api/time-remain/ HTTP/1.1" 200 6
+12-02 22:59 django.request ERROR    Internal Server Error: /api/place/
+Traceback (most recent call last):
+  File "/Users/narissingngam/Desktop/isp/TravelPlanner/map/views.py", line 92, in time_place
+    time_str = direction['rows'][0]['elements'][0]['duration']['text']
+KeyError: 'duration'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/narissingngam/Desktop/isp/TravelPlanner/env/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/Users/narissingngam/Desktop/isp/TravelPlanner/env/lib/python3.6/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Users/narissingngam/Desktop/isp/TravelPlanner/env/lib/python3.6/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/narissingngam/Desktop/isp/TravelPlanner/env/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/narissingngam/Desktop/isp/TravelPlanner/map/views.py", line 97, in time_place
+    logger.error(sys.exc_info())
+NameError: name 'sys' is not defined
+12-02 22:59 django.server ERROR    "POST /api/place/ HTTP/1.1" 500 78082
+12-02 23:00 logger       INFO     duration between Siam Discovery and Chulalongkorn University : 2 mins
+12-02 23:00 django.server INFO     "POST /api/place/ HTTP/1.1" 200 8
+12-02 23:00 logger       INFO     remaining time : 17.58
+12-02 23:00 django.server INFO     "POST /api/time-remain/ HTTP/1.1" 200 7
+12-02 23:00 logger       INFO     duration between CentralWorld and Siam Discovery : 5 mins
+12-02 23:00 django.server INFO     "POST /api/place/ HTTP/1.1" 200 8
+12-02 23:00 logger       INFO     remaining time : 13.53
+12-02 23:00 django.server INFO     "POST /api/time-remain/ HTTP/1.1" 200 7
+12-02 23:00 django.request ERROR    Internal Server Error: /api/place/
+Traceback (most recent call last):
+  File "/Users/narissingngam/Desktop/isp/TravelPlanner/map/views.py", line 90, in time_place
+    response = urllib.request.urlopen(request, context=context).read()
+  File "/anaconda3/lib/python3.6/urllib/request.py", line 223, in urlopen
+    return opener.open(url, data, timeout)
+  File "/anaconda3/lib/python3.6/urllib/request.py", line 526, in open
+    response = self._open(req, data)
+  File "/anaconda3/lib/python3.6/urllib/request.py", line 544, in _open
+    '_open', req)
+  File "/anaconda3/lib/python3.6/urllib/request.py", line 504, in _call_chain
+    result = func(*args)
+  File "/anaconda3/lib/python3.6/urllib/request.py", line 1361, in https_open
+    context=self._context, check_hostname=self._check_hostname)
+  File "/anaconda3/lib/python3.6/urllib/request.py", line 1318, in do_open
+    encode_chunked=req.has_header('Transfer-encoding'))
+  File "/anaconda3/lib/python3.6/http/client.py", line 1239, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "/anaconda3/lib/python3.6/http/client.py", line 1250, in _send_request
+    self.putrequest(method, url, **skips)
+  File "/anaconda3/lib/python3.6/http/client.py", line 1117, in putrequest
+    self._output(request.encode('ascii'))
+UnicodeEncodeError: 'ascii' codec can't encode characters in position 68-83: ordinal not in range(128)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/narissingngam/Desktop/isp/TravelPlanner/env/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/Users/narissingngam/Desktop/isp/TravelPlanner/env/lib/python3.6/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Users/narissingngam/Desktop/isp/TravelPlanner/env/lib/python3.6/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/narissingngam/Desktop/isp/TravelPlanner/env/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/narissingngam/Desktop/isp/TravelPlanner/map/views.py", line 97, in time_place
+    logger.error(sys.exc_info())
+NameError: name 'sys' is not defined
+12-02 23:00 django.server ERROR    "POST /api/place/ HTTP/1.1" 500 118907
+12-02 23:00 logger       INFO     duration between Phuttha Monthon and CentralWorld : 39 mins
+12-02 23:00 django.server INFO     "POST /api/place/ HTTP/1.1" 200 9
+12-02 23:00 logger       INFO     remaining time : 9.139999999999999
+12-02 23:00 django.server INFO     "POST /api/time-remain/ HTTP/1.1" 200 6
+12-02 23:01 logger       INFO     Chulalongkorn University, 2.00,0, 2018-12-02,00:00 saved!
+12-02 23:01 django.server INFO     "POST /api/savedata/ HTTP/1.1" 200 20
+12-02 23:01 logger       INFO     Siam Discovery, 4.00,2 mins, 2018-12-02,02:02 saved!
+12-02 23:01 django.server INFO     "POST /api/savedata/ HTTP/1.1" 200 20
+12-02 23:01 logger       INFO     CentralWorld, 4.00,5 mins, 2018-12-02,06:07 saved!
+12-02 23:01 django.server INFO     "POST /api/savedata/ HTTP/1.1" 200 20
+12-02 23:01 logger       INFO     Phuttha Monthon, 4.00,39 mins, 2018-12-02,10:46 saved!
+12-02 23:01 django.server INFO     "POST /api/savedata/ HTTP/1.1" 200 20
+12-02 23:01 django.server INFO     "GET /static/css/app.8cf8345de2c358f5a3546a816b866972.css HTTP/1.1" 304 0
+12-02 23:01 django.server INFO     "GET /static/js/manifest.2ae2e69a05c33dfc65f8.js.map HTTP/1.1" 200 5453
+12-02 23:01 django.server INFO     "GET /static/js/app.beaa5058b614a6ca9c6c.js.map HTTP/1.1" 200 115967
+12-02 23:01 django.server INFO     "GET /static/css/app.8cf8345de2c358f5a3546a816b866972.css.map HTTP/1.1" 200 545150
+12-02 23:01 django.server INFO     "GET /static/js/vendor.0d6b511f58a42807b804.js.map HTTP/1.1" 200 1609796
+12-02 23:01 logger       INFO     , ,39 mins, 2018-12-02,00:00 saved!
+12-02 23:01 django.server INFO     "POST /api/savedata/ HTTP/1.1" 200 20
+12-02 23:01 logger       INFO     {'id': 'mv8jterb2', 'email': 'mmintttt@gmail.com', 'date': '2018-12-02', 'name': 'mint', 'location': 'Chulalongkorn University', 'spendtime': '2.00', 'times': '00:00', 'duration': '0', 'remaining': '24.0'}
+12-02 23:01 logger       INFO     {'id': 'mv8jterb2', 'email': 'mmintttt@gmail.com', 'date': '2018-12-02', 'name': 'mint', 'location': 'Siam Discovery', 'spendtime': '4.00', 'times': '02:02', 'duration': '2 mins', 'remaining': '22.0'}
+12-02 23:01 logger       INFO     {'id': 'mv8jterb2', 'email': 'mmintttt@gmail.com', 'date': '2018-12-02', 'name': 'mint', 'location': 'CentralWorld', 'spendtime': '4.00', 'times': '06:07', 'duration': '5 mins', 'remaining': '17.58'}
+12-02 23:01 logger       INFO     {'id': 'mv8jterb2', 'email': 'mmintttt@gmail.com', 'date': '2018-12-02', 'name': 'mint', 'location': 'Phuttha Monthon', 'spendtime': '4.00', 'times': '10:46', 'duration': '39 mins', 'remaining': '13.53'}
+12-02 23:01 logger       INFO     {'id': 'mv8jterb2', 'email': 'mmintttt@gmail.com', 'date': '2018-12-02', 'name': 'mint', 'location': '', 'spendtime': '', 'times': '00:00', 'duration': '39 mins', 'remaining': '9.14'}
+12-02 23:01 django.server INFO     "POST /api/plan_data/ HTTP/1.1" 200 1000
+12-02 23:01 django.server INFO     "GET / HTTP/1.1" 200 699
+12-02 23:01 django.server INFO     "GET /static/js/manifest.2ae2e69a05c33dfc65f8.js HTTP/1.1" 304 0
+12-02 23:01 django.server INFO     "GET /static/js/vendor.0d6b511f58a42807b804.js HTTP/1.1" 304 0
+12-02 23:01 django.server INFO     "GET /static/js/app.beaa5058b614a6ca9c6c.js HTTP/1.1" 304 0
+12-02 23:01 logger       INFO     add {'date': '2018-12-02', 'name': 'mint', 'id': 'mv8jterb2'}
+12-02 23:01 logger       INFO     add {'date': '2018-11-27', 'name': 'Sathon road', 'id': '1hdaqv02v'}
+12-02 23:01 logger       INFO     add {'date': '2018-11-27', 'name': 'pakkanuy', 'id': 'd7p0mg6zj'}
+12-02 23:01 logger       INFO     add {'date': '2018-12-01', 'name': 'วัด9วัน', 'id': '7y5w29w2u'}
+12-02 23:01 django.server INFO     "POST /api/user_data/ HTTP/1.1" 200 280
+12-02 23:02 logger       INFO     {'id': 'mv8jterb2', 'email': 'mmintttt@gmail.com', 'date': '2018-12-02', 'name': 'mint', 'location': 'Chulalongkorn University', 'spendtime': '2.00', 'times': '00:00', 'duration': '0', 'remaining': '24.0'}
+12-02 23:02 logger       INFO     {'id': 'mv8jterb2', 'email': 'mmintttt@gmail.com', 'date': '2018-12-02', 'name': 'mint', 'location': 'Siam Discovery', 'spendtime': '4.00', 'times': '02:02', 'duration': '2 mins', 'remaining': '22.0'}
+12-02 23:02 logger       INFO     {'id': 'mv8jterb2', 'email': 'mmintttt@gmail.com', 'date': '2018-12-02', 'name': 'mint', 'location': 'CentralWorld', 'spendtime': '4.00', 'times': '06:07', 'duration': '5 mins', 'remaining': '17.58'}
+12-02 23:02 logger       INFO     {'id': 'mv8jterb2', 'email': 'mmintttt@gmail.com', 'date': '2018-12-02', 'name': 'mint', 'location': 'Phuttha Monthon', 'spendtime': '4.00', 'times': '10:46', 'duration': '39 mins', 'remaining': '13.53'}
+12-02 23:02 logger       INFO     {'id': 'mv8jterb2', 'email': 'mmintttt@gmail.com', 'date': '2018-12-02', 'name': 'mint', 'location': '', 'spendtime': '', 'times': '00:00', 'duration': '39 mins', 'remaining': '9.14'}
+12-02 23:02 django.server INFO     "POST /api/plan_data/ HTTP/1.1" 200 1000
