@@ -9,6 +9,7 @@ env
 htmlcov
 coverage.xml
 .coverage
+file.log
 
 
 # Vue.js
