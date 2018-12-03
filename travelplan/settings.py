@@ -70,6 +70,7 @@ TEMPLATES = [
 WSGI_APPLICATION = 'travelplan.wsgi.application'
 
 # you can use your own database or sqlite for develop
+
 if config('DEV', cast=bool):
     DATABASES = {
         'default': {
@@ -100,8 +101,7 @@ if 'test' in sys.argv:
         'PASSWORD': config('DB_PASSWORD'),
         'PORT': config('DB_PORT'),
     }
-
-
+    
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
 
@@ -126,7 +126,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Bangkok'
 
 USE_I18N = True
 
