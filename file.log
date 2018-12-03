@@ -1898,3 +1898,201 @@ NameError: name 'sys' is not defined
 12-02 15:15 logger       INFO     add {'date': '2018-11-27', 'name': 'pakkanuy', 'id': 'd7p0mg6zj'}
 12-02 15:15 logger       INFO     add {'date': '2018-12-01', 'name': 'วัด9วัน', 'id': '7y5w29w2u'}
 12-02 15:15 django.server INFO     "POST /api/user_data/ HTTP/1.1" 200 221
+12-03 01:01 django.server INFO     "GET / HTTP/1.1" 200 699
+12-03 01:01 django.server INFO     "GET /static/js/manifest.2ae2e69a05c33dfc65f8.js HTTP/1.1" 304 0
+12-03 01:01 django.server INFO     "GET /static/css/app.8cf8345de2c358f5a3546a816b866972.css HTTP/1.1" 304 0
+12-03 01:01 django.server INFO     "GET /static/js/vendor.0d6b511f58a42807b804.js HTTP/1.1" 304 0
+12-03 01:01 django.server INFO     "GET /static/js/app.beaa5058b614a6ca9c6c.js HTTP/1.1" 200 33831
+12-03 01:01 django.server INFO     "GET /static/img/travel-planner.8e0238f.png HTTP/1.1" 304 0
+12-03 01:02 django.server INFO     "GET / HTTP/1.1" 200 698
+12-03 01:02 django.server INFO     "GET /static/js/app.52150958080b571c7b65.js HTTP/1.1" 200 33889
+12-03 01:02 logger       INFO     search: [{'formatted_address': '5820 125th Ln NE, Kirkland, WA 98033, USA', 'name': 'Central Park Tennis Club', 'opening_hours': {'open_now': True}}]
+12-03 01:02 django.server INFO     "POST /api/search/ HTTP/1.1" 200 141
+12-03 01:02 logger       INFO     remaining time : 22.0
+12-03 01:02 django.server INFO     "POST /api/time-remain/ HTTP/1.1" 200 6
+12-03 01:02 logger       INFO     duration between Central Park Zoo and Central Park : 2 mins
+12-03 01:02 django.server INFO     "POST /api/place/ HTTP/1.1" 200 8
+12-03 01:02 logger       INFO     remaining time : 19.58
+12-03 01:02 django.server INFO     "POST /api/time-remain/ HTTP/1.1" 200 7
+12-03 01:08 django.server INFO     "GET / HTTP/1.1" 200 698
+12-03 01:08 django.server INFO     "GET /static/js/vendor.0d6b511f58a42807b804.js HTTP/1.1" 200 409871
+12-03 01:08 django.server INFO     "GET /static/css/app.8cf8345de2c358f5a3546a816b866972.css HTTP/1.1" 200 203547
+12-03 01:08 django.server INFO     "GET /static/js/manifest.2ae2e69a05c33dfc65f8.js HTTP/1.1" 200 857
+12-03 01:08 django.server INFO     "GET /static/js/app.27fd6138b29f99b53b90.js HTTP/1.1" 200 33889
+12-03 01:08 logger       INFO     search: [{'formatted_address': '5820 125th Ln NE, Kirkland, WA 98033, USA', 'name': 'Central Park Tennis Club', 'opening_hours': {'open_now': True}}]
+12-03 01:08 django.server INFO     "POST /api/search/ HTTP/1.1" 200 141
+12-03 01:08 logger       INFO     remaining time : 22.0
+12-03 01:08 django.server INFO     "POST /api/time-remain/ HTTP/1.1" 200 6
+12-03 01:08 logger       INFO     duration between Central Park Zoo and Central Park : 2 mins
+12-03 01:08 django.server INFO     "POST /api/place/ HTTP/1.1" 200 8
+12-03 01:08 logger       INFO     remaining time : 19.58
+12-03 01:08 django.server INFO     "POST /api/time-remain/ HTTP/1.1" 200 7
+12-03 01:10 django.server INFO     "GET /static/css/app.8cf8345de2c358f5a3546a816b866972.css HTTP/1.1" 304 0
+12-03 01:10 django.server INFO     "GET /static/js/manifest.2ae2e69a05c33dfc65f8.js.map HTTP/1.1" 200 4972
+12-03 01:10 django.server INFO     "GET /static/js/app.27fd6138b29f99b53b90.js.map HTTP/1.1" 200 116137
+12-03 01:10 django.server INFO     "GET /static/js/vendor.0d6b511f58a42807b804.js.map HTTP/1.1" 200 1609796
+12-03 01:10 django.server INFO     "GET /static/css/app.8cf8345de2c358f5a3546a816b866972.css.map HTTP/1.1" 200 545150
+12-03 01:12 django.server INFO     "GET / HTTP/1.1" 200 698
+12-03 01:12 django.server INFO     "GET /static/js/manifest.2ae2e69a05c33dfc65f8.js HTTP/1.1" 200 857
+12-03 01:12 django.server INFO     "GET /static/js/vendor.0d6b511f58a42807b804.js HTTP/1.1" 200 409871
+12-03 01:12 django.server INFO     "GET /static/css/app.8cf8345de2c358f5a3546a816b866972.css HTTP/1.1" 200 203547
+12-03 01:12 django.server INFO     "GET /static/js/app.5752e4ea46736e38d30e.js HTTP/1.1" 200 33960
+12-03 01:12 django.server INFO     "GET /static/js/manifest.2ae2e69a05c33dfc65f8.js.map HTTP/1.1" 200 4972
+12-03 01:12 django.server INFO     "GET /static/css/app.8cf8345de2c358f5a3546a816b866972.css.map HTTP/1.1" 200 545150
+12-03 01:12 django.server INFO     "GET /static/js/app.5752e4ea46736e38d30e.js.map HTTP/1.1" 200 116290
+12-03 01:12 django.server INFO     "GET /static/js/vendor.0d6b511f58a42807b804.js.map HTTP/1.1" 200 1609796
+12-03 01:15 django.server INFO     "GET / HTTP/1.1" 200 698
+12-03 01:15 django.server INFO     "GET /static/css/app.8cf8345de2c358f5a3546a816b866972.css HTTP/1.1" 200 203547
+12-03 01:15 django.server INFO     "GET /static/js/app.632cf0c1152a2585113f.js HTTP/1.1" 200 33958
+12-03 01:15 django.server INFO     "GET /static/js/manifest.2ae2e69a05c33dfc65f8.js HTTP/1.1" 200 857
+12-03 01:15 django.server INFO     "GET /static/js/vendor.0d6b511f58a42807b804.js HTTP/1.1" 200 409871
+12-03 01:15 django.server INFO     "GET /static/js/manifest.2ae2e69a05c33dfc65f8.js.map HTTP/1.1" 200 4972
+12-03 01:15 django.server INFO     "GET /static/css/app.8cf8345de2c358f5a3546a816b866972.css.map HTTP/1.1" 200 545150
+12-03 01:15 django.server INFO     "GET /static/js/app.632cf0c1152a2585113f.js.map HTTP/1.1" 200 116290
+12-03 01:15 django.server INFO     "GET /static/js/vendor.0d6b511f58a42807b804.js.map HTTP/1.1" 200 1609796
+12-03 01:15 logger       INFO     search: [{'formatted_address': '5820 125th Ln NE, Kirkland, WA 98033, USA', 'name': 'Central Park Tennis Club', 'opening_hours': {'open_now': True}}]
+12-03 01:15 django.server INFO     "POST /api/search/ HTTP/1.1" 200 141
+12-03 01:15 logger       INFO     remaining time : 23.0
+12-03 01:15 django.server INFO     "POST /api/time-remain/ HTTP/1.1" 200 6
+12-03 01:16 logger       INFO     duration between Central Park Zoo and Central Park : 2 mins
+12-03 01:16 django.server INFO     "POST /api/place/ HTTP/1.1" 200 8
+12-03 01:16 logger       INFO     remaining time : 21.58
+12-03 01:16 django.server INFO     "POST /api/time-remain/ HTTP/1.1" 200 7
+12-03 01:18 django.server INFO     "GET / HTTP/1.1" 200 698
+12-03 01:18 django.server INFO     "GET /static/css/app.8cf8345de2c358f5a3546a816b866972.css HTTP/1.1" 200 203547
+12-03 01:18 django.server INFO     "GET /static/js/vendor.0d6b511f58a42807b804.js HTTP/1.1" 200 409871
+12-03 01:18 django.server INFO     "GET /static/js/app.347a3d2093633c6a115c.js HTTP/1.1" 200 33960
+12-03 01:18 django.server INFO     "GET /static/js/manifest.2ae2e69a05c33dfc65f8.js HTTP/1.1" 200 857
+12-03 01:18 django.server INFO     "GET /static/js/manifest.2ae2e69a05c33dfc65f8.js.map HTTP/1.1" 200 4972
+12-03 01:18 django.server INFO     "GET /static/css/app.8cf8345de2c358f5a3546a816b866972.css.map HTTP/1.1" 200 545150
+12-03 01:18 django.server INFO     "GET /static/js/app.347a3d2093633c6a115c.js.map HTTP/1.1" 200 116290
+12-03 01:18 django.server INFO     "GET /static/js/vendor.0d6b511f58a42807b804.js.map HTTP/1.1" 200 1609796
+12-03 01:19 logger       INFO     search: [{'formatted_address': '5820 125th Ln NE, Kirkland, WA 98033, USA', 'name': 'Central Park Tennis Club', 'opening_hours': {'open_now': True}}]
+12-03 01:19 django.server INFO     "POST /api/search/ HTTP/1.1" 200 141
+12-03 01:19 logger       INFO     remaining time : 23.0
+12-03 01:19 django.server INFO     "POST /api/time-remain/ HTTP/1.1" 200 6
+12-03 01:19 logger       INFO     duration between Central Park Zoo and Central Park : 2 mins
+12-03 01:19 django.server INFO     "POST /api/place/ HTTP/1.1" 200 8
+12-03 01:19 logger       INFO     remaining time : 21.58
+12-03 01:19 django.server INFO     "POST /api/time-remain/ HTTP/1.1" 200 7
+12-03 01:19 logger       INFO     Central Park, 1.00,0, 2018-12-04,00:00 saved!
+12-03 01:19 django.server INFO     "POST /api/savedata/ HTTP/1.1" 200 3
+12-03 01:19 logger       INFO     Central Park Zoo, 1.00,2 mins, 2018-12-04,01:02 saved!
+12-03 01:19 django.server INFO     "POST /api/savedata/ HTTP/1.1" 200 3
+12-03 01:19 logger       INFO     , ,2 mins, 2018-12-04,00:00 saved!
+12-03 01:19 django.server INFO     "POST /api/savedata/ HTTP/1.1" 200 3
+12-03 01:21 django.server INFO     "GET / HTTP/1.1" 200 698
+12-03 01:21 django.server INFO     "GET /static/js/manifest.2ae2e69a05c33dfc65f8.js HTTP/1.1" 200 857
+12-03 01:21 django.server INFO     "GET /static/css/app.8cf8345de2c358f5a3546a816b866972.css HTTP/1.1" 200 203547
+12-03 01:21 django.server INFO     "GET /static/js/vendor.0d6b511f58a42807b804.js HTTP/1.1" 200 409871
+12-03 01:21 django.server INFO     "GET /static/js/app.3052d840cbf0198283a5.js HTTP/1.1" 200 33871
+12-03 01:21 django.server INFO     "GET /static/js/manifest.2ae2e69a05c33dfc65f8.js.map HTTP/1.1" 200 4972
+12-03 01:21 django.server INFO     "GET /static/css/app.8cf8345de2c358f5a3546a816b866972.css.map HTTP/1.1" 200 545150
+12-03 01:21 django.server INFO     "GET /static/js/app.3052d840cbf0198283a5.js.map HTTP/1.1" 200 116091
+12-03 01:21 django.server INFO     "GET /static/js/vendor.0d6b511f58a42807b804.js.map HTTP/1.1" 200 1609796
+12-03 01:21 logger       INFO     search: [{'formatted_address': '5820 125th Ln NE, Kirkland, WA 98033, USA', 'name': 'Central Park Tennis Club', 'opening_hours': {'open_now': True}}]
+12-03 01:21 django.server INFO     "POST /api/search/ HTTP/1.1" 200 141
+12-03 01:21 logger       INFO     remaining time : 23.0
+12-03 01:21 django.server INFO     "POST /api/time-remain/ HTTP/1.1" 200 6
+12-03 01:21 logger       INFO     duration between Central Park Zoo and Central Park : 2 mins
+12-03 01:21 django.server INFO     "POST /api/place/ HTTP/1.1" 200 8
+12-03 01:21 logger       INFO     remaining time : 21.58
+12-03 01:21 django.server INFO     "POST /api/time-remain/ HTTP/1.1" 200 7
+12-03 01:25 django.server INFO     "GET / HTTP/1.1" 200 698
+12-03 01:25 django.server INFO     "GET /static/js/manifest.2ae2e69a05c33dfc65f8.js HTTP/1.1" 200 857
+12-03 01:25 django.server INFO     "GET /static/js/app.bda2c5ba8e563ee7609f.js HTTP/1.1" 200 33960
+12-03 01:25 django.server INFO     "GET /static/css/app.8cf8345de2c358f5a3546a816b866972.css HTTP/1.1" 200 203547
+12-03 01:25 django.server INFO     "GET /static/js/vendor.0d6b511f58a42807b804.js HTTP/1.1" 200 409871
+12-03 01:25 django.server INFO     "GET /static/js/manifest.2ae2e69a05c33dfc65f8.js.map HTTP/1.1" 200 4972
+12-03 01:25 django.server INFO     "GET /static/css/app.8cf8345de2c358f5a3546a816b866972.css.map HTTP/1.1" 200 545150
+12-03 01:25 django.server INFO     "GET /static/js/app.bda2c5ba8e563ee7609f.js.map HTTP/1.1" 200 116290
+12-03 01:25 django.server INFO     "GET /static/js/vendor.0d6b511f58a42807b804.js.map HTTP/1.1" 200 1609796
+12-03 01:26 logger       INFO     search: [{'formatted_address': '5820 125th Ln NE, Kirkland, WA 98033, USA', 'name': 'Central Park Tennis Club', 'opening_hours': {'open_now': True}}]
+12-03 01:26 django.server INFO     "POST /api/search/ HTTP/1.1" 200 141
+12-03 01:26 logger       INFO     remaining time : 23.0
+12-03 01:26 django.server INFO     "POST /api/time-remain/ HTTP/1.1" 200 6
+12-03 01:26 logger       INFO     duration between Central Park Zoo and Central Park : 2 mins
+12-03 01:26 django.server INFO     "POST /api/place/ HTTP/1.1" 200 8
+12-03 01:26 logger       INFO     remaining time : 21.58
+12-03 01:26 django.server INFO     "POST /api/time-remain/ HTTP/1.1" 200 7
+12-03 01:31 django.server INFO     "GET / HTTP/1.1" 200 698
+12-03 01:31 django.server INFO     "GET /static/css/app.8cf8345de2c358f5a3546a816b866972.css HTTP/1.1" 200 203547
+12-03 01:31 django.server INFO     "GET /static/js/manifest.2ae2e69a05c33dfc65f8.js HTTP/1.1" 200 857
+12-03 01:31 django.server INFO     "GET /static/js/app.45f97aa5f96decb1da02.js HTTP/1.1" 200 33915
+12-03 01:31 django.server INFO     "GET /static/js/vendor.0d6b511f58a42807b804.js HTTP/1.1" 200 409871
+12-03 01:31 django.server INFO     "GET /static/js/manifest.2ae2e69a05c33dfc65f8.js.map HTTP/1.1" 200 4972
+12-03 01:31 django.server INFO     "GET /static/css/app.8cf8345de2c358f5a3546a816b866972.css.map HTTP/1.1" 200 545150
+12-03 01:31 django.server INFO     "GET /static/js/app.45f97aa5f96decb1da02.js.map HTTP/1.1" 200 116189
+12-03 01:31 django.server INFO     "GET /static/js/vendor.0d6b511f58a42807b804.js.map HTTP/1.1" 200 1609796
+12-03 01:31 logger       INFO     search: [{'formatted_address': '5820 125th Ln NE, Kirkland, WA 98033, USA', 'name': 'Central Park Tennis Club', 'opening_hours': {'open_now': True}}]
+12-03 01:31 django.server INFO     "POST /api/search/ HTTP/1.1" 200 141
+12-03 01:31 logger       INFO     remaining time : 23.0
+12-03 01:31 django.server INFO     "POST /api/time-remain/ HTTP/1.1" 200 6
+12-03 01:31 logger       INFO     duration between Central Park Zoo and Central Park : 2 mins
+12-03 01:31 django.server INFO     "POST /api/place/ HTTP/1.1" 200 8
+12-03 01:31 logger       INFO     remaining time : 21.58
+12-03 01:31 django.server INFO     "POST /api/time-remain/ HTTP/1.1" 200 7
+12-03 01:39 django.server INFO     "GET / HTTP/1.1" 200 698
+12-03 01:39 django.server INFO     "GET /static/js/manifest.2ae2e69a05c33dfc65f8.js HTTP/1.1" 200 857
+12-03 01:39 django.server INFO     "GET /static/js/app.347a3d2093633c6a115c.js HTTP/1.1" 200 33960
+12-03 01:39 django.server INFO     "GET /static/css/app.8cf8345de2c358f5a3546a816b866972.css HTTP/1.1" 200 203547
+12-03 01:39 django.server INFO     "GET /static/js/vendor.0d6b511f58a42807b804.js HTTP/1.1" 200 409871
+12-03 01:39 django.server INFO     "GET /static/css/app.8cf8345de2c358f5a3546a816b866972.css.map HTTP/1.1" 200 545150
+12-03 01:39 django.server INFO     "GET /static/js/manifest.2ae2e69a05c33dfc65f8.js.map HTTP/1.1" 200 4972
+12-03 01:39 django.server INFO     "GET /static/js/app.347a3d2093633c6a115c.js.map HTTP/1.1" 200 116290
+12-03 01:39 django.server INFO     "GET /static/js/vendor.0d6b511f58a42807b804.js.map HTTP/1.1" 200 1609796
+12-03 01:39 logger       INFO     search: [{'formatted_address': '5820 125th Ln NE, Kirkland, WA 98033, USA', 'name': 'Central Park Tennis Club', 'opening_hours': {'open_now': True}}]
+12-03 01:39 django.server INFO     "POST /api/search/ HTTP/1.1" 200 141
+12-03 01:39 logger       INFO     remaining time : 23.0
+12-03 01:39 django.server INFO     "POST /api/time-remain/ HTTP/1.1" 200 6
+12-03 01:39 logger       INFO     duration between Central Park Zoo and Central Park : 2 mins
+12-03 01:39 django.server INFO     "POST /api/place/ HTTP/1.1" 200 8
+12-03 01:39 logger       INFO     remaining time : 21.58
+12-03 01:39 django.server INFO     "POST /api/time-remain/ HTTP/1.1" 200 7
+12-03 01:42 django.server INFO     "GET / HTTP/1.1" 200 698
+12-03 01:42 django.server INFO     "GET /static/js/app.b855d955d3c6e23b53a0.js HTTP/1.1" 200 34056
+12-03 01:42 django.server INFO     "GET /static/css/app.8cf8345de2c358f5a3546a816b866972.css HTTP/1.1" 200 203547
+12-03 01:42 django.server INFO     "GET /static/js/manifest.2ae2e69a05c33dfc65f8.js HTTP/1.1" 200 857
+12-03 01:42 django.server INFO     "GET /static/js/vendor.0d6b511f58a42807b804.js HTTP/1.1" 200 409871
+12-03 01:42 django.server INFO     "GET /static/js/manifest.2ae2e69a05c33dfc65f8.js.map HTTP/1.1" 200 4972
+12-03 01:42 django.server INFO     "GET /static/css/app.8cf8345de2c358f5a3546a816b866972.css.map HTTP/1.1" 200 545150
+12-03 01:42 django.server INFO     "GET /static/js/app.b855d955d3c6e23b53a0.js.map HTTP/1.1" 200 116533
+12-03 01:42 django.server INFO     "GET /static/js/vendor.0d6b511f58a42807b804.js.map HTTP/1.1" 200 1609796
+12-03 01:43 logger       INFO     search: [{'formatted_address': '5820 125th Ln NE, Kirkland, WA 98033, USA', 'name': 'Central Park Tennis Club', 'opening_hours': {'open_now': True}}]
+12-03 01:43 django.server INFO     "POST /api/search/ HTTP/1.1" 200 141
+12-03 01:43 logger       INFO     remaining time : 23.0
+12-03 01:43 django.server INFO     "POST /api/time-remain/ HTTP/1.1" 200 6
+12-03 01:43 logger       INFO     duration between Central Park Zoo and Central Park : 2 mins
+12-03 01:43 django.server INFO     "POST /api/place/ HTTP/1.1" 200 8
+12-03 01:43 logger       INFO     remaining time : 21.58
+12-03 01:43 django.server INFO     "POST /api/time-remain/ HTTP/1.1" 200 7
+12-03 01:45 django.server INFO     "GET / HTTP/1.1" 200 698
+12-03 01:45 django.server INFO     "GET /static/js/app.c70be9c6fa2b49bf713b.js HTTP/1.1" 200 33915
+12-03 01:45 django.server INFO     "GET /static/js/manifest.2ae2e69a05c33dfc65f8.js HTTP/1.1" 200 857
+12-03 01:45 django.server INFO     "GET /static/js/vendor.0d6b511f58a42807b804.js HTTP/1.1" 200 409871
+12-03 01:45 django.server INFO     "GET /static/css/app.8cf8345de2c358f5a3546a816b866972.css HTTP/1.1" 200 203547
+12-03 01:45 django.server INFO     "GET /static/js/manifest.2ae2e69a05c33dfc65f8.js.map HTTP/1.1" 200 4972
+12-03 01:45 django.server INFO     "GET /static/css/app.8cf8345de2c358f5a3546a816b866972.css.map HTTP/1.1" 200 545150
+12-03 01:45 django.server INFO     "GET /static/js/app.c70be9c6fa2b49bf713b.js.map HTTP/1.1" 200 116197
+12-03 01:45 django.server INFO     "GET /static/js/vendor.0d6b511f58a42807b804.js.map HTTP/1.1" 200 1609796
+12-03 01:45 logger       INFO     search: [{'formatted_address': '5820 125th Ln NE, Kirkland, WA 98033, USA', 'name': 'Central Park Tennis Club', 'opening_hours': {'open_now': True}}]
+12-03 01:45 django.server INFO     "POST /api/search/ HTTP/1.1" 200 141
+12-03 01:45 logger       INFO     remaining time : 22.0
+12-03 01:45 django.server INFO     "POST /api/time-remain/ HTTP/1.1" 200 6
+12-03 01:45 logger       INFO     duration between Central Park Zoo and Central Park : 2 mins
+12-03 01:45 django.server INFO     "POST /api/place/ HTTP/1.1" 200 8
+12-03 01:45 logger       INFO     remaining time : 19.58
+12-03 01:45 django.server INFO     "POST /api/time-remain/ HTTP/1.1" 200 7
+12-03 01:45 logger       INFO     duration between Central Park and Central Park Zoo : 2 mins
+12-03 01:45 django.server INFO     "POST /api/place/ HTTP/1.1" 200 8
+12-03 01:45 logger       INFO     remaining time : 17.56
+12-03 01:45 django.server INFO     "POST /api/time-remain/ HTTP/1.1" 200 7
+12-03 01:45 django.server INFO     "GET / HTTP/1.1" 200 698
+12-03 01:45 django.server INFO     "GET /static/js/manifest.2ae2e69a05c33dfc65f8.js HTTP/1.1" 304 0
+12-03 01:45 django.server INFO     "GET /static/css/app.8cf8345de2c358f5a3546a816b866972.css HTTP/1.1" 304 0
+12-03 01:45 django.server INFO     "GET /static/js/vendor.0d6b511f58a42807b804.js HTTP/1.1" 304 0
+12-03 01:45 django.server INFO     "GET /static/js/app.c70be9c6fa2b49bf713b.js HTTP/1.1" 304 0
+12-03 01:45 django.server INFO     "GET /static/js/manifest.2ae2e69a05c33dfc65f8.js.map HTTP/1.1" 304 0
+12-03 01:45 django.server INFO     "GET /static/js/vendor.0d6b511f58a42807b804.js.map HTTP/1.1" 304 0
+12-03 01:45 django.server INFO     "GET /static/js/app.c70be9c6fa2b49bf713b.js.map HTTP/1.1" 304 0
+12-03 01:45 django.server INFO     "GET /static/css/app.8cf8345de2c358f5a3546a816b866972.css.map HTTP/1.1" 304 0

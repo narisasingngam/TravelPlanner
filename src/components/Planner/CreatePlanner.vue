@@ -17,6 +17,7 @@
                                     label="Topic"
                                     id="topic"
                                     v-model="topic"
+                                    :maxlength="20"
                                     required></v-text-field>
                             </v-flex>
                         </v-layout>
