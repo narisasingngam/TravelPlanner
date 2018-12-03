@@ -2096,3 +2096,27 @@ NameError: name 'sys' is not defined
 12-03 01:45 django.server INFO     "GET /static/js/vendor.0d6b511f58a42807b804.js.map HTTP/1.1" 304 0
 12-03 01:45 django.server INFO     "GET /static/js/app.c70be9c6fa2b49bf713b.js.map HTTP/1.1" 304 0
 12-03 01:45 django.server INFO     "GET /static/css/app.8cf8345de2c358f5a3546a816b866972.css.map HTTP/1.1" 304 0
+12-03 10:13 django.server INFO     "GET / HTTP/1.1" 200 698
+12-03 10:13 django.server INFO     "GET /static/css/app.8cf8345de2c358f5a3546a816b866972.css HTTP/1.1" 304 0
+12-03 10:13 django.server INFO     "GET /static/js/vendor.0d6b511f58a42807b804.js HTTP/1.1" 304 0
+12-03 10:13 django.server INFO     "GET /static/js/manifest.2ae2e69a05c33dfc65f8.js HTTP/1.1" 304 0
+12-03 10:13 django.server INFO     "GET /static/js/app.c70be9c6fa2b49bf713b.js HTTP/1.1" 304 0
+12-03 10:13 django.server INFO     "GET /static/img/travel-planner.8e0238f.png HTTP/1.1" 200 868789
+12-03 10:13 logger       INFO     search: [{'formatted_address': '5820 125th Ln NE, Kirkland, WA 98033, USA', 'name': 'Central Park Tennis Club', 'opening_hours': {'open_now': True}}]
+12-03 10:13 django.server INFO     "POST /api/search/ HTTP/1.1" 200 141
+12-03 10:13 logger       INFO     remaining time : 22.0
+12-03 10:13 django.server INFO     "POST /api/time-remain/ HTTP/1.1" 200 6
+12-03 10:13 logger       INFO     duration between Central Park Zoo and Central Park : 2 mins
+12-03 10:13 django.server INFO     "POST /api/place/ HTTP/1.1" 200 8
+12-03 10:13 logger       INFO     remaining time : 19.58
+12-03 10:13 django.server INFO     "POST /api/time-remain/ HTTP/1.1" 200 7
+12-03 10:13 logger       INFO     add {'date': '2018-12-02', 'name': 'mint', 'id': 'mv8jterb2'}
+12-03 10:13 logger       INFO     add {'date': '2018-12-03', 'name': 'มิ้น', 'id': '23qi9ifb6'}
+12-03 10:13 logger       INFO     add {'date': '2018-11-27', 'name': 'Sathon road', 'id': '1hdaqv02v'}
+12-03 10:13 logger       INFO     add {'date': '2018-11-27', 'name': 'pakkanuy', 'id': 'd7p0mg6zj'}
+12-03 10:13 logger       INFO     add {'date': '2018-12-01', 'name': 'วัด9วัน', 'id': '7y5w29w2u'}
+12-03 10:13 django.server INFO     "POST /api/user_data/ HTTP/1.1" 200 359
+12-03 10:14 logger       INFO     {'id': '23qi9ifb6', 'email': 'mmintttt@gmail.com', 'date': '2018-12-03', 'name': 'มิ้น', 'location': 'Wat Phra Chetuphon Vimolmangklararm Rajwaramahaviharn', 'spendtime': '1.00', 'times': '00:00', 'duration': '0', 'remaining': '24.0'}
+12-03 10:14 logger       INFO     {'id': '23qi9ifb6', 'email': 'mmintttt@gmail.com', 'date': '2018-12-03', 'name': 'มิ้น', 'location': 'Wat Hat Yai Nai', 'spendtime': '1.00', 'times': '13:04', 'duration': '12 hours 4 mins', 'remaining': '23.0'}
+12-03 10:14 logger       INFO     {'id': '23qi9ifb6', 'email': 'mmintttt@gmail.com', 'date': '2018-12-03', 'name': 'มิ้น', 'location': '', 'spendtime': '', 'times': '00:00', 'duration': '12 hours 4 mins', 'remaining': '9.56'}
+12-03 10:14 django.server INFO     "POST /api/plan_data/ HTTP/1.1" 200 701
