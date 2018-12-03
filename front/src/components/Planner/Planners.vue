@@ -74,9 +74,7 @@ export default {
     },
     userIsValid() {
       return (
-        (this.$store.getters.getCookie("mail") == " " ||
-          this.$store.getters.getCookie("mail") == "") &&
-        this.$store.getters.loadedPlanners.length > 0
+        (this.$store.getters.getCookie("mail") == " " || this.$store.getters.getCookie("mail") == "") && this.$store.getters.loadedPlanners.length > 0
       );
     },
     plannersIsValid() {

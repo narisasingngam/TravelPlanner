@@ -342,11 +342,13 @@ export default {
       return this.$store.getters.loadedPlanner(this.id);
     },
     plannerIsValid() {
+      console.log("mail");
+      console.log(this.$store.getters.getCookie("mail"));
       return (
         this.list.length > 1 &&
-        this.$store.getters.getCookie("mail") != " " &&
         this.$store.getters.getDataId !=
-          this.$store.getters.loadedPlanner(this.id).id
+          this.$store.getters.loadedPlanner(this.id).id &&
+        this.$store.getters.getCookie("mail") != " " 
       );
     },
     dataIsValid() {
