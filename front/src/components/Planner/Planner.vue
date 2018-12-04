@@ -138,11 +138,13 @@
             <v-spacer></v-spacer>
             <v-btn class="primary" @click="alert = !alert" :disabled="!plannerIsValid">Save</v-btn>
           </v-card-actions>
-          <v-card-text right>
-            <v-spacer></v-spacer>
-            <div class="info--text">If you want to save this plan, please sign in.</div>
-          </v-card-text>
-          <v-card-actions>
+          <div v-if="hadLogin">
+            <v-card-text right>
+              <v-spacer></v-spacer>
+                <p class="info--text">If you want to save this plan, please sign in.</p>
+              </v-card-text>
+             <v-card-actions>
+          </div>     
             <v-alert
               :value="alert"
               type="success"
@@ -300,6 +302,9 @@ export default {
     );
   },
   computed: {
+    hadLogin(){
+      return this.$store.getters.getCookie("mail") == " " || this.$store.getters.getCookie("mail") == ""
+    },
     planner() {
       if (
         this.$store.getters.getDataId ==
