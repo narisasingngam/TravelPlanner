@@ -1,13 +1,16 @@
 from selenium.webdriver.common.by import By
 from selenium import webdriver
 import unittest
+import os
 
 
 class HomePageViewRedirectTest(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls):
-        cls.browser = webdriver.Safari()
+        PROJECT_ROOT = os.path.abspath(os.path.dirname(__file__))
+        DRIVER = os.path.join(PROJECT_ROOT, "/Users/Faiip/TravelPlanner/chromedriver")
+        cls.browser = webdriver.Chrome(executable_path = DRIVER)
         cls.browser.get('http://travelplanner-app.herokuapp.com/#/')
 
     def test_view_planners_redirect(self):
