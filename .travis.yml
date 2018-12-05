@@ -1,7 +1,15 @@
-llanguage: python
+language: python
 
 python:
     - "3.6.3"
+
+node_js: '7'
+
+sudo: required
+
+env: DISPLAY=':99.0'
+
+dist: trusty
 
 services:
     - postgresql
@@ -10,27 +18,25 @@ virtualenv:
   env_bin_activate: true
 
 install:
-    - pip install --upgrade pip
     - pip install -r requirements.txt
     - pip install codecov
-    - wget -N http://chromedriver.storage.googleapis.com/2.30/chromedriver_linux64.zip -P ~/
-    - unzip ~/chromedriver_linux64.zip -d ~/
-    - rm ~/chromedriver_linux64.zip
-    - sudo mv -f ~/chromedriver /usr/local/share/
-    - sudo chmod +x /usr/local/share/chromedriver
-    - sudo ln -s /usr/local/share/chromedriver /usr/local/bin/chromedriver
 
 addons:
     postgresql: "9.6"
-    chrome: stable
+    apt:
+      sources:
+        - google-chrome
+      packages:
+        - google-chrome-stable
 
 before_script:
     - psql -c "CREATE DATABASE mydb;" -U postgres
+    - sh -e /etc/init.d/xvfb start
 
 script:
-    - whereis google-chrome-stable
-    - whereis chromedriver
     - coverage run manage.py test map/tests
+    - python3 -m unittest discover -p "test_homepage.py"
+    - python3 -m unittest discover -p "test_createpage.py"
 
 after_success:
   - codecov
