@@ -67,12 +67,12 @@ $ pip install -r requirements.txt
 $ python manage.py migrate
 ```
 
-7. For backend compiled
+7. Run application
 
 ``` 
 $ python manage.py runserver
 
-- Run serve with localhost:8000
+- Run server with localhost:8000
  ```
 
  If you want to login as **admin**
