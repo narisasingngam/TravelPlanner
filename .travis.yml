@@ -24,4 +24,4 @@ script:
     - coverage run manage.py test map/tests
 
 after_success:
-  - codecov    
+  - codecov
