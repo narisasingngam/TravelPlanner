@@ -1,7 +1,8 @@
 ![Alt text](front/src/assets/travel-planner.png)
 ## [Front end](https://github.com/ffaiip/TravelPlanner-App)
 # Travel Planner
-Travel planner is a web application where users can create a planner for their own one day trip. In a planner; the user can specify arrival and departure dates, select places to visit by searching from maps, and set time that they want to spend at each place. The planner will show time remaining to the user for estimate time in each place, and display the time that takes user to travel from one place to another.
+Travel planner is a web application where users can create
+a planner for their own one day trip. In a planner; the user can specify arrival and departure dates, select places to visit by searching from maps, and set time that they want to spend at each place. The planner will show time remaining to the user for estimate time in each place, and display the time that takes user to travel from one place to another.
 
 Traivis CI : [![Build Status](https://travis-ci.com/narisasingngam/TravelPlanner.svg?branch=master)](https://travis-ci.com/narisasingngam/TravelPlanner)
 

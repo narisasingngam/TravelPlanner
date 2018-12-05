@@ -21,7 +21,6 @@ before_script:
 
 script:
     - coverage run manage.py test map/tests
-    - python -m uniitest discover
 
 after_success:
   - codecov    
