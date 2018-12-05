@@ -37,8 +37,8 @@ before_script:
 
 script:
     - coverage run manage.py test map/tests
-    - python3 -m unittest discover -p "test_homepage.py"
-    - python3 -m unittest discover -p "test_createpage.py"
+    - python -m unittest discover -p "test_homepage.py"
+    - python -m unittest discover -p "test_createpage.py"
 
 after_success:
   - codecov
