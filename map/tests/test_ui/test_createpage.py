@@ -9,7 +9,7 @@ class CreatePageDisplayTest(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         PROJECT_ROOT = os.path.abspath(os.path.dirname(__file__))
-        DRIVER = os.path.join(PROJECT_ROOT, "/Users/Faiip/TravelPlanner/chromedriver")
+        DRIVER = os.path.join(PROJECT_ROOT, "chromedriver")
         cls.browser = webdriver.Chrome(executable_path=DRIVER)
         cls.browser.get('https://travelplanner-app.herokuapp.com/#/planner/new')
 
