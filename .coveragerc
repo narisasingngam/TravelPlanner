@@ -9,6 +9,7 @@ omit =
     # omit migrations
     */map/migrations/*
     */travelplan/*
+    ./manage.py
 
 include = 
     */map/*    

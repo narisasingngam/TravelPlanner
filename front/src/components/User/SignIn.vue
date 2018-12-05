@@ -147,12 +147,10 @@ export default {
   },
   computed: {
     usname() {
-      // console.log(this.$store.getters.getCookie('name'))
       this.user.username = this.$store.getters.getCookie("name");
       return this.user.username;
     },
     email() {
-      // console.log(this.$store.getters.getCookie('mail'))
       this.user.email = this.$store.getters.getCookie("mail");
       return this.user.email;
     }
@@ -175,7 +173,6 @@ export default {
   border-radius: 3px;
   background-color: #3c82f7;
   color: #fff;
-  /* box-shadow: 0 3px 0 #0f69ff; */
 }
 .fb-signin-button {
   /* This is where you control how the button looks. Be creative! */
