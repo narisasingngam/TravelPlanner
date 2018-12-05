@@ -62,13 +62,17 @@
                                 type="submit">Create planner</v-btn>
                             </v-flex>
                         </v-layout>
-                        <v-layout align-center justify-center row wrap>
+                        <div v-if="hadLogin">
+                          <v-layout align-center justify-center row wrap>
+                          
                             <v-flex xs5 class="mb-6">
                                 <v-card-text right>
-                                    <div class="info--text">If you want to create many plan, please sign in.</div>
+                                     <p class="info--text"> If you want to create many plan, please sign in.</p>
                                 </v-card-text>
                             </v-flex>
-                        </v-layout>
+                        
+                          </v-layout>
+                        </div>
                     </v-form>
                 </v-flex>
             </v-layout>
@@ -90,7 +94,7 @@ export default {
       dateFormatted: null,
       menu: false,
       picker: null,
-      landscape: false
+      landscape: false,
     };
   },
   computed: {
@@ -110,6 +114,9 @@ export default {
         );
       }
       return this.topic !== "" && this.date !== null;
+    },
+    hadLogin(){
+      return this.$store.getters.getCookie("mail") == " " || this.$store.getters.getCookie("mail") == ""
     },
     computedDateFormatted() {
       return this.formatDate(this.date);

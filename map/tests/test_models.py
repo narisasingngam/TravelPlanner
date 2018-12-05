@@ -101,8 +101,6 @@ class PlannerModelTests(TestCase):
         self.assertEqual(plan[2].total_time,"15:30")
 
   
-        
-    
     def test_Users_email(self):
         """
         test email in Users object  
