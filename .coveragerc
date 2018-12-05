@@ -11,6 +11,7 @@ omit =
     */travelplan/*
     ./manage.py
 
+
 include = 
     */map/*    
 

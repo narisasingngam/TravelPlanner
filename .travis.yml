@@ -15,6 +15,7 @@ install:
     
 addons:
     postgresql: "9.6"
+    chrome: stable
 
 before_script:
     - psql -c "CREATE DATABASE mydb;" -U postgres

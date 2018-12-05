@@ -4,6 +4,8 @@ import dj_database_url
 from decouple import config
 import configparser
 import base64
+from selenium import webdriver
+
 import logging.config
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -191,6 +193,19 @@ LOGGING = {
 }
 
 LOGGING_CONFIG = None
+
+SELENIUM_WEBDRIVERS = {
+    'default': {
+        'callable': webdriver.Chrome,
+        'args': (),
+        'kwargs': {},
+    },
+    'firefox': {
+        'callable': webdriver.Firefox,
+        'args': (),
+        'kwargs': {},
+    },
+}
 
 STATIC_URL = '/static/'
 

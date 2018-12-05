@@ -1,5 +1,6 @@
 from selenium.webdriver.common.by import By
 from selenium import webdriver
+from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 import unittest
 
 
@@ -7,7 +8,9 @@ class CreatePageDisplayTest(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls):
-        cls.browser = webdriver.Safari()
+        cls.browser = webdriver.Remote(
+   command_executor='http://127.0.0.1:4444/wd/hub',
+   desired_capabilities=DesiredCapabilities.CHROME)
         cls.browser.get('https://travelplanner-app.herokuapp.com/#/planner/new')
 
     def test_createplan_topic_displayed(self):

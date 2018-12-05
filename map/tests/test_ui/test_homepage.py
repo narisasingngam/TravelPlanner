@@ -7,7 +7,7 @@ class HomePageViewRedirectTest(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls):
-        cls.browser = webdriver.Safari()
+        cls.browser = webdriver.Chrome()
         cls.browser.get('http://travelplanner-app.herokuapp.com/#/')
 
     def test_view_planners_redirect(self):
