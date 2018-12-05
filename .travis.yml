@@ -15,6 +15,7 @@ install:
     
 addons:
     postgresql: "9.6"
+    chrome: stable
 
 before_script:
     - psql -c "CREATE DATABASE mydb;" -U postgres
@@ -23,4 +24,4 @@ script:
     - coverage run manage.py test map/tests
 
 after_success:
-  - codecov    
+  - codecov
